@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://sk44x2v00sao"]
+
+[ext_resource type="Script" uid="uid://8go1bifdo0o0" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://i87yldivj2r8" path="res://sine_wave.gd" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://ol26keh5ewgg" path="res://head.gd" id="3_lquwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
+radius = 25.079872
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="SineWave" type="Node2D" parent="."]
+position = Vector2(0, 360)
+script = ExtResource("2_h2yge")
+
+[node name="Head" type="Area2D" parent="."]
+position = Vector2(0, 360)
+script = ExtResource("3_lquwl")
+
+[node name="HeadSprite" type="Sprite2D" parent="Head"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
+shape = SubResource("CircleShape2D_h2yge")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 207.0
+offset_bottom = 66.0
+
+[node name="SlowButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SLOW"
+
+[node name="FastButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "FAST"
+
+[connection signal="area_entered" from="Head" to="." method="_on_head_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="VBoxContainer/SlowButton" to="." method="_on_slow_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/FastButton" to="." method="_on_fast_button_pressed"]
