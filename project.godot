@@ -28,6 +28,9 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 Collectables=""
+HitOnHead=""
+HitOnBody=""
+NoHit=""
 
 [input]
 
