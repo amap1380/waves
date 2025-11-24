@@ -1,28 +1,29 @@
 extends Node2D
 
 @onready var head: Area2D = $Head
-@onready var sine_wave: Node2D = $SineWave
+@onready var sine_wave: SineWave = $SineWave
 @onready var timer: Timer = $Timer
 
 enum GameMode{FAST, SLOW}
 @export var gamemode: GameMode = GameMode.SLOW
-
-const COLLECTABLE = preload("res://collectable.tscn")
+@export var random: bool = true
+const COLLECTABLE = preload("res://scenes/collectable.tscn")
 
 var x_pos = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
-	match gamemode:
-		GameMode.SLOW:
-			timer.start(randf_range(3.0, 5.0))
-		GameMode.FAST:
-			timer.start(randf_range(2.0, 3.0))
+	if random:
+		match gamemode:
+			GameMode.SLOW:
+				timer.start(randf_range(3.0, 5.0))
+			GameMode.FAST:
+				timer.start(randf_range(2.0, 3.0))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var arr = sine_wave.update_array()
+	var arr = sine_wave.arr
 	#var speed = arr[x_pos].distance_to(arr[x_pos + 1])
 	#x_pos += delta * 100.0 / speed
 	#x_pos = wrapf(x_pos, 0.0, get_viewport_rect().size.x)

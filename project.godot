@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-WaveCollision="*res://wave_collision.gd"
+WaveCollision="*res://scripts/wave_collision.gd"
 
 [display]
 

@@ -1,27 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://sk44x2v00sao"]
+[gd_scene load_steps=7 format=3 uid="uid://sk44x2v00sao"]
 
-[ext_resource type="Script" uid="uid://8go1bifdo0o0" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://i87yldivj2r8" path="res://sine_wave.gd" id="2_h2yge"]
-[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="3_1bvp3"]
-[ext_resource type="Script" uid="uid://ol26keh5ewgg" path="res://head.gd" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://8go1bifdo0o0" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="Script" uid="uid://i87yldivj2r8" path="res://scripts/sine_wave.gd" id="2_tbgi4"]
+[ext_resource type="Script" uid="uid://ol26keh5ewgg" path="res://scripts/head.gd" id="3_tefeu"]
+[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="4_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="5_tbgi4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
 radius = 25.079872
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_ig7tw")
+script = ExtResource("1_jyhfs")
+random = false
 
 [node name="SineWave" type="Node2D" parent="."]
 position = Vector2(0, 360)
-script = ExtResource("2_h2yge")
+script = ExtResource("2_tbgi4")
 
 [node name="Head" type="Area2D" parent="."]
 position = Vector2(0, 360)
-script = ExtResource("3_lquwl")
+script = ExtResource("3_tefeu")
 
 [node name="HeadSprite" type="Sprite2D" parent="Head"]
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_1bvp3")
+texture = ExtResource("4_o6xl0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
 shape = SubResource("CircleShape2D_h2yge")
@@ -39,6 +41,15 @@ text = "SLOW"
 [node name="FastButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "FAST"
+
+[node name="Collectable" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(1509, 190)
+
+[node name="Collectable2" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(1650, 378)
+
+[node name="Collectable3" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(1954, 187)
 
 [connection signal="area_entered" from="Head" to="." method="_on_head_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

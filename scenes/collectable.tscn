@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ds4uqhd57sy3l"]
 
-[ext_resource type="Script" uid="uid://cjn8y62rgijvl" path="res://collectable.gd" id="1_3dk6v"]
+[ext_resource type="Script" uid="uid://cjn8y62rgijvl" path="res://scripts/collectable.gd" id="1_3dk6v"]
 [ext_resource type="Texture2D" uid="uid://b3wmu0tjy51to" path="res://assets/faceon_gold_coin.png" id="2_un20x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7oip2"]

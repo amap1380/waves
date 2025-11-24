@@ -28,6 +28,7 @@ func _ready() -> void:
 var ratio = 0.0
 
 @onready var collison_polygone : Array[PackedVector2Array]
+var arr = PackedVector2Array()
 
 
 func _physics_process(delta: float) -> void:
@@ -37,23 +38,24 @@ func _physics_process(delta: float) -> void:
 	number_of_points = int(lerp(100.0, get_viewport_rect().size.x - 200.0, ratio))
 	#amplitude = lerpf(200.0, 0.0 , ratio)
 	amplitude += Input.get_axis("down", "up") * delta * speed * 100.0
-	amplitude = clampf(amplitude, 0.0, 200.0)
+	amplitude = clampf(amplitude, -200.0, 200.0)
 	frequency = lerpf(50.0, 200.0, ratio)
 	h += delta * 2
 	wrapf(h,0, TAU)
+	update_array()
 	queue_redraw()
 
 func _draw() -> void:
-	draw_polyline(update_array(), Color.SLATE_BLUE, 2.0, true)
+	draw_polyline(arr, Color.SLATE_BLUE, 2.0, true)
+
 
 func update_array():
-	var arr = PackedVector2Array()
+	arr = PackedVector2Array()
 	for i in range(number_of_points):
 		arr.append(Vector2(
 			i,
 			amplitude * sin((i / frequency) + h))
 		)
-	return arr
 
 func update_collision():
 	pass

@@ -8,8 +8,8 @@ class_name Collectable
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(global_position)
-
+	#print(global_position)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -25,5 +25,5 @@ func check_collision_with_wave(arr: PackedVector2Array, offset: Vector2):
 	for i in arr.size() - 1:
 		if Geometry2D.segment_intersects_circle(arr[i], arr[i+1], 
 			collision_shape_2d.global_position - offset, collision_shape_2d.shape.radius) != -1:
-				print(2)
+				#print(2)
 				queue_free()
