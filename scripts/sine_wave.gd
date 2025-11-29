@@ -30,6 +30,8 @@ var ratio = 0.0
 @onready var collison_polygone : Array[PackedVector2Array]
 var arr = PackedVector2Array()
 
+var color: Color
+var energy_level := 0
 
 func _physics_process(delta: float) -> void:
 	
@@ -42,11 +44,25 @@ func _physics_process(delta: float) -> void:
 	frequency = lerpf(50.0, 200.0, ratio)
 	h += delta * 2
 	wrapf(h,0, TAU)
+	var energy = abs(amplitude)/200.0 * (1.0 - ratio)
+	# energy ranges
+	if energy <= 0.3:
+		energy_level = 1
+		color = Color("4D846B")
+	elif energy > 0.3 and energy < 0.7:
+		energy_level = 2
+		color = Color("A526AE")
+	elif energy >= 0.7:
+		energy_level = 3
+		color = Color("5973FF")
+	else:
+		energy_level = 0
+		color = Color.RED
 	update_array()
 	queue_redraw()
 
 func _draw() -> void:
-	draw_polyline(arr, Color.SLATE_BLUE, 2.0, true)
+	draw_polyline(arr, color, 4.0, true)
 
 
 func update_array():

@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://ds4uqhd57sy3l"]
 
 [ext_resource type="Script" uid="uid://cjn8y62rgijvl" path="res://scripts/collectable.gd" id="1_3dk6v"]
-[ext_resource type="Texture2D" uid="uid://b3wmu0tjy51to" path="res://assets/faceon_gold_coin.png" id="2_un20x"]
+[ext_resource type="Texture2D" uid="uid://d3krrqx08e6ff" path="res://assets/white_circle.png" id="2_llfh3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7oip2"]
-radius = 25.0
+radius = 24.0
 
 [node name="Collectable" type="Area2D" groups=["Collectables"]]
 script = ExtResource("1_3dk6v")
+speed = 150.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_un20x")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_llfh3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7oip2")

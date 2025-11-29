@@ -1,57 +1,93 @@
-[gd_scene load_steps=7 format=3 uid="uid://sk44x2v00sao"]
+[gd_scene load_steps=5 format=3 uid="uid://sk44x2v00sao"]
 
 [ext_resource type="Script" uid="uid://8go1bifdo0o0" path="res://scripts/main.gd" id="1_jyhfs"]
-[ext_resource type="Script" uid="uid://i87yldivj2r8" path="res://scripts/sine_wave.gd" id="2_tbgi4"]
-[ext_resource type="Script" uid="uid://ol26keh5ewgg" path="res://scripts/head.gd" id="3_tefeu"]
-[ext_resource type="Texture2D" uid="uid://dd2a3u0lhvmi5" path="res://icon.svg" id="4_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cepq1jsbyexcn" path="res://scenes/sine_wave.tscn" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cd433od0xoqoc" path="res://scenes/head.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="5_tbgi4"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
-radius = 25.079872
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jyhfs")
 random = false
 
-[node name="SineWave" type="Node2D" parent="."]
+[node name="SineWave" parent="." instance=ExtResource("2_tbgi4")]
 position = Vector2(0, 360)
-script = ExtResource("2_tbgi4")
 
-[node name="Head" type="Area2D" parent="."]
-position = Vector2(0, 360)
-script = ExtResource("3_tefeu")
-
-[node name="HeadSprite" type="Sprite2D" parent="Head"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_o6xl0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
-shape = SubResource("CircleShape2D_h2yge")
+[node name="Head" parent="." instance=ExtResource("3_jyhfs")]
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
 offset_right = 207.0
 offset_bottom = 66.0
 
-[node name="SlowButton" type="Button" parent="VBoxContainer"]
+[node name="SlowButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "SLOW"
 
-[node name="FastButton" type="Button" parent="VBoxContainer"]
+[node name="FastButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "FAST"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -191.0
+offset_bottom = 77.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="OnHead" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "On Head: "
+horizontal_alignment = 1
+
+[node name="OnBody" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "On Body: "
+horizontal_alignment = 1
+
+[node name="NoHit" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "No Hit: "
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OnHeadScore" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OnBodyScore" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoHitScore" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Collectable" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(1509, 190)
-
-[node name="Collectable2" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(1650, 378)
-
-[node name="Collectable3" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(1954, 187)
+position = Vector2(1376, 382)
 
 [connection signal="area_entered" from="Head" to="." method="_on_head_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="VBoxContainer/SlowButton" to="." method="_on_slow_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/FastButton" to="." method="_on_fast_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/SlowButton" to="." method="_on_slow_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/FastButton" to="." method="_on_fast_button_pressed"]

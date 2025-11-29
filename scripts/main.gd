@@ -5,9 +5,30 @@ extends Node2D
 @onready var timer: Timer = $Timer
 
 enum GameMode{FAST, SLOW}
-@export var gamemode: GameMode = GameMode.SLOW
+@export var gamemode: GameMode = GameMode.FAST
 @export var random: bool = true
 const COLLECTABLE = preload("res://scenes/collectable.tscn")
+
+@onready var on_head_score_label: Label = $CanvasLayer/HBoxContainer/VBoxContainer2/OnHeadScore
+@onready var on_body_score_label: Label = $CanvasLayer/HBoxContainer/VBoxContainer2/OnBodyScore
+@onready var no_hit_score_label: Label = $CanvasLayer/HBoxContainer/VBoxContainer2/NoHitScore
+
+var no_hit_score := 0:
+	set(value):
+		if no_hit_score != value:
+			no_hit_score = value
+			no_hit_score_label.text = str(value)
+
+var on_body_score := 0:
+	set(value):
+		if on_body_score != value:
+			on_body_score = value
+			on_body_score_label.text = str(value)
+var on_head_score := 0:
+	set(value):
+		if on_head_score != value:
+			on_head_score = value
+			on_head_score_label.text = str(value)
 
 var x_pos = 0.0
 # Called when the node enters the scene tree for the first time.
@@ -30,15 +51,23 @@ func _process(delta: float) -> void:
 	head.global_position =  arr[-2] + sine_wave.global_position
 	head.look_at(arr[-1] + sine_wave.global_position)
 	for collectable in get_tree().get_nodes_in_group("Collectables"):
-		collectable.check_collision_with_wave(arr, sine_wave.global_position)
+		if collectable.check_collision_with_wave(arr, sine_wave.global_position):
+			if collectable.energy_level == sine_wave.energy_level:
+				self.on_body_score += 1
+			if collectable.energy_level > sine_wave.energy_level:
+				self.no_hit_score += 1
+			collectable.queue_free()
 
 func _on_head_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Collectables"):
+		if area.energy_level < sine_wave.energy_level:
+			self.on_head_score += 1
 		area.queue_free()
 
 
 func _on_timer_timeout() -> void:
 	var collectable = COLLECTABLE.instantiate() as Collectable
+	collectable.energy_level = randi_range(1,3)
 	add_child(collectable)
 	collectable.global_position = Vector2( 
 		get_viewport_rect().size.x + collectable.collision_shape_2d.shape.radius, 
