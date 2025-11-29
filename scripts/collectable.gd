@@ -6,6 +6,7 @@ class_name Collectable
 
 @export var speed = 100.0
 @export_range(0, 3) var energy_level := 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#print(global_position)
@@ -26,6 +27,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	self.global_position.x -= speed * delta
 	if self.global_position.x < -collision_shape_2d.shape.radius:
+		SignalBus.collectable_crossed.emit(self)
 		queue_free()
 
 	

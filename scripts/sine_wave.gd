@@ -1,5 +1,6 @@
 extends Node2D
 class_name SineWave
+@onready var line_2d: Line2D = $Line2D
 
 @export var amplitude = 100.0:
 	set(value):
@@ -22,6 +23,10 @@ var h = 0.0
 			number_of_points = value
 			queue_redraw()
 
+@export var gradient_1: Gradient
+@export var gradient_2: Gradient
+@export var gradient_3: Gradient
+
 func _ready() -> void:
 	queue_redraw()
 
@@ -32,6 +37,7 @@ var arr = PackedVector2Array()
 
 var color: Color
 var energy_level := 0
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -49,20 +55,26 @@ func _physics_process(delta: float) -> void:
 	if energy <= 0.3:
 		energy_level = 1
 		color = Color("4D846B")
+		line_2d.gradient = gradient_1
 	elif energy > 0.3 and energy < 0.6:
 		energy_level = 2
 		color = Color("A526AE")
+		line_2d.gradient = gradient_2
 	elif energy >= 0.6:
 		energy_level = 3
 		color = Color("5973FF")
+		line_2d.gradient = gradient_3
 	else:
 		energy_level = 0
 		color = Color.RED
+		line_2d.gradient = null
 	update_array()
+	line_2d.points = arr
 	queue_redraw()
 
 func _draw() -> void:
-	draw_polyline(arr, color, 8.0, true)
+	pass
+	#draw_polyline(arr, color, 8.0, true)
 
 
 func update_array():

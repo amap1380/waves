@@ -40,7 +40,7 @@ func _ready() -> void:
 				timer.start(randf_range(3.0, 5.0))
 			GameMode.FAST:
 				timer.start(randf_range(2.0, 3.0))
-
+	SignalBus.collectable_crossed.connect(_on_collectable_crossed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -54,8 +54,6 @@ func _process(delta: float) -> void:
 		if collectable.check_collision_with_wave(arr, sine_wave.global_position):
 			if collectable.energy_level == sine_wave.energy_level:
 				self.on_body_score += 1
-			if collectable.energy_level > sine_wave.energy_level:
-				self.no_hit_score += 1
 			collectable.queue_free()
 
 func _on_head_area_entered(area: Area2D) -> void:
@@ -82,6 +80,9 @@ func _on_timer_timeout() -> void:
 			collectable.speed = 150.0
 			timer.start(randf_range(2.0, 3.0))
 
+func _on_collectable_crossed(collectable: Collectable):
+	if sine_wave.energy_level < collectable.energy_level:
+		self.no_hit_score += 1
 
 func _on_slow_button_pressed() -> void:
 	gamemode = GameMode.SLOW
