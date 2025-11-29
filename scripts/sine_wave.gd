@@ -49,10 +49,10 @@ func _physics_process(delta: float) -> void:
 	if energy <= 0.3:
 		energy_level = 1
 		color = Color("4D846B")
-	elif energy > 0.3 and energy < 0.7:
+	elif energy > 0.3 and energy < 0.6:
 		energy_level = 2
 		color = Color("A526AE")
-	elif energy >= 0.7:
+	elif energy >= 0.6:
 		energy_level = 3
 		color = Color("5973FF")
 	else:
@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	draw_polyline(arr, color, 4.0, true)
+	draw_polyline(arr, color, 8.0, true)
 
 
 func update_array():
