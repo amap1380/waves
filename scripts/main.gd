@@ -3,15 +3,17 @@ extends Node2D
 @onready var head: Area2D = $Head
 @onready var sine_wave: SineWave = $SineWave
 @onready var timer: Timer = $Timer
+@onready var camera_2d: Camera2D = $Camera2D
 
 enum GameMode{FAST, SLOW}
 @export var gamemode: GameMode = GameMode.FAST
 @export var random: bool = true
 const COLLECTABLE = preload("res://scenes/collectable.tscn")
 
-@onready var on_head_score_label: Label = $CanvasLayer/HBoxContainer/VBoxContainer2/OnHeadScore
-@onready var on_body_score_label: Label = $CanvasLayer/HBoxContainer/VBoxContainer2/OnBodyScore
-@onready var no_hit_score_label: Label = $CanvasLayer/HBoxContainer/VBoxContainer2/NoHitScore
+@onready var on_head_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/OnHeadScore
+@onready var on_body_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/OnBodyScore
+@onready var no_hit_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/NoHitScore
+@onready var mistake_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/MistakeScore
 
 var no_hit_score := 0:
 	set(value):
@@ -29,6 +31,12 @@ var on_head_score := 0:
 		if on_head_score != value:
 			on_head_score = value
 			on_head_score_label.text = str(value)
+
+var mistake_score := 0:
+	set(value):
+		if mistake_score != value:
+			mistake_score = value
+			mistake_score_label.text = str(value)
 
 var x_pos = 0.0
 # Called when the node enters the scene tree for the first time.
@@ -54,12 +62,18 @@ func _process(delta: float) -> void:
 		if collectable.check_collision_with_wave(arr, sine_wave.global_position):
 			if collectable.energy_level == sine_wave.energy_level:
 				self.on_body_score += 1
+			else:
+				self.mistake_score += 1
+				camera_2d.add_trauma(0.3)
 			collectable.queue_free()
 
 func _on_head_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Collectables"):
 		if area.energy_level < sine_wave.energy_level:
 			self.on_head_score += 1
+		else:
+			self.mistake_score += 1
+			camera_2d.add_trauma(0.3)
 		area.queue_free()
 
 
@@ -83,6 +97,9 @@ func _on_timer_timeout() -> void:
 func _on_collectable_crossed(collectable: Collectable):
 	if sine_wave.energy_level < collectable.energy_level:
 		self.no_hit_score += 1
+	else:
+		self.mistake_score += 1
+		camera_2d.add_trauma(0.3)
 
 func _on_slow_button_pressed() -> void:
 	gamemode = GameMode.SLOW

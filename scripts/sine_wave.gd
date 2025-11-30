@@ -1,6 +1,9 @@
 extends Node2D
 class_name SineWave
-@onready var line_2d: Line2D = $Line2D
+
+@onready var body: Line2D = $Body
+@onready var spikes: Line2D = $Spikes
+
 
 @export var amplitude = 100.0:
 	set(value):
@@ -43,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	
 	ratio += Input.get_axis("left", "right")*delta * speed / 5.0
 	ratio = clampf(ratio, 0.0, 1.0)
-	number_of_points = int(lerp(100.0, get_viewport_rect().size.x - 200.0, ratio))
+	number_of_points = int(lerp(100.0, get_viewport_rect().size.x - 100.0, ratio))
 	#amplitude = lerpf(200.0, 0.0 , ratio)
 	amplitude += Input.get_axis("down", "up") * delta * speed * 100.0
 	amplitude = clampf(amplitude, -200.0, 200.0)
@@ -54,22 +57,25 @@ func _physics_process(delta: float) -> void:
 	# energy ranges
 	if energy <= 0.3:
 		energy_level = 1
-		color = Color("4D846B")
-		line_2d.gradient = gradient_1
+		color = Color("00ff8c")
+		body.gradient = gradient_1
 	elif energy > 0.3 and energy < 0.6:
 		energy_level = 2
-		color = Color("A526AE")
-		line_2d.gradient = gradient_2
+		color = Color("ee00ff")
+		body.gradient = gradient_2
 	elif energy >= 0.6:
 		energy_level = 3
-		color = Color("5973FF")
-		line_2d.gradient = gradient_3
+		color = Color("0080ffff")
+		body.gradient = gradient_3
 	else:
 		energy_level = 0
 		color = Color.RED
-		line_2d.gradient = null
+		body.gradient = null
+	#self.modulate = color
+	body.self_modulate = color * 2.0
 	update_array()
-	line_2d.points = arr
+	body.points = arr
+	spikes.points = arr
 	queue_redraw()
 
 func _draw() -> void:
