@@ -1,19 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgb8ykca2yih"]
+[gd_scene load_steps=7 format=3 uid="uid://bgb8ykca2yih"]
 
 [ext_resource type="FontFile" uid="uid://bfc1dsw0qnkd0" path="res://assets/InknutAntiqua-Regular.ttf" id="1_i0sit"]
 [ext_resource type="Script" uid="uid://cotyam0qdodi" path="res://scripts/level_button.gd" id="2_o8246"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8246"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 16
+corner_radius_bottom_right = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrusj"]
 bg_color = Color(0.28707156, 0.2400937, 0.1931151, 0.8)
-corner_radius_top_left = 32
-corner_radius_bottom_right = 32
+corner_radius_top_left = 16
+corner_radius_bottom_right = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6g3el"]
 bg_color = Color(0.44672376, 0.38857287, 0.3133042, 0.8)
-corner_radius_top_left = 32
-corner_radius_bottom_right = 32
+corner_radius_top_left = 16
+corner_radius_bottom_right = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o8246"]
 
 [node name="LevelButton" type="Button"]
 custom_minimum_size = Vector2(128, 128)
@@ -24,6 +33,7 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_o8246")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hrusj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6g3el")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o8246")
 text = "1"
 script = ExtResource("2_o8246")
 unlocked = false
