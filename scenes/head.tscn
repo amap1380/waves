@@ -9,6 +9,7 @@
 script = ExtResource("1_d75dd")
 
 [node name="HeadSprite" type="Sprite2D" parent="."]
+self_modulate = Color(0.85882354, 0.25490198, 0.23137255, 1)
 rotation = 0.5235988
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_cwpmm")

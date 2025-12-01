@@ -4,21 +4,32 @@
 [ext_resource type="Script" uid="uid://cotyam0qdodi" path="res://scripts/level_button.gd" id="2_o8246"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8246"]
-bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 16
 corner_radius_bottom_right = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrusj"]
 bg_color = Color(0.28707156, 0.2400937, 0.1931151, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 16
 corner_radius_bottom_right = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6g3el"]
 bg_color = Color(0.44672376, 0.38857287, 0.3133042, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 16
 corner_radius_bottom_right = 16
 
@@ -28,6 +39,7 @@ corner_radius_bottom_right = 16
 custom_minimum_size = Vector2(128, 128)
 offset_right = 107.0
 offset_bottom = 102.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_i0sit")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_o8246")
@@ -37,5 +49,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_o8246")
 text = "1"
 script = ExtResource("2_o8246")
 unlocked = false
+metadata/_edit_horizontal_guides_ = [64.0]
+metadata/_edit_vertical_guides_ = [64.0]
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

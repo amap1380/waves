@@ -33,7 +33,7 @@ var h = 0.0
 func _ready() -> void:
 	queue_redraw()
 
-var ratio = 0.0
+var ratio = 0.1
 
 @onready var collison_polygone : Array[PackedVector2Array]
 var arr = PackedVector2Array()
