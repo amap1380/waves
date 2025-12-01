@@ -60,26 +60,26 @@ func _process(delta: float) -> void:
 	head.look_at(arr[-1] + sine_wave.global_position)
 	for collectable in get_tree().get_nodes_in_group("Collectables"):
 		if collectable.check_collision_with_wave(arr, sine_wave.global_position):
-			if collectable.energy_level == sine_wave.energy_level:
-				self.on_body_score += 1
-			else:
-				self.mistake_score += 1
-				camera_2d.add_trauma(0.3)
+			#if collectable.energy_level == sine_wave.energy_level:
+				#self.on_body_score += 1
+			#else:
+				#self.mistake_score += 1
+				#camera_2d.add_trauma(0.3)
 			collectable.queue_free()
 
 func _on_head_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Collectables"):
-		if area.energy_level < sine_wave.energy_level:
-			self.on_head_score += 1
-		else:
-			self.mistake_score += 1
-			camera_2d.add_trauma(0.3)
+		#if area.energy_level < sine_wave.energy_level:
+			#self.on_head_score += 1
+		#else:
+			#self.mistake_score += 1
+			#camera_2d.add_trauma(0.3)
 		area.queue_free()
 
 
 func _on_timer_timeout() -> void:
 	var collectable = COLLECTABLE.instantiate() as Collectable
-	collectable.energy_level = randi_range(1,3)
+	collectable.type = randi_range(0, collectable.TYPE.size() - 1)
 	add_child(collectable)
 	collectable.global_position = Vector2( 
 		get_viewport_rect().size.x + collectable.collision_shape_2d.shape.radius, 
@@ -95,11 +95,12 @@ func _on_timer_timeout() -> void:
 			timer.start(randf_range(2.0, 3.0))
 
 func _on_collectable_crossed(collectable: Collectable):
-	if sine_wave.energy_level < collectable.energy_level:
-		self.no_hit_score += 1
-	else:
-		self.mistake_score += 1
-		camera_2d.add_trauma(0.3)
+	pass
+	#if sine_wave.energy_level < collectable.energy_level:
+		#self.no_hit_score += 1
+	#else:
+		#self.mistake_score += 1
+		#camera_2d.add_trauma(0.3)
 
 func _on_slow_button_pressed() -> void:
 	gamemode = GameMode.SLOW

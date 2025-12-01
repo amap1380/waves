@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://r1t657hq0hxf"]
+
+[ext_resource type="Script" uid="uid://d2o8hjors4akv" path="res://scripts/level_select.gd" id="1_2epne"]
+[ext_resource type="FontFile" uid="uid://bfc1dsw0qnkd0" path="res://assets/InknutAntiqua-Regular.ttf" id="1_3shnc"]
+[ext_resource type="Texture2D" uid="uid://c8trejqrgvfch" path="res://assets/MainMenuBg.png" id="2_2epne"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2epne")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2epne")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_3shnc")
+theme_override_font_sizes/font_size = 64
+text = "Level Select"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -512.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 8
+columns = 3

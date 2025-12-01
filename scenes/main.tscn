@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://c51orpd3k7so2" path="res://scripts/camera_2d.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cepq1jsbyexcn" path="res://scenes/sine_wave.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cd433od0xoqoc" path="res://scenes/head.tscn" id="3_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://24armb45uw3d" path="res://assets/bg 2.png" id="5_tbgi4"]
-[ext_resource type="Texture2D" uid="uid://b1vs67661kd4y" path="res://assets/bg 1.png" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://bctudo65gd681" path="res://assets/bgSky.png" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://do3i3coldfhcm" path="res://assets/bgMountains.png" id="6_o6xl0"]
 
 [sub_resource type="Environment" id="Environment_sugp2"]
 background_mode = 3
@@ -15,6 +15,7 @@ glow_hdr_threshold = 1.5
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jyhfs")
+random = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -109,7 +110,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Background" type="CanvasLayer" parent="."]
-layer = -1
+layer = -10
 
 [node name="ColorRect" type="ColorRect" parent="Background"]
 anchors_preset = 15
@@ -122,12 +123,10 @@ metadata/_edit_lock_ = true
 
 [node name="Sky" type="Parallax2D" parent="Background"]
 repeat_size = Vector2(1280, 0)
-autoscroll = Vector2(-2, 0)
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Sky"]
-position = Vector2(-1, 0)
-scale = Vector2(0.45701036, 0.69031644)
+scale = Vector2(0.64646465, 0.6666667)
 texture = ExtResource("5_tefeu")
 centered = false
 
@@ -137,9 +136,8 @@ autoscroll = Vector2(-50, 0)
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Mountains"]
-position = Vector2(-1, 0)
-scale = Vector2(0.45701036, 0.69031644)
-texture = ExtResource("5_tbgi4")
+scale = Vector2(0.64646465, 0.6666666)
+texture = ExtResource("6_o6xl0")
 centered = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

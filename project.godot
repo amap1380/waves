@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="waves"
-run/main_scene="uid://sk44x2v00sao"
+run/main_scene="uid://r1t657hq0hxf"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SignalBus="*res://scripts/signal_bus.gd"
+LevelManager="*res://scripts/level_manager.gd"
 
 [display]
 

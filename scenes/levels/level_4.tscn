@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhhb7gulbs6ca"]
+
+[ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="1_06474"]
+
+[node name="Level4" type="Node2D"]
+
+[node name="Collectable" parent="." instance=ExtResource("1_06474")]
+position = Vector2(1280, 354)

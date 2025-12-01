@@ -1,0 +1,823 @@
+[gd_scene load_steps=3 format=3 uid="uid://cru04owp0njly"]
+
+[ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="1_o8c3j"]
+[ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="2_44gv1"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Collectable20" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(4224, 360)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable21" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(4928, 360)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable23" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(5632, 360)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable25" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(6336, 360)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable27" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(25458.46, 168)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable28" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(25458.46, 552)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable29" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(25651.605, 264)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable30" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(25651.605, 456)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable31" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(25267.887, 264)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable32" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(25267.887, 456)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(1344, 584)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable19" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(1344, 584)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable2" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(1344, 136)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable3" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(1536, 584)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable4" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(1536, 136)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable5" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(1728, 584)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable6" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(1728, 136)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable7" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(1920, 584)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable8" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(1920, 136)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable9" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(2112, 584)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable10" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(2112, 136)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable11" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(2304, 520)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable12" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(2304, 200)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable13" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(2496, 520)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable14" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(2496, 200)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable15" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(2688, 520)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable16" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(2688, 200)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable17" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(2872, 520)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable18" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(2872, 200)
+speed = 250.0
+energy_level = 3
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 352.0
+offset_top = 88.0
+offset_right = 897.0
+offset_bottom = 196.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Do NOT collect the Purple coins at all!"
+script = ExtResource("2_44gv1")
+speed = 250.0
+
+[node name="Collectable34" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(8935.882, 280)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable35" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(9535.882, 272)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable36" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(9223.882, 440)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable38" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(9855.882, 440)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable37" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(10175.882, 280)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable42" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(12192.76, 152)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable43" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(12792.76, 144)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable44" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(13432.76, 152)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable39" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(10463.882, 440)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable45" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(12480.76, 568)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable46" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(13112.76, 568)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable47" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(13720.76, 568)
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable40" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(12192.76, 280)
+rotation = -0.38283682
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable41" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(12792.76, 272)
+rotation = -0.38283682
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable48" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(12480.76, 440)
+rotation = -0.38283682
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable49" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(13112.76, 440)
+rotation = -0.38283682
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable50" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(13432.76, 280)
+rotation = -0.38283682
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable51" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(13720.76, 440)
+rotation = -0.38283682
+speed = 200.0
+energy_level = 3
+
+[node name="Collectable24" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(22341.682, 408)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable26" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(22341.682, 584)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable33" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(22789.682, 280)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable52" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(23237.682, 424)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable53" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(23685.682, 280)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable54" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(24133.682, 416)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable55" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(24581.682, 280)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable56" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(24997.682, 424)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable22" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(21461.68, 424)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable57" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(21901.682, 280)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable58" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(35550.93, 432)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable59" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(34406.93, 360)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable60" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(34974.93, 288)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable61" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(34974.93, 112)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable62" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(36694.93, 432)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable63" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(36118.93, 288)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable64" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(37838.93, 432)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable65" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(37262.93, 288)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable66" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(38982.93, 432)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable67" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(38406.93, 288)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable68" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40126.93, 432)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable69" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(39550.93, 288)
+speed = 300.0
+energy_level = 3
+
+[node name="Collectable70" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(8364.534, 512)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable71" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(8364.534, 192)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable72" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(8556.534, 512)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable73" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(8556.534, 192)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable74" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(8748.534, 512)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable75" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(8748.534, 192)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable76" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(8932.534, 512)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable77" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(8932.534, 192)
+speed = 275.0
+energy_level = 3
+
+[node name="Collectable78" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40722.695, 592)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable79" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40722.695, 592)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable80" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40722.695, 144)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable81" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40914.695, 592)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable82" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40914.695, 144)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable83" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(41106.695, 592)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable84" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(41106.695, 144)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable85" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(41298.695, 592)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable86" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(41298.695, 144)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable87" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(41490.695, 592)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable88" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(41490.695, 144)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable89" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(39962.695, 528)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable90" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(39962.695, 208)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable91" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40154.695, 528)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable92" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40154.695, 208)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable93" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40346.695, 528)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable94" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40346.695, 208)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable95" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40530.695, 528)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable96" parent="." instance=ExtResource("1_o8c3j")]
+position = Vector2(40530.695, 208)
+speed = 250.0
+energy_level = 3
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 42001.293
+offset_top = 208.0
+offset_right = 42758.293
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Finished!"
+script = ExtResource("2_44gv1")
+speed = 250.0
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 24261.977
+offset_top = 224.0
+offset_right = 25018.977
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Stay prepared!"
+script = ExtResource("2_44gv1")
+speed = 250.0
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 33289.387
+offset_top = 208.0
+offset_right = 34046.387
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Expand as much as you can!"
+script = ExtResource("2_44gv1")
+speed = 300.0
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 19963.035
+offset_top = 208.0
+offset_right = 20720.035
+offset_bottom = 316.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "this time, a bigger wavelength might help."
+script = ExtResource("2_44gv1")
+speed = 275.0
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 11456.368
+offset_top = 136.0
+offset_right = 12213.368
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "try one more time."
+script = ExtResource("2_44gv1")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 7928.095
+offset_top = 136.0
+offset_right = 8685.096
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Match your wavelength in a way to dogde all those..."
+script = ExtResource("2_44gv1")
+
+[node name="notUsedPatterns" type="Node2D" parent="."]
+process_mode = 4
+visible = false
+
+[node name="Collectable20" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11184, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable35" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11112, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable21" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11144, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable22" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11368, 416)
+energy_level = 3
+
+[node name="Collectable23" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11400, 288)
+energy_level = 3
+
+[node name="Collectable36" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11336, 288)
+energy_level = 3
+
+[node name="Collectable24" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11624, 416)
+energy_level = 3
+
+[node name="Collectable37" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11560, 416)
+energy_level = 3
+
+[node name="Collectable25" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11592, 288)
+energy_level = 3
+
+[node name="Collectable26" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11816, 416)
+energy_level = 3
+
+[node name="Collectable27" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11848, 288)
+energy_level = 3
+
+[node name="Collectable38" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(11784, 288)
+energy_level = 3
+
+[node name="Collectable39" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12616, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable40" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12496, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable41" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12552, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable42" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12928, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable43" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12984, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable44" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12872, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable45" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13352, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable46" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13240, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable47" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13296, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable48" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13672, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable49" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13728, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable50" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13616, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable29" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(5136, 224)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable51" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12616, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable52" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12496, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable53" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12552, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable54" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12928, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable55" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12984, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable56" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(12872, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable57" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13352, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable58" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13240, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable59" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13296, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable60" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13672, 416)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable61" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13728, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable62" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(13616, 288)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable63" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(5136, 448)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable64" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(5256, 448)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable31" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(5256, 224)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable30" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(7144, 224)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable65" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(7144, 448)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable66" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(7264, 448)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable34" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(7264, 224)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable32" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(6112, 352)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable72" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(3880, 352)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable33" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(6240, 352)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable67" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(8616, 352)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable68" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(8896, 352)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable69" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(9152, 352)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable70" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(9408, 352)
+speed = 250.0
+energy_level = 3
+
+[node name="Collectable71" parent="notUsedPatterns" instance=ExtResource("1_o8c3j")]
+position = Vector2(9664, 352)
+speed = 250.0
+energy_level = 3

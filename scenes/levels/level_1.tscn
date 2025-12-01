@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://1huttcjrnc0v"]
+
+[ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="1_ksju7"]
+[ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="2_6iamk"]
+
+[node name="level 1" type="Node2D"]
+
+[node name="Collectable" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(2160, 192)
+speed = 110.0
+
+[node name="Collectable2" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(2888, 480)
+speed = 110.0
+
+[node name="Collectable3" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(3456, 192)
+speed = 110.0
+
+[node name="Collectable4" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(3800, 480)
+speed = 110.0
+
+[node name="Collectable5" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(4864, 192)
+speed = 110.0
+
+[node name="Collectable6" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(5056, 384)
+speed = 110.0
+
+[node name="Collectable7" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(5248, 576)
+speed = 110.0
+
+[node name="Collectable8" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(6144, 576)
+speed = 110.0
+
+[node name="Collectable10" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(6336, 376)
+speed = 110.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 696.0
+offset_top = 104.0
+offset_right = 1155.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Press A/D to adjust wavelength.
+Press W/S to adjust amplitude"
+script = ExtResource("2_6iamk")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1800.0
+offset_top = 512.0
+offset_right = 2345.0
+offset_bottom = 620.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Collect all Green coins with your head"
+script = ExtResource("2_6iamk")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 11792.0
+offset_top = 328.0
+offset_right = 12251.0
+offset_bottom = 436.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Finished!"
+script = ExtResource("2_6iamk")

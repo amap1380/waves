@@ -55,24 +55,24 @@ func _physics_process(delta: float) -> void:
 	wrapf(h,0, TAU)
 	var energy = abs(amplitude)/200.0 * (1.0 - ratio)
 	# energy ranges
-	if energy <= 0.3:
-		energy_level = 1
-		color = Color("00ff8c")
-		body.gradient = gradient_1
-	elif energy > 0.3 and energy < 0.6:
-		energy_level = 2
-		color = Color("ee00ff")
-		body.gradient = gradient_2
-	elif energy >= 0.6:
-		energy_level = 3
-		color = Color("0080ffff")
-		body.gradient = gradient_3
-	else:
-		energy_level = 0
-		color = Color.RED
-		body.gradient = null
-	#self.modulate = color
-	body.self_modulate = color * 2.0
+	#if energy <= 0.3:
+		#energy_level = 1
+		#color = Color("30bf7fff")
+		#body.gradient = gradient_1
+	#elif energy > 0.3 and energy < 0.6:
+		#energy_level = 2
+		#color = Color("b630bfff")
+		#body.gradient = gradient_2
+	#elif energy >= 0.6:
+		#energy_level = 3
+		#color = Color("3078bfff")
+		#body.gradient = gradient_3
+	#else:
+		#energy_level = 0
+		#color = Color.RED
+		#body.gradient = null
+	##self.modulate = color
+	#body.self_modulate = color * 2.0
 	update_array()
 	body.points = arr
 	spikes.points = arr

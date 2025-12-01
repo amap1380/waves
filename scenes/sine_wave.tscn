@@ -27,13 +27,12 @@ gradient_2 = SubResource("Gradient_eijrl")
 gradient_3 = SubResource("Gradient_y67ed")
 
 [node name="Body" type="Line2D" parent="."]
+texture_filter = 1
 texture_repeat = 2
 width = 64.0
 width_curve = SubResource("Curve_gfbow")
 texture = ExtResource("2_eijrl")
 texture_mode = 1
-joint_mode = 1
-antialiased = true
 
 [node name="Spikes" type="Line2D" parent="."]
 texture_repeat = 2
