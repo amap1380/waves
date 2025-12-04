@@ -49,6 +49,8 @@ func _ready() -> void:
 			GameMode.FAST:
 				timer.start(randf_range(2.0, 3.0))
 	SignalBus.collectable_crossed.connect(_on_collectable_crossed)
+	var level = LevelManager.levels[LevelManager.current_level - 1].instantiate()
+	self.add_child(level)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -108,3 +110,7 @@ func _on_slow_button_pressed() -> void:
 
 func _on_fast_button_pressed() -> void:
 	gamemode = GameMode.FAST
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")

@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://blf0quosmi4tn"]
+[gd_scene load_steps=5 format=3 uid="uid://blf0quosmi4tn"]
 
 [ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="1_j2425"]
 [ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="2_g2h2n"]
+[ext_resource type="Script" uid="uid://y11l76dsjwas" path="res://scripts/finish_line.gd" id="3_ra442"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fiq81"]
+normal = Vector2(-1, 0)
 
 [node name="level2" type="Node2D"]
 
@@ -150,3 +154,12 @@ theme_override_font_sizes/font_size = 30
 text = "Finished!"
 script = ExtResource("2_g2h2n")
 speed = 100.0
+
+[node name="FinishLine" type="Area2D" parent="Label3"]
+position = Vector2(403.345, 8)
+script = ExtResource("3_ra442")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label3/FinishLine"]
+shape = SubResource("WorldBoundaryShape2D_fiq81")
+
+[connection signal="area_entered" from="Label3/FinishLine" to="Label3/FinishLine" method="_on_area_entered"]

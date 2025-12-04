@@ -1,5 +1,7 @@
 extends Node
 
+@export var levels: Array[PackedScene] = []
+
 var current_level: int = 1
 var level_unlocked: int = 1
 var max_level: int = 3
