@@ -19,6 +19,7 @@ class_name SineWave
 var h = 0.0
 
 @export var speed := 1.0
+@export var sine_speed := 2.0
 
 @export var number_of_points = 1000:
 	set(value):
@@ -51,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	amplitude += Input.get_axis("down", "up") * delta * speed * 100.0
 	amplitude = clampf(amplitude, -200.0, 200.0)
 	frequency = lerpf(50.0, 200.0, ratio)
-	h += delta * 2
+	h += delta * sine_speed
 	wrapf(h,0, TAU)
 	var energy = abs(amplitude)/200.0 * (1.0 - ratio)
 	# energy ranges
