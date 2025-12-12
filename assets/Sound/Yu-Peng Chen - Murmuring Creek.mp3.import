@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://byaln8vtcc5b5"
+path="res://.godot/imported/Yu-Peng Chen - Murmuring Creek.mp3-db6a07bab0213dab70a69b6d339231a5.mp3str"
+
+[deps]
+
+source_file="res://assets/Sound/Yu-Peng Chen - Murmuring Creek.mp3"
+dest_files=["res://.godot/imported/Yu-Peng Chen - Murmuring Creek.mp3-db6a07bab0213dab70a69b6d339231a5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

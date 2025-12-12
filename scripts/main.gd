@@ -15,6 +15,9 @@ const COLLECTABLE = preload("res://scenes/collectable.tscn")
 @onready var no_hit_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/NoHitScore
 @onready var mistake_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/MistakeScore
 
+var timerformusic : Timer
+@onready var bg_music_player: AudioStreamPlayer = $BgMusic
+
 var no_hit_score := 0:
 	set(value):
 		if no_hit_score != value:
@@ -41,6 +44,13 @@ var mistake_score := 0:
 var x_pos = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	timerformusic = Timer.new()
+	timerformusic.wait_time = 6.8    # duration in seconds
+	timerformusic.one_shot = true
+	add_child(timerformusic)
+	timerformusic.timeout.connect(_on_timer_finished)
+	timerformusic.start()
+	
 	randomize()
 	if random:
 		match gamemode:
@@ -114,3 +124,6 @@ func _on_fast_button_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
+
+func _on_timer_finished():
+	bg_music_player.play()
