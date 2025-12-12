@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cru04owp0njly"]
+[gd_scene load_steps=5 format=3 uid="uid://cru04owp0njly"]
 
 [ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="1_o8c3j"]
+[ext_resource type="Theme" uid="uid://b3akcc4smtgv" path="res://assets/bodyTextTheme.tres" id="2_0qepi"]
 [ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="2_44gv1"]
 [ext_resource type="PackedScene" uid="uid://cy8n4fc7c1qo0" path="res://scenes/finish_line.tscn" id="3_0ljxa"]
 
@@ -128,9 +129,11 @@ offset_top = 88.0
 offset_right = 897.0
 offset_bottom = 196.0
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("2_0qepi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
 theme_override_font_sizes/font_size = 30
-text = "Do NOT collect the Purple coins at all!"
+text = "Do NOT collect the Green eyes at all!"
 script = ExtResource("2_44gv1")
 speed = 250.0
 
@@ -413,7 +416,9 @@ offset_left = 42001.293
 offset_top = 208.0
 offset_right = 42758.293
 offset_bottom = 316.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("2_0qepi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
 theme_override_font_sizes/font_size = 30
 text = "Finished!"
 script = ExtResource("2_44gv1")
@@ -427,7 +432,9 @@ offset_left = 24261.977
 offset_top = 224.0
 offset_right = 25018.977
 offset_bottom = 332.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("2_0qepi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
 theme_override_font_sizes/font_size = 30
 text = "Stay prepared!"
 script = ExtResource("2_44gv1")
@@ -438,7 +445,9 @@ offset_left = 33289.387
 offset_top = 208.0
 offset_right = 34046.387
 offset_bottom = 316.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("2_0qepi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
 theme_override_font_sizes/font_size = 30
 text = "Expand as much as you can!"
 script = ExtResource("2_44gv1")
@@ -449,7 +458,9 @@ offset_left = 19963.035
 offset_top = 208.0
 offset_right = 20720.035
 offset_bottom = 316.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("2_0qepi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
 theme_override_font_sizes/font_size = 30
 text = "this time, a bigger wavelength might help."
 script = ExtResource("2_44gv1")
@@ -460,7 +471,9 @@ offset_left = 11456.368
 offset_top = 136.0
 offset_right = 12213.368
 offset_bottom = 244.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("2_0qepi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
 theme_override_font_sizes/font_size = 30
 text = "try one more time."
 script = ExtResource("2_44gv1")
@@ -470,7 +483,9 @@ offset_left = 7928.095
 offset_top = 136.0
 offset_right = 8685.096
 offset_bottom = 244.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("2_0qepi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
 theme_override_font_sizes/font_size = 30
 text = "Match your wavelength in a way to dogde all those..."
 script = ExtResource("2_44gv1")

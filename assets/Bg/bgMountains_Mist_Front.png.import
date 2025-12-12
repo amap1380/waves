@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://24armb45uw3d"
-path="res://.godot/imported/bg 2.png-84ae4d915cd7e551df5ca710c3791613.ctex"
+uid="uid://cfcx8347bogm0"
+path="res://.godot/imported/bgMountains_Mist_Front.png-a8f5f084bead714848abbdbbf6170d23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bg 2.png"
-dest_files=["res://.godot/imported/bg 2.png-84ae4d915cd7e551df5ca710c3791613.ctex"]
+source_file="res://assets/Bg/bgMountains_Mist_Front.png"
+dest_files=["res://.godot/imported/bgMountains_Mist_Front.png-a8f5f084bead714848abbdbbf6170d23.ctex"]
 
 [params]
 

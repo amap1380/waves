@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://blf0quosmi4tn"]
+[gd_scene load_steps=6 format=3 uid="uid://blf0quosmi4tn"]
 
 [ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="1_j2425"]
+[ext_resource type="Theme" uid="uid://b3akcc4smtgv" path="res://assets/bodyTextTheme.tres" id="2_fiq81"]
 [ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="2_g2h2n"]
 [ext_resource type="Script" uid="uid://y11l76dsjwas" path="res://scripts/finish_line.gd" id="3_ra442"]
 
@@ -12,135 +13,167 @@ normal = Vector2(-1, 0)
 [node name="Collectable9" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(1312, 352)
 speed = 110.0
+type = 2
 
 [node name="Collectable11" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(1760, 352)
 speed = 110.0
+type = 2
 
 [node name="Collectable12" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(2080, 472)
 speed = 110.0
+type = 2
 
 [node name="Collectable13" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(2464, 480)
 speed = 110.0
+type = 2
 
 [node name="Collectable14" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(2784, 288)
 speed = 110.0
+type = 2
 
 [node name="Collectable15" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(2976, 288)
 speed = 110.0
+type = 2
 
 [node name="Collectable16" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(3176, 608)
 speed = 110.0
+type = 2
 
 [node name="Collectable17" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(3368, 608)
 speed = 110.0
+type = 2
 
 [node name="Collectable18" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(3616, 544)
 speed = 110.0
+type = 2
 
 [node name="Collectable19" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(3744, 608)
 speed = 110.0
+type = 2
 
 [node name="Collectable20" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(3936, 608)
 speed = 110.0
+type = 2
 
 [node name="Collectable21" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(4128, 480)
 speed = 110.0
+type = 2
 
 [node name="Collectable22" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(4320, 288)
 speed = 110.0
+type = 2
 
 [node name="Collectable23" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(4576, 288)
 speed = 110.0
+type = 2
 
 [node name="Collectable24" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(4704, 416)
 speed = 110.0
+type = 2
 
 [node name="Collectable25" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(4832, 544)
 speed = 110.0
+type = 2
 
 [node name="Collectable26" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(4960, 544)
 speed = 110.0
+type = 2
 
 [node name="Collectable27" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(5024, 416)
 speed = 110.0
+type = 2
 
 [node name="Collectable28" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(5088, 288)
 speed = 110.0
+type = 2
 
 [node name="Collectable29" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(5160, 320)
 speed = 110.0
+type = 2
 
 [node name="Collectable30" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(5216, 416)
 speed = 110.0
+type = 2
 
 [node name="Collectable31" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(5280, 512)
 speed = 110.0
+type = 2
 
 [node name="Collectable32" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(5336, 608)
 speed = 110.0
+type = 2
 
 [node name="Collectable33" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(5672, 416)
 speed = 110.0
+type = 2
 
 [node name="Collectable34" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(5864, 608)
 speed = 110.0
+type = 2
 
 [node name="Collectable35" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(6048, 224)
 speed = 110.0
+type = 2
 
 [node name="Collectable36" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(6240, 544)
 speed = 110.0
+type = 2
 
 [node name="Collectable37" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(6368, 352)
 speed = 110.0
+type = 2
 
 [node name="Collectable38" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(6496, 544)
 speed = 110.0
+type = 2
 
 [node name="Collectable39" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(6624, 352)
 speed = 110.0
+type = 2
 
 [node name="Collectable40" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(6752, 440)
 speed = 110.0
+type = 2
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 664.0
 offset_top = 112.0
 offset_right = 1209.0
 offset_bottom = 220.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("2_fiq81")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-text = "Collect all Green coins with your head"
+text = "Collect all Red Eyes with your head"
 script = ExtResource("2_g2h2n")
 speed = 100.0
 
@@ -149,7 +182,8 @@ offset_left = 7064.0
 offset_top = 440.0
 offset_right = 7523.0
 offset_bottom = 548.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("2_fiq81")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Finished!"
 script = ExtResource("2_g2h2n")

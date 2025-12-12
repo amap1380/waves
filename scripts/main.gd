@@ -77,7 +77,8 @@ func _process(delta: float) -> void:
 			#else:
 				#self.mistake_score += 1
 				#camera_2d.add_trauma(0.3)
-			collectable.queue_free()
+			#collectable.queue_free()
+			pass
 
 func _on_head_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Collectables"):
