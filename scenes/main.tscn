@@ -48,7 +48,7 @@ position = Vector2(0, 360)
 [node name="Head" parent="." instance=ExtResource("3_jyhfs")]
 position = Vector2(264, 166)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="SpawnTimer" type="Timer" parent="."]
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -206,7 +206,7 @@ stream = SubResource("AudioStreamSynchronized_jbj1t")
 autoplay = true
 
 [connection signal="area_entered" from="Head" to="." method="_on_head_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="HUD/VBoxContainer/SlowButton" to="." method="_on_slow_button_pressed"]
 [connection signal="pressed" from="HUD/VBoxContainer/FastButton" to="." method="_on_fast_button_pressed"]
 [connection signal="pressed" from="HUD/Button" to="." method="_on_button_pressed"]

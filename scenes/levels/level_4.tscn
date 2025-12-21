@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhhb7gulbs6ca"]
+[gd_scene load_steps=5 format=3 uid="uid://bhhb7gulbs6ca"]
 
 [ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="1_06474"]
-[ext_resource type="Theme" path="res://assets/bodyTextTheme.tres" id="2_ogj6a"]
+[ext_resource type="Theme" uid="uid://b3akcc4smtgv" path="res://assets/bodyTextTheme.tres" id="2_ogj6a"]
 [ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="3_anwe6"]
+[ext_resource type="PackedScene" uid="uid://cy8n4fc7c1qo0" path="res://scenes/finish_line.tscn" id="4_ogj6a"]
 
 [node name="Level4" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-3122.0]
 
 [node name="midref" parent="." instance=ExtResource("1_06474")]
 position = Vector2(-48, 354)
@@ -12,62 +14,50 @@ position = Vector2(-48, 354)
 [node name="Collectable40" parent="." instance=ExtResource("1_06474")]
 position = Vector2(7506, 262)
 speed = 200.0
-type = 2
 
 [node name="Collectable39" parent="." instance=ExtResource("1_06474")]
 position = Vector2(3192, 376)
 speed = 165.0
-type = 1
 
 [node name="Collectable105" parent="." instance=ExtResource("1_06474")]
 position = Vector2(3192, 120)
 speed = 165.0
-type = 1
 
 [node name="Collectable111" parent="." instance=ExtResource("1_06474")]
 position = Vector2(3192, 504)
 speed = 165.0
-type = 1
 
 [node name="Collectable118" parent="." instance=ExtResource("1_06474")]
 position = Vector2(3192, 632)
 speed = 165.0
-type = 1
 
 [node name="Collectable117" parent="." instance=ExtResource("1_06474")]
 position = Vector2(3192, 248)
 speed = 165.0
-type = 1
 
 [node name="Collectable42" parent="." instance=ExtResource("1_06474")]
 position = Vector2(5112, 362)
 speed = 165.0
-type = 1
 
 [node name="Collectable119" parent="." instance=ExtResource("1_06474")]
 position = Vector2(5112, 490)
 speed = 165.0
-type = 1
 
 [node name="Collectable120" parent="." instance=ExtResource("1_06474")]
 position = Vector2(5112, 234)
 speed = 165.0
-type = 1
 
 [node name="Collectable43" parent="." instance=ExtResource("1_06474")]
 position = Vector2(7086, 362)
 speed = 200.0
-type = 1
 
 [node name="Collectable189" parent="." instance=ExtResource("1_06474")]
 position = Vector2(7086, 490)
 speed = 200.0
-type = 1
 
 [node name="Collectable190" parent="." instance=ExtResource("1_06474")]
 position = Vector2(7086, 234)
 speed = 200.0
-type = 1
 
 [node name="Collectable122" parent="." instance=ExtResource("1_06474")]
 position = Vector2(7320, 552)
@@ -80,527 +70,230 @@ speed = 200.0
 [node name="Collectable44" parent="." instance=ExtResource("1_06474")]
 position = Vector2(2078, 521)
 speed = 165.0
-type = 2
 
 [node name="Collectable84" parent="." instance=ExtResource("1_06474")]
 position = Vector2(2561, 229)
 speed = 165.0
-type = 2
 
 [node name="Collectable85" parent="." instance=ExtResource("1_06474")]
 position = Vector2(2633, 365)
 speed = 165.0
-type = 2
 
 [node name="Collectable86" parent="." instance=ExtResource("1_06474")]
 position = Vector2(2713, 501)
 speed = 165.0
-type = 2
 
 [node name="Collectable97" parent="." instance=ExtResource("1_06474")]
 position = Vector2(2809, 605)
 speed = 165.0
-type = 2
 
 [node name="Collectable99" parent="." instance=ExtResource("1_06474")]
 position = Vector2(1776, 419)
 speed = 165.0
-type = 2
 
 [node name="Collectable123" parent="." instance=ExtResource("1_06474")]
 position = Vector2(1512, 146)
 speed = 165.0
-type = 2
 
 [node name="Collectable124" parent="." instance=ExtResource("1_06474")]
 position = Vector2(1639, 273)
 speed = 165.0
-type = 2
 
 [node name="Collectable100" parent="." instance=ExtResource("1_06474")]
 position = Vector2(1915, 557)
 speed = 165.0
-type = 2
 
 [node name="Collectable101" parent="." instance=ExtResource("1_06474")]
 position = Vector2(2001, 589)
 speed = 165.0
-type = 2
 
 [node name="Collectable102" parent="." instance=ExtResource("1_06474")]
 position = Vector2(2232, 362)
 speed = 165.0
-type = 2
 
 [node name="Collectable103" parent="." instance=ExtResource("1_06474")]
 position = Vector2(2388, 205)
 speed = 165.0
-type = 2
 
 [node name="Collectable104" parent="." instance=ExtResource("1_06474")]
 position = Vector2(2481, 173)
 speed = 165.0
-type = 2
 
 [node name="Collectable47" parent="." instance=ExtResource("1_06474")]
 position = Vector2(4110, 521)
 speed = 165.0
-type = 2
 
 [node name="Collectable106" parent="." instance=ExtResource("1_06474")]
 position = Vector2(4593, 229)
 speed = 165.0
-type = 2
 
 [node name="Collectable107" parent="." instance=ExtResource("1_06474")]
 position = Vector2(4665, 365)
 speed = 165.0
-type = 2
 
 [node name="Collectable108" parent="." instance=ExtResource("1_06474")]
 position = Vector2(4745, 501)
 speed = 165.0
-type = 2
 
 [node name="Collectable109" parent="." instance=ExtResource("1_06474")]
 position = Vector2(4841, 605)
 speed = 165.0
-type = 2
 
 [node name="Collectable110" parent="." instance=ExtResource("1_06474")]
 position = Vector2(3808, 419)
 speed = 165.0
-type = 2
 
 [node name="Collectable125" parent="." instance=ExtResource("1_06474")]
 position = Vector2(3544, 146)
 speed = 165.0
-type = 2
 
 [node name="Collectable126" parent="." instance=ExtResource("1_06474")]
 position = Vector2(3671, 273)
 speed = 165.0
-type = 2
 
 [node name="Collectable112" parent="." instance=ExtResource("1_06474")]
 position = Vector2(3947, 557)
 speed = 165.0
-type = 2
 
 [node name="Collectable113" parent="." instance=ExtResource("1_06474")]
 position = Vector2(4033, 589)
 speed = 165.0
-type = 2
 
 [node name="Collectable114" parent="." instance=ExtResource("1_06474")]
 position = Vector2(4264, 362)
 speed = 165.0
-type = 2
 
 [node name="Collectable115" parent="." instance=ExtResource("1_06474")]
 position = Vector2(4420, 205)
 speed = 165.0
-type = 2
 
 [node name="Collectable116" parent="." instance=ExtResource("1_06474")]
 position = Vector2(4513, 173)
 speed = 165.0
-type = 2
 
 [node name="Collectable45" parent="." instance=ExtResource("1_06474")]
 position = Vector2(29880, 376)
 speed = 165.0
-type = 1
 
 [node name="Collectable133" parent="." instance=ExtResource("1_06474")]
 position = Vector2(29880, 120)
 speed = 165.0
-type = 1
 
 [node name="Collectable191" parent="." instance=ExtResource("1_06474")]
 position = Vector2(29880, 504)
 speed = 165.0
-type = 1
 
 [node name="Collectable192" parent="." instance=ExtResource("1_06474")]
 position = Vector2(29880, 632)
 speed = 165.0
-type = 1
 
 [node name="Collectable193" parent="." instance=ExtResource("1_06474")]
 position = Vector2(29880, 248)
 speed = 165.0
-type = 1
 
 [node name="Collectable46" parent="." instance=ExtResource("1_06474")]
 position = Vector2(28766, 521)
 speed = 165.0
-type = 2
 
 [node name="Collectable94" parent="." instance=ExtResource("1_06474")]
 position = Vector2(28110, 229)
 speed = 165.0
-type = 2
 
 [node name="Collectable95" parent="." instance=ExtResource("1_06474")]
 position = Vector2(28038, 365)
 speed = 165.0
-type = 2
 
 [node name="Collectable96" parent="." instance=ExtResource("1_06474")]
 position = Vector2(27948, 522)
 speed = 165.0
-type = 2
 
 [node name="Collectable98" parent="." instance=ExtResource("1_06474")]
 position = Vector2(27858, 604.80646)
 speed = 165.0
-type = 2
 
 [node name="Collectable194" parent="." instance=ExtResource("1_06474")]
 position = Vector2(28446, 408)
 speed = 165.0
-type = 2
 
 [node name="Collectable198" parent="." instance=ExtResource("1_06474")]
 position = Vector2(28200, 174)
 speed = 165.0
-type = 2
 
 [node name="Collectable202" parent="." instance=ExtResource("1_06474")]
 position = Vector2(28302, 252)
 speed = 165.0
-type = 2
 
 [node name="Collectable217" parent="." instance=ExtResource("1_06474")]
 position = Vector2(28590, 552)
 speed = 165.0
-type = 2
 
 [node name="Collectable218" parent="." instance=ExtResource("1_06474")]
 position = Vector2(28689, 589)
 speed = 165.0
-type = 2
 
 [node name="Collectable219" parent="." instance=ExtResource("1_06474")]
 position = Vector2(28920, 362)
 speed = 165.0
-type = 2
 
 [node name="Collectable220" parent="." instance=ExtResource("1_06474")]
 position = Vector2(29076, 205)
 speed = 165.0
-type = 2
 
 [node name="Collectable221" parent="." instance=ExtResource("1_06474")]
 position = Vector2(29166, 144)
 speed = 165.0
-type = 2
 
 [node name="Collectable77" parent="." instance=ExtResource("1_06474")]
 position = Vector2(31418, 521)
 speed = 165.0
-type = 2
 
 [node name="Collectable222" parent="." instance=ExtResource("1_06474")]
 position = Vector2(30762, 229)
 speed = 165.0
-type = 2
 
 [node name="Collectable223" parent="." instance=ExtResource("1_06474")]
 position = Vector2(30690, 365)
 speed = 165.0
-type = 2
 
 [node name="Collectable224" parent="." instance=ExtResource("1_06474")]
 position = Vector2(30600, 522)
 speed = 165.0
-type = 2
 
 [node name="Collectable225" parent="." instance=ExtResource("1_06474")]
 position = Vector2(30510, 604.80646)
 speed = 165.0
-type = 2
 
 [node name="Collectable226" parent="." instance=ExtResource("1_06474")]
 position = Vector2(31098, 408)
 speed = 165.0
-type = 2
 
 [node name="Collectable227" parent="." instance=ExtResource("1_06474")]
 position = Vector2(30852, 174)
 speed = 165.0
-type = 2
 
 [node name="Collectable238" parent="." instance=ExtResource("1_06474")]
 position = Vector2(30954, 252)
 speed = 165.0
-type = 2
 
 [node name="Collectable239" parent="." instance=ExtResource("1_06474")]
 position = Vector2(31242, 552)
 speed = 165.0
-type = 2
 
 [node name="Collectable240" parent="." instance=ExtResource("1_06474")]
 position = Vector2(31341, 589)
 speed = 165.0
-type = 2
 
 [node name="Collectable241" parent="." instance=ExtResource("1_06474")]
 position = Vector2(31572, 362)
 speed = 165.0
-type = 2
 
 [node name="Collectable242" parent="." instance=ExtResource("1_06474")]
 position = Vector2(31728, 205)
 speed = 165.0
-type = 2
 
 [node name="Collectable243" parent="." instance=ExtResource("1_06474")]
 position = Vector2(31818, 144)
 speed = 165.0
-type = 2
-
-[node name="Collectable134" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3232, -712)
-speed = 165.0
-type = 1
-
-[node name="Collectable135" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3232, -920)
-speed = 165.0
-type = 1
-
-[node name="Collectable136" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3235.3477, -620)
-speed = 165.0
-type = 1
-
-[node name="Collectable137" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3240, -536)
-speed = 165.0
-type = 1
-
-[node name="Collectable138" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3243.3477, -444)
-speed = 165.0
-type = 1
-
-[node name="Collectable139" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3232, -816)
-speed = 165.0
-type = 1
-
-[node name="Collectable140" parent="." instance=ExtResource("1_06474")]
-position = Vector2(1730, -725)
-speed = 165.0
-type = 2
-
-[node name="Collectable141" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2102, -545)
-speed = 165.0
-type = 2
-
-[node name="Collectable142" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2335, -784)
-speed = 165.0
-type = 2
-
-[node name="Collectable143" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2625, -765)
-speed = 165.0
-type = 2
-
-[node name="Collectable144" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2705, -637)
-speed = 165.0
-type = 2
-
-[node name="Collectable145" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2769, -501)
-speed = 165.0
-type = 2
-
-[node name="Collectable146" parent="." instance=ExtResource("1_06474")]
-position = Vector2(1869, -569)
-speed = 165.0
-type = 2
-
-[node name="Collectable147" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2179, -629)
-speed = 165.0
-type = 2
-
-[node name="Collectable148" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2585, -837)
-speed = 165.0
-type = 2
-
-[node name="Collectable149" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2657, -701)
-speed = 165.0
-type = 2
-
-[node name="Collectable150" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2737, -565)
-speed = 165.0
-type = 2
-
-[node name="Collectable151" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2833, -461)
-speed = 165.0
-type = 2
-
-[node name="Collectable152" parent="." instance=ExtResource("1_06474")]
-position = Vector2(1800, -647)
-speed = 165.0
-type = 2
-
-[node name="Collectable153" parent="." instance=ExtResource("1_06474")]
-position = Vector2(1536, -920)
-speed = 165.0
-type = 2
-
-[node name="Collectable154" parent="." instance=ExtResource("1_06474")]
-position = Vector2(1663, -793)
-speed = 165.0
-type = 2
-
-[node name="Collectable155" parent="." instance=ExtResource("1_06474")]
-position = Vector2(1599, -862)
-speed = 165.0
-type = 2
-
-[node name="Collectable156" parent="." instance=ExtResource("1_06474")]
-position = Vector2(1939, -509)
-speed = 165.0
-type = 2
-
-[node name="Collectable157" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3642, -732)
-speed = 165.0
-type = 2
-
-[node name="Collectable158" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3780, -583)
-speed = 165.0
-type = 2
-
-[node name="Collectable159" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3711, -661)
-speed = 165.0
-type = 2
-
-[node name="Collectable160" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3441, -911)
-speed = 165.0
-type = 2
-
-[node name="Collectable161" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3573, -796)
-speed = 165.0
-type = 2
-
-[node name="Collectable162" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3505, -860)
-speed = 165.0
-type = 2
-
-[node name="Collectable163" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3857, -512)
-speed = 165.0
-type = 2
-
-[node name="Collectable164" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2025, -477)
-speed = 165.0
-type = 2
-
-[node name="Collectable165" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2256, -704)
-speed = 165.0
-type = 2
-
-[node name="Collectable166" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2412, -861)
-speed = 165.0
-type = 2
-
-[node name="Collectable167" parent="." instance=ExtResource("1_06474")]
-position = Vector2(2505, -893)
-speed = 165.0
-type = 2
-
-[node name="Collectable168" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4033, -533)
-speed = 165.0
-type = 2
-
-[node name="Collectable169" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4265, -765)
-speed = 165.0
-type = 2
-
-[node name="Collectable170" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4553, -757)
-speed = 165.0
-type = 2
-
-[node name="Collectable171" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4633, -629)
-speed = 165.0
-type = 2
-
-[node name="Collectable172" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4697, -493)
-speed = 165.0
-type = 2
-
-[node name="Collectable173" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4113, -613)
-speed = 165.0
-type = 2
-
-[node name="Collectable174" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4513, -829)
-speed = 165.0
-type = 2
-
-[node name="Collectable175" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4585, -693)
-speed = 165.0
-type = 2
-
-[node name="Collectable176" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4665, -557)
-speed = 165.0
-type = 2
-
-[node name="Collectable177" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4761, -453)
-speed = 165.0
-type = 2
-
-[node name="Collectable178" parent="." instance=ExtResource("1_06474")]
-position = Vector2(3953, -469)
-speed = 165.0
-type = 2
-
-[node name="Collectable179" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4193, -685)
-speed = 165.0
-type = 2
-
-[node name="Collectable180" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4345, -845)
-speed = 165.0
-type = 2
-
-[node name="Collectable181" parent="." instance=ExtResource("1_06474")]
-position = Vector2(4449, -885)
-speed = 165.0
-type = 2
 
 [node name="Collectable48" parent="." instance=ExtResource("1_06474")]
 position = Vector2(7802, 265)
@@ -609,22 +302,18 @@ speed = 200.0
 [node name="Collectable56" parent="." instance=ExtResource("1_06474")]
 position = Vector2(8394, 534)
 speed = 200.0
-type = 2
 
 [node name="Collectable67" parent="." instance=ExtResource("1_06474")]
 position = Vector2(8718, 150)
 speed = 200.0
-type = 2
 
 [node name="Collectable127" parent="." instance=ExtResource("1_06474")]
 position = Vector2(9036, 534)
 speed = 200.0
-type = 2
 
 [node name="Collectable129" parent="." instance=ExtResource("1_06474")]
 position = Vector2(9328.652, 265)
 speed = 200.0
-type = 2
 
 [node name="Collectable130" parent="." instance=ExtResource("1_06474")]
 position = Vector2(9324, 450)
@@ -634,47 +323,17 @@ speed = 200.0
 position = Vector2(7509.3477, 450)
 speed = 200.0
 
-[node name="Collectable49" parent="." instance=ExtResource("1_06474")]
-position = Vector2(8000, -888)
-speed = 200.0
-
-[node name="Collectable50" parent="." instance=ExtResource("1_06474")]
-position = Vector2(7699.3477, -692)
-speed = 200.0
-
-[node name="Collectable51" parent="." instance=ExtResource("1_06474")]
-position = Vector2(8320, -692)
-speed = 200.0
-
-[node name="Collectable53" parent="." instance=ExtResource("1_06474")]
-position = Vector2(8000, -692)
-speed = 200.0
-type = 2
-
-[node name="Collectable54" parent="." instance=ExtResource("1_06474")]
-position = Vector2(7696, -888)
-speed = 200.0
-type = 2
-
-[node name="Collectable61" parent="." instance=ExtResource("1_06474")]
-position = Vector2(8324.652, -880)
-speed = 200.0
-type = 2
-
 [node name="Collectable131" parent="." instance=ExtResource("1_06474")]
 position = Vector2(11736, 264)
 speed = 200.0
-type = 2
 
 [node name="Collectable132" parent="." instance=ExtResource("1_06474")]
 position = Vector2(11424, 457)
 speed = 200.0
-type = 2
 
 [node name="Collectable199" parent="." instance=ExtResource("1_06474")]
 position = Vector2(7797.3477, 450)
 speed = 200.0
-type = 2
 
 [node name="Collectable200" parent="." instance=ExtResource("1_06474")]
 position = Vector2(8101.3477, 450)
@@ -683,7 +342,6 @@ speed = 200.0
 [node name="Collectable201" parent="." instance=ExtResource("1_06474")]
 position = Vector2(8098, 262)
 speed = 200.0
-type = 2
 
 [node name="Collectable204" parent="." instance=ExtResource("1_06474")]
 position = Vector2(9620, 265)
@@ -692,7 +350,6 @@ speed = 200.0
 [node name="Collectable205" parent="." instance=ExtResource("1_06474")]
 position = Vector2(9615.348, 450)
 speed = 200.0
-type = 2
 
 [node name="Collectable206" parent="." instance=ExtResource("1_06474")]
 position = Vector2(9919.348, 450)
@@ -701,7 +358,6 @@ speed = 200.0
 [node name="Collectable207" parent="." instance=ExtResource("1_06474")]
 position = Vector2(9916, 262)
 speed = 200.0
-type = 2
 
 [node name="Collectable24" parent="." instance=ExtResource("1_06474")]
 position = Vector2(26914.002, 426)
@@ -710,7 +366,6 @@ speed = 275.0
 [node name="Collectable33" parent="." instance=ExtResource("1_06474")]
 position = Vector2(25652.002, 432)
 speed = 275.0
-type = 2
 
 [node name="Collectable52" parent="." instance=ExtResource("1_06474")]
 position = Vector2(27810.002, 442)
@@ -723,17 +378,14 @@ speed = 275.0
 [node name="Collectable25" parent="." instance=ExtResource("1_06474")]
 position = Vector2(26914.002, 282)
 speed = 275.0
-type = 2
 
 [node name="Collectable55" parent="." instance=ExtResource("1_06474")]
 position = Vector2(27810.002, 298)
 speed = 275.0
-type = 2
 
 [node name="Collectable23" parent="." instance=ExtResource("1_06474")]
 position = Vector2(26034, 298)
 speed = 275.0
-type = 2
 
 [node name="Collectable59" parent="." instance=ExtResource("1_06474")]
 position = Vector2(26474.002, 282)
@@ -742,7 +394,6 @@ speed = 275.0
 [node name="Collectable34" parent="." instance=ExtResource("1_06474")]
 position = Vector2(27362.002, 426)
 speed = 275.0
-type = 2
 
 [node name="Collectable37" parent="." instance=ExtResource("1_06474")]
 position = Vector2(27362.002, 282)
@@ -751,7 +402,6 @@ speed = 275.0
 [node name="Collectable66" parent="." instance=ExtResource("1_06474")]
 position = Vector2(26474.002, 426)
 speed = 275.0
-type = 2
 
 [node name="Collectable57" parent="." instance=ExtResource("1_06474")]
 position = Vector2(26556, 337)
@@ -820,32 +470,26 @@ speed = 230.0
 [node name="Collectable60" parent="." instance=ExtResource("1_06474")]
 position = Vector2(25050, 534)
 speed = 200.0
-type = 2
 
 [node name="Collectable62" parent="." instance=ExtResource("1_06474")]
 position = Vector2(24738, 177)
 speed = 200.0
-type = 2
 
 [node name="Collectable63" parent="." instance=ExtResource("1_06474")]
 position = Vector2(25346, 177)
 speed = 200.0
-type = 2
 
 [node name="Collectable71" parent="." instance=ExtResource("1_06474")]
 position = Vector2(25949.348, 156)
 speed = 200.0
-type = 2
 
 [node name="Collectable73" parent="." instance=ExtResource("1_06474")]
 position = Vector2(26266, 534)
 speed = 200.0
-type = 2
 
 [node name="Collectable74" parent="." instance=ExtResource("1_06474")]
 position = Vector2(26589.348, 164)
 speed = 200.0
-type = 2
 
 [node name="Collectable82" parent="." instance=ExtResource("1_06474")]
 position = Vector2(8394, 153)
@@ -862,22 +506,18 @@ speed = 200.0
 [node name="Collectable79" parent="." instance=ExtResource("1_06474")]
 position = Vector2(10214, 534)
 speed = 200.0
-type = 2
 
 [node name="Collectable182" parent="." instance=ExtResource("1_06474")]
 position = Vector2(10538, 150)
 speed = 200.0
-type = 2
 
 [node name="Collectable183" parent="." instance=ExtResource("1_06474")]
 position = Vector2(10856, 534)
 speed = 200.0
-type = 2
 
 [node name="Collectable184" parent="." instance=ExtResource("1_06474")]
 position = Vector2(11148.652, 265)
 speed = 200.0
-type = 2
 
 [node name="Collectable185" parent="." instance=ExtResource("1_06474")]
 position = Vector2(11144, 450)
@@ -894,7 +534,6 @@ speed = 200.0
 [node name="Collectable212" parent="." instance=ExtResource("1_06474")]
 position = Vector2(11736, 262)
 speed = 200.0
-type = 2
 
 [node name="Collectable186" parent="." instance=ExtResource("1_06474")]
 position = Vector2(10214, 153)
@@ -911,17 +550,14 @@ speed = 200.0
 [node name="Collectable90" parent="." instance=ExtResource("1_06474")]
 position = Vector2(27192.348, 159)
 speed = 200.0
-type = 2
 
 [node name="Collectable91" parent="." instance=ExtResource("1_06474")]
 position = Vector2(27509, 537)
 speed = 200.0
-type = 2
 
 [node name="Collectable92" parent="." instance=ExtResource("1_06474")]
 position = Vector2(27832.348, 167)
 speed = 200.0
-type = 2
 
 [node name="Collectable27" parent="." instance=ExtResource("1_06474")]
 position = Vector2(12832.574, 288)
@@ -942,7 +578,6 @@ speed = 200.0
 [node name="Collectable203" parent="." instance=ExtResource("1_06474")]
 position = Vector2(16722, 174)
 speed = 200.0
-type = 2
 
 [node name="Collectable208" parent="." instance=ExtResource("1_06474")]
 position = Vector2(16866, 174)
@@ -959,7 +594,6 @@ speed = 200.0
 [node name="Collectable214" parent="." instance=ExtResource("1_06474")]
 position = Vector2(17298, 174)
 speed = 200.0
-type = 2
 
 [node name="Collectable215" parent="." instance=ExtResource("1_06474")]
 position = Vector2(17442, 174)
@@ -972,7 +606,6 @@ speed = 200.0
 [node name="Collectable228" parent="." instance=ExtResource("1_06474")]
 position = Vector2(15000, 174)
 speed = 200.0
-type = 2
 
 [node name="Collectable229" parent="." instance=ExtResource("1_06474")]
 position = Vector2(15144, 174)
@@ -989,7 +622,6 @@ speed = 200.0
 [node name="Collectable232" parent="." instance=ExtResource("1_06474")]
 position = Vector2(15576, 174)
 speed = 200.0
-type = 2
 
 [node name="Collectable233" parent="." instance=ExtResource("1_06474")]
 position = Vector2(15720, 174)
@@ -1006,7 +638,6 @@ speed = 200.0
 [node name="Collectable236" parent="." instance=ExtResource("1_06474")]
 position = Vector2(16152, 174)
 speed = 200.0
-type = 2
 
 [node name="Collectable237" parent="." instance=ExtResource("1_06474")]
 position = Vector2(16296, 174)
@@ -1074,3 +705,6 @@ theme_override_font_sizes/font_size = 30
 text = "Finished!"
 script = ExtResource("3_anwe6")
 speed = 100.0
+
+[node name="FinishLine" parent="Label3" instance=ExtResource("4_ogj6a")]
+position = Vector2(346.64063, -1.8911743)

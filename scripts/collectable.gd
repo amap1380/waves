@@ -1,28 +1,31 @@
 extends Area2D
 class_name Collectable
 
-@onready var textures: Array[Texture2D] = [preload("res://assets/StarGreen.png"),
-	preload("res://assets/StarOrange.png"), preload("res://assets/StarRed.png")]
+
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
+@onready var despawn_timer: Timer = $DespawnTimer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var speed = 100.0
 #@export_range(1, 3) var energy_level := 0
 
 enum TYPE{Green, Orange, Red}
 
-@export var type : TYPE
+#@export var type : TYPE
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	match  type:
-		TYPE.Green:
-			sprite_2d.texture = textures[0]
-		TYPE.Orange:
-			sprite_2d.texture = textures[1]
-		TYPE.Red:
-			sprite_2d.texture = textures[2]
+	pass
+	#match  type:
+		#TYPE.Green:
+			#sprite_2d.texture = textures[0]
+		#TYPE.Orange:
+			#sprite_2d.texture = textures[1]
+		#TYPE.Red:
+			#sprite_2d.texture = textures[2]
 	#print(global_position)
 	#match energy_level:
 		#0:
@@ -35,22 +38,22 @@ func _ready() -> void:
 			#sprite_2d.self_modulate = Color("5973FF")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Engine.is_editor_hint():
-		match  type:
-			TYPE.Green:
-				sprite_2d.texture = textures[0]
-			TYPE.Orange:
-				sprite_2d.texture = textures[1]
-			TYPE.Red:
-				sprite_2d.texture = textures[2]
+func _process(_delta: float) -> void:
+	pass
+	#if Engine.is_editor_hint():
+		#match  type:
+			#TYPE.Green:
+				#sprite_2d.texture = textures[0]
+			#TYPE.Orange:
+				#sprite_2d.texture = textures[1]
+			#TYPE.Red:
+				#sprite_2d.texture = textures[2]
 
 func _physics_process(delta: float) -> void:
-	if not Engine.is_editor_hint():
-		self.global_position.x -= speed * delta
-		if self.global_position.x < -collision_shape_2d.shape.radius:
-			SignalBus.collectable_crossed.emit(self)
-			queue_free()
+	self.global_position.x -= speed * delta
+	if self.global_position.x < -collision_shape_2d.shape.radius:
+		SignalBus.collectable_crossed.emit(self)
+		queue_free()
 
 	
 func check_collision_with_wave(arr: PackedVector2Array, offset: Vector2):
@@ -60,3 +63,18 @@ func check_collision_with_wave(arr: PackedVector2Array, offset: Vector2):
 				#print(2)
 				return true
 	return false
+
+func is_on_screen() -> bool:
+	return visible_on_screen_notifier_2d.is_on_screen()
+
+func absorb() -> void:
+	animation_player.play("absorb")
+
+func _on_despawn_timer_timeout() -> void:
+	animation_player.play("despawn")
+
+
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	pass # Replace with function body.

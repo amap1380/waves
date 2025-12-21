@@ -32,6 +32,7 @@ var h = 0.0
 @export var gradient_3: Gradient
 
 func _ready() -> void:
+	update_array()
 	queue_redraw()
 
 var ratio = 0.1
@@ -50,11 +51,11 @@ func _physics_process(delta: float) -> void:
 	number_of_points = int(lerp(100.0, get_viewport_rect().size.x - 100.0, ratio))
 	#amplitude = lerpf(200.0, 0.0 , ratio)
 	amplitude += Input.get_axis("down", "up") * delta * speed * 100.0
-	amplitude = clampf(amplitude, -200.0, 200.0)
+	amplitude = clampf(amplitude, 0.0, 200.0)
 	frequency = lerpf(50.0, 200.0, ratio)
 	h += delta * sine_speed
 	wrapf(h,0, TAU)
-	var energy = abs(amplitude)/200.0 * (1.0 - ratio)
+	#var energy = abs(amplitude)/200.0 * (1.0 - ratio)
 	# energy ranges
 	#if energy <= 0.3:
 		#energy_level = 1

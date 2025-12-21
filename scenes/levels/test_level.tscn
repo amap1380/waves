@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://dnj1kn2x26w3p"]
+[gd_scene load_steps=2 format=3 uid="uid://dnj1kn2x26w3p"]
+
+[ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="1_jbqir"]
 
 [node name="test Level" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [360.0]
+
+[node name="Collectable" parent="." instance=ExtResource("1_jbqir")]
+
+[node name="Collectable2" parent="." instance=ExtResource("1_jbqir")]
+position = Vector2(366, 157)
+
+[node name="Collectable3" parent="." instance=ExtResource("1_jbqir")]
+position = Vector2(507, 33)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://kg2q7m6ecsjj"]
+
+[ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="1_vsx6j"]
+[ext_resource type="Script" uid="uid://c2hkiapwdjqgi" path="res://scripts/green_star.gd" id="2_8bl1u"]
+
+[node name="GreenStar" instance=ExtResource("1_vsx6j")]
+script = ExtResource("2_8bl1u")
+speed = 100.0
