@@ -1,11 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjtkbrvnl7uyu"]
+[gd_scene load_steps=10 format=3 uid="uid://bjtkbrvnl7uyu"]
 
 [ext_resource type="Script" uid="uid://cgn3sm0lfs1u2" path="res://scripts/level_manager.gd" id="1_2yrkd"]
 [ext_resource type="PackedScene" uid="uid://1huttcjrnc0v" path="res://scenes/levels/level_1.tscn" id="2_kfnik"]
 [ext_resource type="PackedScene" uid="uid://blf0quosmi4tn" path="res://scenes/levels/level_2.tscn" id="3_dpnu2"]
 [ext_resource type="PackedScene" uid="uid://cru04owp0njly" path="res://scenes/levels/level_3.tscn" id="4_6dptc"]
 [ext_resource type="PackedScene" uid="uid://bhhb7gulbs6ca" path="res://scenes/levels/level_4.tscn" id="5_kfnik"]
+[ext_resource type="Script" uid="uid://d0hcivpqeurdj" path="res://resources/dialogue.gd" id="6_dpnu2"]
+
+[sub_resource type="Resource" id="Resource_6dptc"]
+script = ExtResource("6_dpnu2")
+dialogue_lines = Array[String](["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."])
+metadata/_custom_type_script = "uid://d0hcivpqeurdj"
+
+[sub_resource type="Resource" id="Resource_dpnu2"]
+script = ExtResource("6_dpnu2")
+dialogue_lines = Array[String](["Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.", "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."])
+metadata/_custom_type_script = "uid://d0hcivpqeurdj"
+
+[sub_resource type="Resource" id="Resource_kq0y1"]
+script = ExtResource("6_dpnu2")
+dialogue_lines = Array[String]([""])
+metadata/_custom_type_script = "uid://d0hcivpqeurdj"
 
 [node name="LevelManager" type="Node"]
 script = ExtResource("1_2yrkd")
 levels = Array[PackedScene]([ExtResource("2_kfnik"), ExtResource("3_dpnu2"), ExtResource("4_6dptc"), ExtResource("5_kfnik")])
+level_dialogues = Array[ExtResource("6_dpnu2")]([SubResource("Resource_6dptc"), SubResource("Resource_dpnu2"), SubResource("Resource_kq0y1")])

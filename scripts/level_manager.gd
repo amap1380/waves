@@ -1,6 +1,7 @@
 extends Node
 
 @export var levels: Array[PackedScene] = []
+#@export var level_dialogues: Array[Dialogue] = []
 
 var current_level: int = 1
 var level_unlocked: int = 1
