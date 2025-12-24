@@ -2,7 +2,7 @@ extends PanelContainer
 @onready var label: Label = $VBoxContainer/CenterContainer/Label
 @onready var enter_label: Label = $VBoxContainer/EnterLabel
 
-@export var typing_speed: float = 1.0
+@export var typing_speed: float = 32.0
 
 var dialogue: Dialogue
 var current_line: int = 0
@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 func animate_typing(delta: float) -> void:
 	if label.visible_ratio >= 1.0:
 		return
-	label.visible_ratio += delta * typing_speed * 4
+	label.visible_ratio += delta * typing_speed / label.get_total_character_count()
 
 func update_current_line(value: int):
 	if value >= dialogue.dialogue_lines.size():

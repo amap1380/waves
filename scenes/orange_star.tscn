@@ -10,3 +10,7 @@ speed = 100.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_0wj73")
+
+[node name="DespawnTimer" type="Timer" parent="." index="4"]
+
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

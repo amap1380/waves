@@ -1,18 +1,17 @@
 extends Area2D
 class_name Collectable
 
-
+var tween: Tween
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
-@onready var despawn_timer: Timer = $DespawnTimer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var speed = 100.0
 #@export_range(1, 3) var energy_level := 0
 
-enum TYPE{Green, Orange, Red}
+#enum TYPE{Green, Orange, Red}
 
 #@export var type : TYPE
 
@@ -60,7 +59,6 @@ func check_collision_with_wave(arr: PackedVector2Array, offset: Vector2):
 	for i in arr.size() - 1:
 		if Geometry2D.segment_intersects_circle(arr[i], arr[i+1], 
 			collision_shape_2d.global_position - offset, collision_shape_2d.shape.radius) != -1:
-				#print(2)
 				return true
 	return false
 
@@ -68,10 +66,13 @@ func is_on_screen() -> bool:
 	return visible_on_screen_notifier_2d.is_on_screen()
 
 func absorb() -> void:
-	animation_player.play("absorb")
-
-func _on_despawn_timer_timeout() -> void:
-	animation_player.play("despawn")
+	if tween:
+		tween.kill()
+	tween = get_tree().create_tween()
+	tween.tween_property(self.sprite_2d,"scale", Vector2.ZERO, 0.4)
+	tween.parallel().tween_property(self.sprite_2d,"modulate", Color(0.0, 0.0, 0.0, 0.0), 0.4)
+	tween.parallel().tween_property(self.collision_shape_2d.shape,"radius", 0, 0.4)
+	tween.tween_callback(self.queue_free)
 
 
 

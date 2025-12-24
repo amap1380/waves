@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://oofaqds7qccy"]
+[gd_scene load_steps=5 format=3 uid="uid://cw8000sdbix1t"]
 
 [ext_resource type="Script" uid="uid://uj3p8sxvr6us" path="res://scripts/dialogue_screen.gd" id="1_7wpgx"]
 [ext_resource type="FontFile" uid="uid://bfc1dsw0qnkd0" path="res://assets/InknutAntiqua-Regular.ttf" id="1_o66xv"]
@@ -15,7 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4kitf")
 script = ExtResource("1_7wpgx")
-typing_speed = 0.2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
