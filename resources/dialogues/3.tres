@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=2 format=3 uid="uid://ulhxajluead1"]
+
+[ext_resource type="Script" uid="uid://d0hcivpqeurdj" path="res://resources/dialogue.gd" id="1_65w4x"]
+
+[resource]
+script = ExtResource("1_65w4x")
+dialogue_lines = Array[String](["Not all thoughts are meant to be carried.
+
+Avoiding is not the same as Ignoring."])
+metadata/_custom_type_script = "uid://d0hcivpqeurdj"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw8000sdbix1t"]
+[gd_scene load_steps=5 format=3 uid="uid://oofaqds7qccy"]
 
 [ext_resource type="Script" uid="uid://uj3p8sxvr6us" path="res://scripts/dialogue_screen.gd" id="1_7wpgx"]
 [ext_resource type="FontFile" uid="uid://bfc1dsw0qnkd0" path="res://assets/InknutAntiqua-Regular.ttf" id="1_o66xv"]
+[ext_resource type="AudioStream" uid="uid://b87ucga7qn2dq" path="res://assets/Sound/Rec 0006.mp3" id="3_sufax"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kitf"]
 bg_color = Color(0.15170373, 0.15170373, 0.15170373, 1)
@@ -42,3 +43,7 @@ text = "Press Enter to continue"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_trim_flags = 128
+
+[node name="LevelStartAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sufax")
+autoplay = true

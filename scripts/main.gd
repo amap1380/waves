@@ -45,7 +45,7 @@ var x_pos = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	timerformusic = Timer.new()
-	timerformusic.wait_time = 6.8    # duration in seconds
+	timerformusic.wait_time = 0.0 # duration in seconds
 	timerformusic.one_shot = true
 	add_child(timerformusic)
 	timerformusic.timeout.connect(_on_timer_finished)

@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 func animate_typing(delta: float) -> void:
 	if label.visible_ratio >= 1.0:
 		return
-	label.visible_ratio += delta * typing_speed
+	label.visible_ratio += delta * typing_speed * 4
 
 func update_current_line(value: int):
 	if value >= dialogue.dialogue_lines.size():

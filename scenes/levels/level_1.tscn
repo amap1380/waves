@@ -6,51 +6,43 @@
 [ext_resource type="PackedScene" uid="uid://cy8n4fc7c1qo0" path="res://scenes/finish_line.tscn" id="3_nsrm0"]
 
 [node name="level 1" type="Node2D"]
+metadata/_edit_vertical_guides_ = [712.0]
 
 [node name="Collectable" parent="." instance=ExtResource("1_ksju7")]
 position = Vector2(2160, 192)
 speed = 110.0
-type = 2
 
 [node name="Collectable2" parent="." instance=ExtResource("1_ksju7")]
 position = Vector2(2888, 480)
 speed = 110.0
-type = 2
 
 [node name="Collectable3" parent="." instance=ExtResource("1_ksju7")]
 position = Vector2(3456, 192)
 speed = 110.0
-type = 2
 
 [node name="Collectable4" parent="." instance=ExtResource("1_ksju7")]
 position = Vector2(3800, 480)
 speed = 110.0
-type = 2
 
 [node name="Collectable5" parent="." instance=ExtResource("1_ksju7")]
 position = Vector2(4864, 192)
 speed = 110.0
-type = 2
 
 [node name="Collectable6" parent="." instance=ExtResource("1_ksju7")]
 position = Vector2(5056, 384)
 speed = 110.0
-type = 2
 
 [node name="Collectable7" parent="." instance=ExtResource("1_ksju7")]
 position = Vector2(5248, 576)
 speed = 110.0
-type = 2
 
 [node name="Collectable8" parent="." instance=ExtResource("1_ksju7")]
 position = Vector2(6144, 576)
 speed = 110.0
-type = 2
 
 [node name="Collectable10" parent="." instance=ExtResource("1_ksju7")]
 position = Vector2(6336, 376)
 speed = 110.0
-type = 2
 
 [node name="Label" type="Label" parent="."]
 offset_left = 696.0

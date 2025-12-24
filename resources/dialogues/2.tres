@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_xs0jq")
+dialogue_lines = Array[String](["Repetition teaches the body, not the mind."])
 metadata/_custom_type_script = "uid://d0hcivpqeurdj"
