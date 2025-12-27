@@ -1,0 +1,7 @@
+[gd_resource type="GradientTexture1D" load_steps=2 format=3 uid="uid://b4k1m3pvoldts"]
+
+[ext_resource type="Gradient" uid="uid://d3imfmni2p3ik" path="res://assets/daynightcycle-gradient.tres" id="1_rc4e6"]
+
+[resource]
+gradient = ExtResource("1_rc4e6")
+width = 2048

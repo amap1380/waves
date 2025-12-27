@@ -4,6 +4,7 @@ extends Node2D
 @onready var sine_wave: SineWave = $SineWave
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var day_night_cycle: CanvasModulate = $DayNightCycle
 
 enum GameMode{FAST, SLOW}
 @export var gamemode: GameMode = GameMode.FAST
@@ -44,6 +45,7 @@ var mistake_score := 0:
 var x_pos = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	timerformusic = Timer.new()
 	timerformusic.wait_time = 6.8 # duration in seconds
 	timerformusic.one_shot = true
@@ -62,6 +64,9 @@ func _ready() -> void:
 	
 	var level = LevelManager.levels[LevelManager.current_level - 1].instantiate()
 	self.add_child(level)
+	var finisih_line:Node2D =  get_tree().get_first_node_in_group("FinishLine")
+	day_night_cycle.finish_line = finisih_line
+	day_night_cycle.init_pos_x = finisih_line.global_position.x
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

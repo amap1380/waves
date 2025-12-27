@@ -5,7 +5,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fiq81"]
 normal = Vector2(-1, 0)
 
-[node name="FinishLine" type="Area2D"]
+[node name="FinishLine" type="Area2D" groups=["FinishLine"]]
 script = ExtResource("1_ojfi3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

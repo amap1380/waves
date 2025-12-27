@@ -7,6 +7,7 @@ var tween: Tween
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var point_light_2d: PointLight2D = $PointLight2D
 
 @export var speed = 100.0
 #@export_range(1, 3) var energy_level := 0
@@ -17,7 +18,7 @@ var tween: Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	point_light_2d.editor_only = true
 	#match  type:
 		#TYPE.Green:
 			#sprite_2d.texture = textures[0]
@@ -72,10 +73,11 @@ func absorb() -> void:
 	tween.tween_property(self.sprite_2d,"scale", Vector2.ZERO, 0.4)
 	tween.parallel().tween_property(self.sprite_2d,"modulate", Color(0.0, 0.0, 0.0, 0.0), 0.4)
 	tween.parallel().tween_property(self.collision_shape_2d.shape,"radius", 0, 0.4)
+	tween.parallel().tween_property(self.point_light_2d,"texture_scale", 0, 0.4)
 	tween.tween_callback(self.queue_free)
 
 
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
-	pass # Replace with function body.
+	point_light_2d.editor_only = false

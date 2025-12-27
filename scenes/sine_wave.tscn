@@ -47,3 +47,8 @@ texture = ExtResource("3_y67ed")
 texture_mode = 1
 joint_mode = 1
 antialiased = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(0, 119.75)
+scale = Vector2(1, 240.5)

@@ -15,4 +15,5 @@ func _on_despawn_timer_timeout() -> void:
 	tween.tween_property(self.sprite_2d,"scale", Vector2.ZERO, 0.4)
 	tween.parallel().tween_property(self.sprite_2d,"modulate", Color(0.0, 0.0, 0.0, 0.0), 0.4)
 	tween.parallel().tween_property(self.collision_shape_2d.shape,"radius", 0, 0.4)
+	tween.parallel().tween_property(self.point_light_2d,"texture_scale", 0, 0.4)
 	tween.tween_callback(self.queue_free)
