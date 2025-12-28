@@ -55,6 +55,7 @@ theme_override_font_sizes/font_size = 30
 text = "Press A/D to adjust wavelength.
 Press W/S to adjust amplitude"
 script = ExtResource("2_6iamk")
+speed = 110.0
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 1800.0
@@ -66,17 +67,19 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Collect all Red Eyes with your head"
 script = ExtResource("2_6iamk")
+speed = 110.0
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 11792.0
+offset_left = 7664.0
 offset_top = 328.0
-offset_right = 12251.0
+offset_right = 8123.0
 offset_bottom = 436.0
 theme = ExtResource("2_x42e6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Finished!"
 script = ExtResource("2_6iamk")
+speed = 110.0
 
 [node name="FinishLine" parent="Label3" instance=ExtResource("3_nsrm0")]
 position = Vector2(911.7549, 80.986084)

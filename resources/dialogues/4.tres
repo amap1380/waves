@@ -5,6 +5,5 @@
 [resource]
 script = ExtResource("1_6w3vx")
 dialogue_lines = Array[String](["Some Wonders should be attended and some shoud be left behind.
-
 Contemplating is not hesitation."])
 metadata/_custom_type_script = "uid://d0hcivpqeurdj"

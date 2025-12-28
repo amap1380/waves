@@ -5,6 +5,5 @@
 [resource]
 script = ExtResource("1_65w4x")
 dialogue_lines = Array[String](["Not all thoughts are meant to be carried.
-
 Avoiding is not the same as Ignoring."])
 metadata/_custom_type_script = "uid://d0hcivpqeurdj"

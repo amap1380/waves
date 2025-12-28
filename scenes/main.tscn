@@ -23,11 +23,11 @@ glow_hdr_threshold = 1.5
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_jkv2x"]
 stream_count = 3
 stream_0/stream = ExtResource("8_ya4ey")
-stream_0/volume = -7.0
+stream_0/volume = -8.68
 stream_1/stream = ExtResource("9_eb6dy")
-stream_1/volume = -13.0
+stream_1/volume = -6.03
 stream_2/stream = ExtResource("10_trceg")
-stream_2/volume = -0.3
+stream_2/volume = -3.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jyhfs")
@@ -141,8 +141,6 @@ environment = SubResource("Environment_sugp2")
 
 [node name="BgMusic" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_jkv2x")
-
-[node name="LevelStartAudio" type="AudioStreamPlayer" parent="."]
 autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]

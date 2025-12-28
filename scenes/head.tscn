@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cd433od0xoqoc"]
 
 [ext_resource type="Script" uid="uid://ol26keh5ewgg" path="res://scripts/head.gd" id="1_d75dd"]
-[ext_resource type="Texture2D" uid="uid://c3h8d1uchutjp" path="res://assets/HeadAlone.png" id="2_cwpmm"]
+[ext_resource type="Texture2D" uid="uid://d0u6r5hucw2jx" path="res://assets/HeadAloneRed.png" id="2_cwpmm"]
 [ext_resource type="Texture2D" uid="uid://t67fi18mw7mc" path="res://assets/HornFront.png" id="3_6rdic"]
 [ext_resource type="Texture2D" uid="uid://d33fkmt33e7pu" path="res://assets/HornBack.png" id="4_480qb"]
 
@@ -19,7 +19,6 @@ metadata/_snap_enabled = true
 script = ExtResource("1_d75dd")
 
 [node name="HeadSprite" type="Sprite2D" parent="."]
-self_modulate = Color(0.85882354, 0.25490198, 0.23137255, 1)
 rotation = 0.5235988
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_cwpmm")
