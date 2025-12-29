@@ -19,6 +19,9 @@ const COLLECTABLE = preload("res://scenes/collectable.tscn")
 var timerformusic : Timer
 @onready var bg_music_player: AudioStreamPlayer = $BgMusic
 
+@onready var sfx_player: AudioStreamPlayer = $AudioStreamPlayer
+@export var collected_sounds: Array[AudioStream]
+
 var no_hit_score := 0:
 	set(value):
 		if no_hit_score != value:
@@ -94,8 +97,9 @@ func _on_head_area_entered(area: Area2D) -> void:
 		#else:
 			#self.mistake_score += 1
 			#camera_2d.add_trauma(0.3)
+		play_devour_animation()
+		play_collected_sound()
 		area.absorb()
-
 
 
 
@@ -139,3 +143,26 @@ func _on_spawn_timer_timeout() -> void:
 		GameMode.FAST:
 			collectable.speed = 150.0
 			spawn_timer.start(randf_range(2.0, 3.0))
+
+func play_devour_animation():
+		$Head/WholeHeadSprite/HeadSprite.visible = false
+		$Head/WholeHeadSprite/DevourSprite.visible = true
+		await get_tree().create_timer(0.2).timeout
+		$Head/WholeHeadSprite/DevourSprite.visible = false
+		$Head/WholeHeadSprite/HeadSprite.visible = true
+
+func play_collected_sound():
+	if collected_sounds.is_empty():
+		return
+
+	var p := AudioStreamPlayer.new()
+	p.stream = collected_sounds.pick_random()
+	p.bus = "Master"
+	p.volume_db = -27
+	p.pitch_scale = 0.8
+	add_child(p)
+	p.play()
+
+	p.finished.connect(func():
+		p.queue_free()
+)

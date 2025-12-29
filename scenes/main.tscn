@@ -1,12 +1,23 @@
-[gd_scene load_steps=16 format=3 uid="uid://sk44x2v00sao"]
+[gd_scene load_steps=28 format=3 uid="uid://sk44x2v00sao"]
 
 [ext_resource type="Script" uid="uid://8go1bifdo0o0" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://wyu4i6dnbgfh" path="res://assets/Sound/whispers/sorrywhispered-104387.mp3" id="2_gqmmt"]
 [ext_resource type="Script" uid="uid://c51orpd3k7so2" path="res://scripts/camera_2d.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cepq1jsbyexcn" path="res://scenes/sine_wave.tscn" id="2_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://b84fxnaknc74w" path="res://assets/Sound/whispers/have-you-ever-wondered-86962.mp3" id="2_y6deb"]
 [ext_resource type="PackedScene" uid="uid://cd433od0xoqoc" path="res://scenes/head.tscn" id="3_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://ct1s4xeqso5yu" path="res://assets/Sound/whispers/just-a-dream-82893.mp3" id="3_og1vs"]
+[ext_resource type="AudioStream" uid="uid://bnnuxsbxbfwkb" path="res://assets/Sound/whispers/step-into-clarity-whisper-307972.mp3" id="3_yc10j"]
+[ext_resource type="AudioStream" uid="uid://bkgr0b50c2ikd" path="res://assets/Sound/whispers/quick-overe-here-edit-105707.mp3" id="4_2wyq8"]
+[ext_resource type="AudioStream" uid="uid://bxalwwrpiy5p6" path="res://assets/Sound/whispers/strongenoughwhisper-88302.mp3" id="4_jscy8"]
 [ext_resource type="FontFile" uid="uid://bfc1dsw0qnkd0" path="res://assets/InknutAntiqua-Regular.ttf" id="5_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://d1ucodx3eqimr" path="res://assets/Sound/whispers/theres-no-time-82341.mp3" id="5_pm3ni"]
 [ext_resource type="Texture2D" uid="uid://bctudo65gd681" path="res://assets/bgSky.png" id="5_tefeu"]
+[ext_resource type="AudioStream" uid="uid://ylpa221mjcch" path="res://assets/Sound/whispers/sorry-whisper-male-104428.mp3" id="5_vxglm"]
+[ext_resource type="AudioStream" uid="uid://bfngaowwc2xj5" path="res://assets/Sound/whispers/whispering2-322490.mp3" id="6_y6deb"]
+[ext_resource type="AudioStream" uid="uid://41lccdjo2h4h" path="res://assets/Sound/whispers/whispering-322494.mp3" id="7_og1vs"]
 [ext_resource type="Texture2D" uid="uid://dme5lhnkegpyo" path="res://assets/Bg/bgMountains-1.png" id="7_trceg"]
+[ext_resource type="AudioStream" uid="uid://cymaxphn12qab" path="res://assets/Sound/whispers/woman-whispering-quotthatx27s-the-beauty-of-itquot-232445.mp3" id="8_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://b4rfqc6kcxoxr" path="res://assets/Bg/bgMountains_Mist_Back.png" id="8_a8y0u"]
 [ext_resource type="AudioStream" uid="uid://cdao4gaj4kx4x" path="res://assets/Sound/361054__jorge0000__wind-noise-hawk.wav" id="8_ya4ey"]
 [ext_resource type="AudioStream" uid="uid://cooxpwr1m2f83" path="res://assets/Sound/726312__zipcreates__wind-1.wav" id="9_eb6dy"]
@@ -29,9 +40,12 @@ stream_1/volume = -6.03
 stream_2/stream = ExtResource("10_trceg")
 stream_2/volume = -3.0
 
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_gqmmt"]
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jyhfs")
 random = false
+collected_sounds = Array[AudioStream]([ExtResource("2_y6deb"), ExtResource("3_og1vs"), ExtResource("4_2wyq8"), ExtResource("5_vxglm"), ExtResource("2_gqmmt"), ExtResource("3_yc10j"), ExtResource("4_jscy8"), ExtResource("5_pm3ni"), ExtResource("6_y6deb"), ExtResource("7_og1vs"), ExtResource("8_2wyq8")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -205,8 +219,14 @@ texture = ExtResource("9_jkv2x")
 centered = false
 
 [node name="DayNightCycle" parent="." instance=ExtResource("13_trceg")]
-color = Color(0.169088, 0.18037, 0.333017, 1)
+color = Color(1, 1, 1, 1)
 INITIAL_HOUR = 24
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPolyphonic_gqmmt")
+volume_db = -30.522
+pitch_scale = 0.88
+max_polyphony = 32
 
 [connection signal="area_entered" from="Head" to="." method="_on_head_area_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd433od0xoqoc"]
+[gd_scene load_steps=8 format=3 uid="uid://cd433od0xoqoc"]
 
 [ext_resource type="Script" uid="uid://ol26keh5ewgg" path="res://scripts/head.gd" id="1_d75dd"]
 [ext_resource type="Texture2D" uid="uid://d0u6r5hucw2jx" path="res://assets/HeadAloneRed.png" id="2_cwpmm"]
 [ext_resource type="Texture2D" uid="uid://t67fi18mw7mc" path="res://assets/HornFront.png" id="3_6rdic"]
+[ext_resource type="Texture2D" uid="uid://dhucra522u2e5" path="res://assets/Serpent/DevouringAnim/Animation folder0002 (2).png" id="3_480qb"]
 [ext_resource type="Texture2D" uid="uid://d33fkmt33e7pu" path="res://assets/HornBack.png" id="4_480qb"]
 
 [sub_resource type="Gradient" id="Gradient_cwpmm"]
@@ -18,25 +19,6 @@ metadata/_snap_enabled = true
 [node name="Head" type="Area2D"]
 script = ExtResource("1_d75dd")
 
-[node name="HeadSprite" type="Sprite2D" parent="."]
-rotation = 0.5235988
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_cwpmm")
-offset = Vector2(7.475, 74.035)
-
-[node name="HornFrontSprite" type="Sprite2D" parent="."]
-rotation = 0.5235988
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_6rdic")
-offset = Vector2(7.475, 74.035)
-
-[node name="HornBackSprite" type="Sprite2D" parent="."]
-z_index = -1
-rotation = 0.5235988
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_480qb")
-offset = Vector2(7.475, 74.035)
-
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(20, 7)
 rotation = 1.5707964
@@ -50,3 +32,31 @@ energy = 3.0
 blend_mode = 2
 texture = SubResource("GradientTexture2D_6rdic")
 texture_scale = 4.0
+
+[node name="WholeHeadSprite" type="Node2D" parent="."]
+
+[node name="HeadSprite" type="Sprite2D" parent="WholeHeadSprite"]
+rotation = 0.5235988
+scale = Vector2(0.29999998, 0.29999998)
+texture = ExtResource("2_cwpmm")
+offset = Vector2(7.475, 74.035)
+
+[node name="DevourSprite" type="Sprite2D" parent="WholeHeadSprite"]
+visible = false
+position = Vector2(18.000002, 13)
+rotation = 0.24973196
+scale = Vector2(0.29999995, 0.29999995)
+texture = ExtResource("3_480qb")
+
+[node name="HornFrontSprite" type="Sprite2D" parent="WholeHeadSprite"]
+rotation = 0.5235988
+scale = Vector2(0.29999998, 0.29999998)
+texture = ExtResource("3_6rdic")
+offset = Vector2(7.475, 74.035)
+
+[node name="HornBackSprite" type="Sprite2D" parent="WholeHeadSprite"]
+z_index = -1
+rotation = 0.5235988
+scale = Vector2(0.29999998, 0.29999998)
+texture = ExtResource("4_480qb")
+offset = Vector2(7.475, 74.035)

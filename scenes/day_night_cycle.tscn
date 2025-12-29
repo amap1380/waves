@@ -1,8 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjydngvj1swak"]
 
-[ext_resource type="Script" uid="uid://d2l0ddd4yen8k" path="res://scripts/day_night_cycle.gd" id="1_e4bus"]
+[ext_resource type="Script" path="res://scripts/day_night_cycle.gd" id="1_e4bus"]
 [ext_resource type="Gradient" uid="uid://d3imfmni2p3ik" path="res://assets/daynightcycle-gradient.tres" id="2_qf6xv"]
 
 [node name="DayNightCycle" type="CanvasModulate"]
+color = Color(0.14901961, 0.047058824, 0.3019608, 1)
 script = ExtResource("1_e4bus")
 gradient = ExtResource("2_qf6xv")
