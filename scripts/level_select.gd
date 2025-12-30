@@ -9,3 +9,7 @@ func _ready() -> void:
 		var level_button = LEVEL_BUTTON.instantiate()
 		grid_container.add_child(level_button)
 	#grid_container.get_child(0).unlocked = true
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
