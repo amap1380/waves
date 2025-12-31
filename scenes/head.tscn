@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cd433od0xoqoc"]
+[gd_scene load_steps=11 format=3 uid="uid://cd433od0xoqoc"]
 
 [ext_resource type="Script" uid="uid://ol26keh5ewgg" path="res://scripts/head.gd" id="1_d75dd"]
 [ext_resource type="Texture2D" uid="uid://d0u6r5hucw2jx" path="res://assets/HeadAloneRed.png" id="2_cwpmm"]
@@ -15,6 +15,67 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0.2)
 metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_6rdic"]
+resource_name = "devour"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WholeHeadSprite/DevourSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WholeHeadSprite/HeadSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_480qb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WholeHeadSprite/DevourSprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WholeHeadSprite/HeadSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tctuf"]
+_data = {
+&"RESET": SubResource("Animation_480qb"),
+&"devour": SubResource("Animation_6rdic")
+}
 
 [node name="Head" type="Area2D"]
 script = ExtResource("1_d75dd")
@@ -60,3 +121,10 @@ rotation = 0.5235988
 scale = Vector2(0.29999998, 0.29999998)
 texture = ExtResource("4_480qb")
 offset = Vector2(7.475, 74.035)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tctuf")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

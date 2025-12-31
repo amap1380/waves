@@ -17,9 +17,9 @@ const COLLECTABLE = preload("res://scenes/collectable.tscn")
 @onready var mistake_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/MistakeScore
 
 var timerformusic : Timer
-@onready var bg_music_player: AudioStreamPlayer = $BgMusic
+@onready var bg_music_player: AudioStreamPlayer = $Sounds/BgMusic
 
-@onready var sfx_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var sfx_player: AudioStreamPlayer = $Sounds/SFX
 @export var collected_sounds: Array[AudioStream]
 
 var no_hit_score := 0:
@@ -90,16 +90,7 @@ func _physics_process(delta: float) -> void:
 				#collectable.queue_free()
 				pass
 
-func _on_head_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Collectables") and area is Collectable:
-		#if area.energy_level < sine_wave.energy_level:
-			#self.on_head_score += 1
-		#else:
-			#self.mistake_score += 1
-			#camera_2d.add_trauma(0.3)
-		play_devour_animation()
-		play_collected_sound()
-		area.absorb()
+
 
 
 
@@ -112,12 +103,6 @@ func _on_collectable_crossed(collectable: Collectable):
 		#self.mistake_score += 1
 		#camera_2d.add_trauma(0.3)
 
-func _on_slow_button_pressed() -> void:
-	gamemode = GameMode.SLOW
-
-
-func _on_fast_button_pressed() -> void:
-	gamemode = GameMode.FAST
 
 
 func _on_button_pressed() -> void:
@@ -144,12 +129,7 @@ func _on_spawn_timer_timeout() -> void:
 			collectable.speed = 150.0
 			spawn_timer.start(randf_range(2.0, 3.0))
 
-func play_devour_animation():
-		$Head/WholeHeadSprite/HeadSprite.visible = false
-		$Head/WholeHeadSprite/DevourSprite.visible = true
-		await get_tree().create_timer(0.2).timeout
-		$Head/WholeHeadSprite/DevourSprite.visible = false
-		$Head/WholeHeadSprite/HeadSprite.visible = true
+
 
 func play_collected_sound():
 	if collected_sounds.is_empty():
@@ -157,12 +137,16 @@ func play_collected_sound():
 
 	var p := AudioStreamPlayer.new()
 	p.stream = collected_sounds.pick_random()
-	p.bus = "Master"
+	p.bus = "SFX"
 	p.volume_db = -27
-	p.pitch_scale = 0.8
+	p.pitch_scale = 0.8 + randf_range(-0.2, 0.2)
 	add_child(p)
 	p.play()
 
 	p.finished.connect(func():
 		p.queue_free()
 )
+
+
+func _on_head_devoured(area: Collectable) -> void:
+	play_collected_sound()

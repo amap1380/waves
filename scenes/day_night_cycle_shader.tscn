@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0uke0bcx6w1n"]
+
+[ext_resource type="Script" uid="uid://b16i4k80jxmeg" path="res://scripts/day_night_cycle_shader.gd" id="1_nvm61"]
+[ext_resource type="Shader" uid="uid://bafx5maml5mgk" path="res://assets/shaders/day_night_cycle.gdshader" id="1_ue7pl"]
+[ext_resource type="Gradient" uid="uid://d3imfmni2p3ik" path="res://assets/daynightcycle-gradient.tres" id="2_ogk0o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vxglm"]
+shader = ExtResource("1_ue7pl")
+shader_parameter/blend_color = Color(0.14901961, 0.047058824, 0.3019608, 1)
+shader_parameter/strength = 1.0
+
+[node name="DayNightCycleShader" type="CanvasLayer"]
+script = ExtResource("1_nvm61")
+gradient = ExtResource("2_ogk0o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vxglm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
