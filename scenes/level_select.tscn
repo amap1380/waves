@@ -51,3 +51,25 @@ layout_mode = 2
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 8
 columns = 5
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05390625
+anchor_top = 0.8125
+anchor_right = 0.05390625
+anchor_bottom = 0.8125
+offset_left = 38.0
+offset_top = 30.0
+offset_right = 106.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_3shnc")
+theme_override_font_sizes/font_size = 20
+text = "Back"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
