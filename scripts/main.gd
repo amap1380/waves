@@ -5,6 +5,7 @@ extends Node2D
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var day_night_cycle: CanvasModulate = $DayNightCycle
+@onready var day_night_cycle_shader: CanvasLayer = $DayNightCycleShader
 
 enum GameMode{FAST, SLOW}
 @export var gamemode: GameMode = GameMode.FAST
@@ -67,9 +68,12 @@ func _ready() -> void:
 	
 	var level = LevelManager.levels[LevelManager.current_level - 1].instantiate()
 	self.add_child(level)
-	var finisih_line:Node2D =  get_tree().get_first_node_in_group("FinishLine")
-	day_night_cycle.finish_line = finisih_line
-	day_night_cycle.init_pos_x = finisih_line.global_position.x
+	var finish_line:Node2D =  get_tree().get_first_node_in_group("FinishLine")
+	day_night_cycle.finish_line = finish_line
+	day_night_cycle.init_pos_x = finish_line.global_position.x
+	day_night_cycle_shader.finish_line = finish_line
+	day_night_cycle_shader.init_pos_x = finish_line.global_position.x
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
