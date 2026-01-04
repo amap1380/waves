@@ -6,6 +6,7 @@
 [node name="GreenStar" instance=ExtResource("1_vsx6j")]
 script = ExtResource("2_8bl1u")
 speed = 100.0
+score = -1
 
-[node name="PointLight2D" parent="." index="4"]
+[node name="PointLight2D" parent="." index="2"]
 color = Color(0, 1, 0, 1)

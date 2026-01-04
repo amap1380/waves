@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cfcx8347bogm0" path="res://assets/Bg/bgMountains_Mist_Front.png" id="9_jkv2x"]
 [ext_resource type="AudioStream" uid="uid://bk4ojba0y8viq" path="res://assets/Sound/FFXX - Walk Me Through History.mp3" id="10_trceg"]
 [ext_resource type="PackedScene" uid="uid://cjydngvj1swak" path="res://scenes/day_night_cycle.tscn" id="13_trceg"]
-[ext_resource type="PackedScene" uid="uid://bgvfnquovx67t" path="res://scenes/red_star.tscn" id="25_og1vs"]
+[ext_resource type="Script" uid="uid://dmwkhtbt7uhl2" path="res://scripts/orbs_container.gd" id="25_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://d0uke0bcx6w1n" path="res://scenes/day_night_cycle_shader.tscn" id="26_2wyq8"]
 
 [sub_resource type="Environment" id="Environment_sugp2"]
@@ -105,10 +105,8 @@ scale = Vector2(0.64646465, 0.6666666)
 texture = ExtResource("9_jkv2x")
 centered = false
 
-[node name="RedStar" parent="." instance=ExtResource("25_og1vs")]
-position = Vector2(1048, 157)
-
 [node name="DayNightCycle" parent="." instance=ExtResource("13_trceg")]
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sugp2")
@@ -130,71 +128,6 @@ bus = &"SFX"
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -191.0
-offset_bottom = 77.0
-grow_horizontal = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/HBoxContainer"]
-visible = false
-layout_mode = 2
-
-[node name="OnHead" type="Label" parent="HUD/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "On Head: "
-horizontal_alignment = 1
-
-[node name="OnBody" type="Label" parent="HUD/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "On Body: "
-horizontal_alignment = 1
-
-[node name="NoHit" type="Label" parent="HUD/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "No Hit: "
-horizontal_alignment = 1
-
-[node name="Mistake" type="Label" parent="HUD/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Mistake: "
-horizontal_alignment = 1
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="HUD/HBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="OnHeadScore" type="Label" parent="HUD/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="OnBodyScore" type="Label" parent="HUD/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NoHitScore" type="Label" parent="HUD/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MistakeScore" type="Label" parent="HUD/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Button" type="Button" parent="HUD"]
 offset_left = 38.0
 offset_top = 30.0
@@ -203,6 +136,16 @@ offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("5_o6xl0")
 text = "Back"
 metadata/_edit_use_anchors_ = true
+
+[node name="OrbsContainer" type="HBoxContainer" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("25_2wyq8")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 
