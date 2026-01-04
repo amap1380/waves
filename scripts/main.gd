@@ -11,51 +11,26 @@ enum GameMode{FAST, SLOW}
 @export var gamemode: GameMode = GameMode.FAST
 @export var random: bool = true
 const COLLECTABLE = preload("res://scenes/collectable.tscn")
+const ORBS_UI = preload("uid://bytsjkgf1g428")
 
-@onready var on_head_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/OnHeadScore
-@onready var on_body_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/OnBodyScore
-@onready var no_hit_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/NoHitScore
-@onready var mistake_score_label: Label = $HUD/HBoxContainer/VBoxContainer2/MistakeScore
+@onready var orbs_container: HBoxContainer = $HUD/OrbsContainer
 
-var timerformusic : Timer
+
 @onready var bg_music_player: AudioStreamPlayer = $Sounds/BgMusic
 
 @onready var sfx_player: AudioStreamPlayer = $Sounds/SFX
 @export var collected_sounds: Array[AudioStream]
 
-var no_hit_score := 0:
-	set(value):
-		if no_hit_score != value:
-			no_hit_score = value
-			no_hit_score_label.text = str(value)
 
-var on_body_score := 0:
-	set(value):
-		if on_body_score != value:
-			on_body_score = value
-			on_body_score_label.text = str(value)
-var on_head_score := 0:
-	set(value):
-		if on_head_score != value:
-			on_head_score = value
-			on_head_score_label.text = str(value)
 
-var mistake_score := 0:
-	set(value):
-		if mistake_score != value:
-			mistake_score = value
-			mistake_score_label.text = str(value)
+var positive_score: int = 0
+var negetive_score: int = 0
+
 
 var x_pos = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	timerformusic = Timer.new()
-	timerformusic.wait_time = 6.8 # duration in seconds
-	timerformusic.one_shot = true
-	add_child(timerformusic)
-	timerformusic.timeout.connect(_on_timer_finished)
-	#timerformusic.start()
 	
 	randomize()
 	if random:
@@ -66,8 +41,14 @@ func _ready() -> void:
 				spawn_timer.start(randf_range(2.0, 3.0))
 	SignalBus.collectable_crossed.connect(_on_collectable_crossed)
 	
-	var level = LevelManager.levels[LevelManager.current_level - 1].instantiate()
+	var level: Level = LevelManager.levels[LevelManager.current_level - 1].instantiate()
 	self.add_child(level)
+	for i in level.number_of_orbs:
+		var new_orb:OrbsUI = ORBS_UI.instantiate()
+		orbs_container.add_child(new_orb)
+		new_orb.max_value = level.max_positive
+		new_orb.negetive_bar.max_value = level.max_negetive
+
 	var finish_line:Node2D =  get_tree().get_first_node_in_group("FinishLine")
 	day_night_cycle.finish_line = finish_line
 	day_night_cycle.init_pos_x = finish_line.global_position.x
@@ -99,7 +80,7 @@ func _physics_process(delta: float) -> void:
 
 
 
-func _on_collectable_crossed(collectable: Collectable):
+func _on_collectable_crossed(_collectable: Collectable):
 	pass
 	#if sine_wave.energy_level < collectable.energy_level:
 		#self.no_hit_score += 1
@@ -112,8 +93,6 @@ func _on_collectable_crossed(collectable: Collectable):
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 
-func _on_timer_finished():
-	bg_music_player.play()
 
 
 func _on_spawn_timer_timeout() -> void:
@@ -153,4 +132,10 @@ func play_collected_sound():
 
 
 func _on_head_devoured(area: Collectable) -> void:
+	if area.score > 0:
+		self.positive_score += area.score
+		orbs_container.set_positive(self.positive_score)
+	else:
+		self.negetive_score += area.score
+		orbs_container.set_negetive(self.negetive_score)
 	play_collected_sound()

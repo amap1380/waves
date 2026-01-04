@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://blf0quosmi4tn"]
+[gd_scene load_steps=6 format=3 uid="uid://blf0quosmi4tn"]
 
 [ext_resource type="PackedScene" uid="uid://bgvfnquovx67t" path="res://scenes/red_star.tscn" id="1_j2425"]
+[ext_resource type="Script" uid="uid://c23nwx3sr4m8" path="res://scripts/level.gd" id="1_l37oo"]
 [ext_resource type="Theme" uid="uid://b3akcc4smtgv" path="res://assets/bodyTextTheme.tres" id="2_fiq81"]
 [ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="2_g2h2n"]
 [ext_resource type="PackedScene" uid="uid://cy8n4fc7c1qo0" path="res://scenes/finish_line.tscn" id="4_fiq81"]
 
 [node name="level2" type="Node2D"]
+script = ExtResource("1_l37oo")
 
 [node name="Collectable9" parent="." instance=ExtResource("1_j2425")]
 position = Vector2(1312, 352)

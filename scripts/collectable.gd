@@ -11,6 +11,7 @@ var tween: Tween
 @onready var eye: Sprite2D = $Eye
 
 @export var speed = 100.0
+@export var score:int = 0
 
 func _ready() -> void:
 	point_light_2d.editor_only = true
@@ -40,6 +41,7 @@ func absorb() -> void:
 	_despawn()
 
 func _despawn():
+	self.collision_shape_2d.set_deferred("disabled", true)
 	if tween:
 		tween.kill()
 	tween = get_tree().create_tween()

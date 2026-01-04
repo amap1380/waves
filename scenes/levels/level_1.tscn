@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://1huttcjrnc0v"]
+[gd_scene load_steps=6 format=3 uid="uid://1huttcjrnc0v"]
 
+[ext_resource type="Script" uid="uid://c23nwx3sr4m8" path="res://scripts/level.gd" id="1_6761a"]
 [ext_resource type="PackedScene" uid="uid://bgvfnquovx67t" path="res://scenes/red_star.tscn" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="2_6iamk"]
 [ext_resource type="Theme" uid="uid://b3akcc4smtgv" path="res://assets/bodyTextTheme.tres" id="2_x42e6"]
 [ext_resource type="PackedScene" uid="uid://cy8n4fc7c1qo0" path="res://scenes/finish_line.tscn" id="3_nsrm0"]
 
 [node name="level 1" type="Node2D"]
+script = ExtResource("1_6761a")
+number_of_orbs = 2
+max_positive = 2
+max_negetive = 2
 metadata/_edit_vertical_guides_ = [712.0]
 
 [node name="Collectable" parent="." instance=ExtResource("1_ksju7")]
