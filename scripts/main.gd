@@ -132,10 +132,10 @@ func play_collected_sound():
 
 
 func _on_head_devoured(area: Collectable) -> void:
-	if area.score > 0:
-		self.positive_score += area.score
-		orbs_container.set_positive(self.positive_score)
-	else:
-		self.negetive_score += area.score
-		orbs_container.set_negetive(self.negetive_score)
+	self.positive_score += area.score
+	self.positive_score = maxi(self.positive_score, 0)
+	self.negetive_score += area.score
+	self.negetive_score = mini(self.negetive_score, 0)
+	orbs_container.set_positive(self.positive_score)
+	orbs_container.set_negetive(abs(self.negetive_score))
 	play_collected_sound()

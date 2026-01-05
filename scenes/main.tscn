@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://cjydngvj1swak" path="res://scenes/day_night_cycle.tscn" id="13_trceg"]
 [ext_resource type="Texture2D" uid="uid://jxvlanv6wx4u" path="res://assets/Bg/bg alone_no texture.png" id="16_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://qsonnftfq5wd" path="res://assets/Bg/paper texture darker.png" id="16_vxglm"]
-[ext_resource type="PackedScene" uid="uid://bgvfnquovx67t" path="res://scenes/red_star.tscn" id="25_og1vs"]
 [ext_resource type="Script" uid="uid://dmwkhtbt7uhl2" path="res://scripts/orbs_container.gd" id="25_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://d0uke0bcx6w1n" path="res://scenes/day_night_cycle_shader.tscn" id="26_2wyq8"]
 
@@ -122,8 +121,8 @@ texture = ExtResource("9_jkv2x")
 centered = false
 
 [node name="DayNightCycle" parent="." instance=ExtResource("13_trceg")]
-color = Color(0.6472221, 0.66232157, 0.82841635, 1)
 visible = false
+color = Color(0.6472221, 0.66232157, 0.82841635, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sugp2")

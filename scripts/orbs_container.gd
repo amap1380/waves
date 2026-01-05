@@ -19,6 +19,6 @@ func set_negetive(value: int) -> void:
 	var orb:OrbsUI = get_child(negetive_index)
 	if value > orb.negetive_bar.max_value * abs(negetive_index):
 		negetive_index -= 1
-		set_positive(value - int(orb.negetive_bar.max_value) * (negetive_index))
+		set_negetive(value - int(orb.negetive_bar.max_value) * abs(negetive_index + 1))
 	else:
 		orb.negetive_bar.value = value
