@@ -18,7 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 SignalBus="*res://scripts/autoloads/signal_bus.gd"
-LevelManager="*res://scenes/level_manager.tscn"
+LevelManager="*res://scenes/autoloads/level_manager.tscn"
+SceneManager="*res://scenes/autoloads/scene_manager.tscn"
 
 [display]
 

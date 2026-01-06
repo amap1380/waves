@@ -9,7 +9,9 @@
 [node name="level 1" type="Node2D"]
 editor_description = "=9"
 script = ExtResource("1_6761a")
-max_positive = 6
+number_of_orbs = 3
+max_positive = 2
+max_negetive = 2
 metadata/_edit_vertical_guides_ = [712.0]
 
 [node name="Collectable" parent="." instance=ExtResource("1_ksju7")]
