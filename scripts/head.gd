@@ -5,6 +5,8 @@ signal devoured(area)
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+func _process(delta: float) -> void:
+	pass
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Collectables") and area is Collectable:

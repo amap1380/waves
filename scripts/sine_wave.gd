@@ -3,6 +3,7 @@ class_name SineWave
 
 @onready var body: Line2D = $Body
 @onready var spikes: Line2D = $Spikes
+@onready var head: Head = $Head
 
 
 @export var amplitude = 100.0:
@@ -27,9 +28,9 @@ var h = 0.0
 			number_of_points = value
 			queue_redraw()
 
-@export var gradient_1: Gradient
-@export var gradient_2: Gradient
-@export var gradient_3: Gradient
+#@export var gradient_1: Gradient
+#@export var gradient_2: Gradient
+#@export var gradient_3: Gradient
 
 func _ready() -> void:
 	update_array()
@@ -55,6 +56,7 @@ func _physics_process(delta: float) -> void:
 	frequency = lerpf(50.0, 200.0, ratio)
 	h += delta * sine_speed
 	wrapf(h,0, TAU)
+	
 	#var energy = abs(amplitude)/200.0 * (1.0 - ratio)
 	# energy ranges
 	#if energy <= 0.3:
@@ -78,11 +80,14 @@ func _physics_process(delta: float) -> void:
 	update_array()
 	body.points = arr
 	spikes.points = arr
+	head.global_position =  arr[-2] + global_position
+	head.look_at(arr[-1] + global_position)
 	queue_redraw()
 
 func _draw() -> void:
 	pass
 	#draw_polyline(arr, color, 8.0, true)
+
 
 
 func update_array():
@@ -92,6 +97,3 @@ func update_array():
 			i,
 			amplitude * sin((i / frequency) + h))
 		)
-
-func update_collision():
-	pass

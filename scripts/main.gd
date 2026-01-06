@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var head: Area2D = $Head
+@onready var head: Area2D = $SineWave/Head
 @onready var sine_wave: SineWave = $SineWave
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var camera_2d: Camera2D = $Camera2D
@@ -68,8 +68,7 @@ func _physics_process(delta: float) -> void:
 	#var speed = arr[x_pos].distance_to(arr[x_pos + 1])
 	#x_pos += delta * 100.0 / speed
 	#x_pos = wrapf(x_pos, 0.0, get_viewport_rect().size.x)
-	head.global_position =  arr[-2] + sine_wave.global_position
-	head.look_at(arr[-1] + sine_wave.global_position)
+
 	for collectable: Collectable in get_tree().get_nodes_in_group("Collectables"):
 		if collectable.is_on_screen() :
 			if collectable.check_collision_with_wave(arr, sine_wave.global_position):
