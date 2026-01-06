@@ -1,13 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://cru04owp0njly"]
 
-[ext_resource type="Script" uid="uid://c23nwx3sr4m8" path="res://scripts/level.gd" id="1_fmg3e"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_fmg3e"]
 [ext_resource type="PackedScene" uid="uid://kg2q7m6ecsjj" path="res://scenes/green_star.tscn" id="1_o8c3j"]
 [ext_resource type="Theme" uid="uid://b3akcc4smtgv" path="res://assets/bodyTextTheme.tres" id="2_0qepi"]
 [ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="2_44gv1"]
 [ext_resource type="PackedScene" uid="uid://cy8n4fc7c1qo0" path="res://scenes/finish_line.tscn" id="3_0ljxa"]
 
 [node name="Level3" type="Node2D"]
+editor_description = "orbs: 10+8+4+8+6+12+10+6+12+8+10=94"
 script = ExtResource("1_fmg3e")
+number_of_orbs = 3
+max_negetive = 23
 
 [node name="Collectable20" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(4224, 360)

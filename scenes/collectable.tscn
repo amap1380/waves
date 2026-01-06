@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ds4uqhd57sy3l"]
+[gd_scene load_steps=11 format=3 uid="uid://ds4uqhd57sy3l"]
 
 [ext_resource type="Script" uid="uid://cjn8y62rgijvl" path="res://scripts/collectable.gd" id="1_3dk6v"]
 [ext_resource type="Texture2D" uid="uid://d2iabs5pih2fk" path="res://assets/StarGreenEyeless.png" id="2_dnya4"]
@@ -31,6 +31,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eye:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Eye:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.75, 0.75)]
+}
 
 [sub_resource type="Animation" id="Animation_ftjwp"]
 resource_name = "idle"
@@ -49,8 +73,49 @@ tracks/0/keys = {
 "values": [0.0, 3.1415927, 6.2831855]
 }
 
+[sub_resource type="Animation" id="Animation_i8gcc"]
+resource_name = "Collection"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eye:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eye:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Eye:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(10, 10)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i8gcc"]
 _data = {
+&"Collection": SubResource("Animation_i8gcc"),
 &"RESET": SubResource("Animation_dnya4"),
 &"idle": SubResource("Animation_ftjwp")
 }
@@ -67,8 +132,8 @@ shape = SubResource("CircleShape2D_llfh3")
 rect = Rect2(-40, -25, 80, 50)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-enabled = false
 energy = 2.5
+range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_dnya4")
 texture_scale = 2.5
 
@@ -77,6 +142,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_dnya4")
 
 [node name="Eye" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_dnya4")
 
