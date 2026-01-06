@@ -3,7 +3,9 @@ extends Node
 @export var levels: Array[PackedScene] = []
 #@export var level_dialogues: Array[Dialogue] = []
 
-var current_level: int = 1
+var current_level: int = 1:
+	set(value):
+		current_level = clampi(value, 1, levels.size())
 var level_unlocked: int = 1
 var max_level: int = 0
 

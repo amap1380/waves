@@ -22,6 +22,8 @@ const ORBS_UI = preload("uid://bytsjkgf1g428")
 @export var collected_sounds: Array[AudioStream]
 
 
+var MAX_POSITIVE: int = 0
+var MAX_NEGETIVE: int = 0
 
 var positive_score: int = 0
 var negetive_score: int = 0
@@ -40,9 +42,13 @@ func _ready() -> void:
 			GameMode.FAST:
 				spawn_timer.start(randf_range(2.0, 3.0))
 	SignalBus.collectable_crossed.connect(_on_collectable_crossed)
+	SignalBus.level_finished.connect(_on_level_finished)
 	
 	var level: Level = LevelManager.levels[LevelManager.current_level - 1].instantiate()
 	self.add_child(level)
+	
+	MAX_POSITIVE = level.max_positive * level.number_of_orbs
+	MAX_NEGETIVE = -level.max_negetive * level.number_of_orbs
 	for i in level.number_of_orbs:
 		var new_orb:OrbsUI = ORBS_UI.instantiate()
 		orbs_container.add_child(new_orb)
@@ -88,10 +94,20 @@ func _on_collectable_crossed(_collectable: Collectable):
 		#self.mistake_score += 1
 		#camera_2d.add_trauma(0.3)
 
+func _on_level_finished():
+	if positive_score == MAX_POSITIVE:
+		print("ascend")
+		LevelManager.current_level += 1
+	elif positive_score < float(MAX_POSITIVE) / 2 or negetive_score < float(MAX_NEGETIVE) / 2:
+		print("desend")
+		LevelManager.current_level -= 1
+	else:
+		print("stay")
+	SceneManager.change_scene(self,"res://scenes/dialogue_screen.tscn")
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
+	SceneManager.change_scene(self, "res://scenes/level_select.tscn")
 
 
 
@@ -133,9 +149,10 @@ func play_collected_sound():
 
 func _on_head_devoured(area: Collectable) -> void:
 	self.positive_score += area.score
-	self.positive_score = maxi(self.positive_score, 0)
+	self.positive_score = clampi(self.positive_score, 0, MAX_POSITIVE)
 	self.negetive_score += area.score
-	self.negetive_score = mini(self.negetive_score, 0)
-	orbs_container.set_positive(self.positive_score)
-	orbs_container.set_negetive(abs(self.negetive_score))
+	self.negetive_score = clampi(self.negetive_score, MAX_NEGETIVE, 0)
+	orbs_container.reset_orbs()
+	orbs_container.test_positive(self.positive_score)
+	orbs_container.test_negetive(abs(self.negetive_score))
 	play_collected_sound()

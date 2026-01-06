@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	LevelManager.current_level = level_num
-	get_tree().change_scene_to_file("res://scenes/dialogue_screen.tscn")
+	SceneManager.change_scene(self, "res://scenes/dialogue_screen.tscn")
 	#var main_scene = MAIN_SCENE.instantiate()
 	#if FileAccess.file_exists("res://scenes/levels/level_" + str(level_num) + ".tscn"):
 		#var level = load("res://scenes/levels/level_" + str(level_num) + ".tscn") as PackedScene
