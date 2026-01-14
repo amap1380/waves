@@ -19,11 +19,6 @@ var init_pos_x: float
 		INITIAL_HOUR = h
 		time = INGAME_TO_REAL_MINUTE_DURATION * MINUTES_PER_HOUR * INITIAL_HOUR
 
-func _ready() -> void:
-	if Engine.is_editor_hint():
-		time = INGAME_TO_REAL_MINUTE_DURATION * MINUTES_PER_HOUR * INITIAL_HOUR
-		var value = (sin(time - PI / 2.0) + 1.0) / 2.0
-		self.color = gradient.sample(value)
 
 
 func _process(_delta: float) -> void:

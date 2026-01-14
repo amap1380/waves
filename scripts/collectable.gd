@@ -14,12 +14,8 @@ var tween: Tween
 @export var score:int = 0
 
 func _ready() -> void:
-	point_light_2d.editor_only = true
+	point_light_2d.enabled = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 
 func _physics_process(delta: float) -> void:
@@ -54,7 +50,7 @@ func _despawn():
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
-	point_light_2d.editor_only = false
+	point_light_2d.enabled = true
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:

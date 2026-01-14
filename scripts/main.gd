@@ -65,19 +65,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	var arr = sine_wave.arr
-	#var speed = arr[x_pos].distance_to(arr[x_pos + 1])
-	#x_pos += delta * 100.0 / speed
-	#x_pos = wrapf(x_pos, 0.0, get_viewport_rect().size.x)
 
 	for collectable: Collectable in get_tree().get_nodes_in_group("Collectables"):
 		if collectable.is_on_screen() :
 			if collectable.check_collision_with_wave(arr, sine_wave.global_position):
-				#if collectable.energy_level == sine_wave.energy_level:
-					#self.on_body_score += 1
-				#else:
-					#self.mistake_score += 1
-					#camera_2d.add_trauma(0.3)
-				#collectable.queue_free()
 				pass
 
 
@@ -87,11 +78,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_collectable_crossed(_collectable: Collectable):
 	pass
-	#if sine_wave.energy_level < collectable.energy_level:
-		#self.no_hit_score += 1
-	#else:
-		#self.mistake_score += 1
-		#camera_2d.add_trauma(0.3)
+
 
 func _on_level_finished():
 	if positive_score == MAX_POSITIVE:
@@ -147,6 +134,8 @@ func play_collected_sound():
 
 
 func _on_head_devoured(area: Collectable) -> void:
+	if area.score < 0:
+		camera_2d.add_screen_shake(4, 0.2)
 	self.positive_score += area.score
 	self.positive_score = clampi(self.positive_score, 0, MAX_POSITIVE)
 	self.negetive_score += area.score
