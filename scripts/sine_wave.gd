@@ -3,8 +3,8 @@ class_name SineWave
 
 @onready var body: Line2D = $Body
 @onready var spikes: Line2D = $Spikes
-@onready var head: Head = $Head
 
+@onready var head: Head = $Head
 
 @export var amplitude = 100.0:
 	set(value):
@@ -28,9 +28,6 @@ var h = 0.0
 			number_of_points = value
 			queue_redraw()
 
-#@export var gradient_1: Gradient
-#@export var gradient_2: Gradient
-#@export var gradient_3: Gradient
 
 func _ready() -> void:
 	update_array()
@@ -38,11 +35,9 @@ func _ready() -> void:
 
 var ratio = 0.1
 
-@onready var collison_polygone : Array[PackedVector2Array]
 var arr = PackedVector2Array()
 
 var color: Color
-var energy_level := 0
 
 
 func _physics_process(delta: float) -> void:
@@ -56,27 +51,7 @@ func _physics_process(delta: float) -> void:
 	frequency = lerpf(50.0, 200.0, ratio)
 	h += delta * sine_speed
 	wrapf(h,0, TAU)
-	
-	#var energy = abs(amplitude)/200.0 * (1.0 - ratio)
-	# energy ranges
-	#if energy <= 0.3:
-		#energy_level = 1
-		#color = Color("30bf7fff")
-		#body.gradient = gradient_1
-	#elif energy > 0.3 and energy < 0.6:
-		#energy_level = 2
-		#color = Color("b630bfff")
-		#body.gradient = gradient_2
-	#elif energy >= 0.6:
-		#energy_level = 3
-		#color = Color("3078bfff")
-		#body.gradient = gradient_3
-	#else:
-		#energy_level = 0
-		#color = Color.RED
-		#body.gradient = null
-	##self.modulate = color
-	#body.self_modulate = color * 2.0
+
 	update_array()
 	body.points = arr
 	spikes.points = arr

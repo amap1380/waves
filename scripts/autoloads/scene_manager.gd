@@ -3,6 +3,7 @@ extends Node
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
+# changes scenes to a file and plays the transition animation
 func change_scene(from, to_scene_name: String):
 	
 	animation_player.play("transition_out")

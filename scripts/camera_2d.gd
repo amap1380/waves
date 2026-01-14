@@ -39,25 +39,14 @@ func _physics_process(delta: float) -> void:
 		offset.y = noise.get_noise_2d(0, shake_time) * shake_intensity
 		
 		shake_intensity = max(shake_intensity - shake_decay * delta, 0)
+		active_shake_time -= delta
 	else:
 		offset = lerp(offset, Vector2.ZERO, 10.5*delta)
 	if trauma: # If the camera is currently shaking
 		trauma = max(trauma - decay * delta, 0) # Decay the shake strength
 		shake() # Shake the camera
 
-
-func screen_shake(intensity: float, time: float):
-	shake_rng.randomize()
-	noise.seed = shake_rng.randi()
-	noise.frequency = 2.0
-	
-	shake_intensity = intensity
-	active_shake_time = time
-	shake_time = 0.0
-
-
-
-
+#type one screen shake
 ## The function to use for adding trauma (screen shake)
 func add_trauma(amount : float) -> void:
 	trauma = min(trauma + amount, 1.0) # Add the amount of trauma (capped at 1.0)
@@ -69,3 +58,22 @@ func shake() -> void:
 	rotation = max_roll * amount * randf_range(-1, 1)
 	offset.x = max_offset.x * amount * randf_range(-1, 1)
 	offset.y = max_offset.y * amount * randf_range(-1, 1)
+#end of type one
+
+#type 2 screen shake
+
+func add_screen_shake(intensity: float, time: float):
+	shake_rng.randomize()
+	noise.seed = shake_rng.randi()
+	noise.frequency = 2.0
+	
+	shake_intensity += intensity
+	active_shake_time = time
+	shake_time = 0.0
+
+func reset_screen_shake():
+	shake_intensity = 0
+	active_shake_time = 0
+	shake_time = 0
+
+#end of type 2

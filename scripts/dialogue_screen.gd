@@ -7,7 +7,9 @@ extends PanelContainer
 var dialogue: Dialogue
 var current_line: int = 0
 
+
 func _ready() -> void:
+	#loads the current level dialogue from dialogues folder
 	if not ResourceLoader.exists("res://resources/dialogues/%d.tres" % LevelManager.current_level):
 		SceneManager.change_scene(self,"res://scenes/main.tscn")
 		return
@@ -15,14 +17,18 @@ func _ready() -> void:
 	if dialogue.dialogue_lines.is_empty():
 		SceneManager.change_scene(self, "res://scenes/main.tscn")
 		return
+	#sets the label text and hides it
 	label.text = dialogue.dialogue_lines[current_line]
 	label.visible_ratio = 0.0
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
+	if (event.is_action_pressed("ui_accept") 
+		or (event is InputEventMouseButton and event.button_index == 1)):
 		if label.visible_ratio < 1.0:
+			#shows the current line
 			label.visible_ratio = 1.0
 		else:
+			#progress the dialogue lines
 			update_current_line(current_line + 1)
 
 func _process(delta: float) -> void:
