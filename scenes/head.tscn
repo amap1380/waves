@@ -80,11 +80,6 @@ _data = {
 [node name="Head" type="Area2D"]
 script = ExtResource("1_d75dd")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(20, 7)
-rotation = 1.5707964
-polygon = PackedVector2Array(-24, -3, -26, 21, -14.999998, 49, -7.9999976, 52, 4.000002, 48, 24, 33, 32, 18.999998, 28, -8.000002, 29.999996, -39, 22.999996, -52, 13.999997, -53, 2.999998, -46, -7.000001, -27, -19, -17)
-
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(31, 11)
@@ -126,5 +121,10 @@ offset = Vector2(7.475, 74.035)
 libraries = {
 &"": SubResource("AnimationLibrary_tctuf")
 }
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(20, 7)
+rotation = 1.5707964
+polygon = PackedVector2Array(-30, -3.999998, -32, 19.000002, -20.999998, 50, -9.999997, 58, 4.000003, 55, 30, 38, 38, 19.999998, 33, -6.000002, 34.999996, -41, 30.999996, -54, 12.999997, -56, -2.000002, -48, -11.000002, -31, -24, -20)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
