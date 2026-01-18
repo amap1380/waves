@@ -82,13 +82,14 @@ func _on_collectable_crossed(_collectable: Collectable):
 
 func _on_level_finished():
 	if positive_score == MAX_POSITIVE:
-		print("ascend")
+		sine_wave.ascend()
 		LevelManager.current_level += 1
 	elif positive_score < float(MAX_POSITIVE) / 2 or negetive_score < float(MAX_NEGETIVE) / 2:
-		print("desend")
+		sine_wave.descend()
 		LevelManager.current_level -= 1
 	else:
-		print("stay")
+		sine_wave.stay()
+	await get_tree().create_timer(Constants.SINE_WAVE_TRANSITION_TIME).timeout
 	SceneManager.change_scene(self,"res://scenes/dialogue_screen.tscn")
 
 
