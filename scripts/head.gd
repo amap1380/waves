@@ -4,6 +4,7 @@ class_name Head
 signal devoured(area)
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var collision_shape_2d: CollisionPolygon2D = $CollisionShape2D
 
 
 
