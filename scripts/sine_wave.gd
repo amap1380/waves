@@ -29,6 +29,12 @@ var h = 0.0
 			queue_redraw()
 
 
+var inputs = {
+	"up":true,
+	"down":true,
+	"right":true,
+	"left":true
+}
 
 var ratio = 0.1
 
@@ -40,6 +46,10 @@ func _ready() -> void:
 	update_array()
 	queue_redraw()
 
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		pass
 
 var transition_flag = true
 
@@ -101,6 +111,11 @@ func stay():
 	head.collision_shape_2d.disabled = true
 	target = Vector2.RIGHT
 
+func set_input(input: String, enable: bool):
+	if inputs.has(input):
+		inputs[input] = enable
+	else :
+		push_error("input %s not found" % input )
 
 func update_array():
 	arr = PackedVector2Array()

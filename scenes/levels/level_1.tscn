@@ -8,7 +8,7 @@
 
 [node name="level 1" type="Node2D"]
 script = ExtResource("1_6761a")
-number_of_orbs = 3
+number_of_orbs = 1
 max_positive = 2
 max_negetive = 2
 metadata/_edit_vertical_guides_ = [712.0]
@@ -75,9 +75,9 @@ script = ExtResource("2_6iamk")
 speed = 110.0
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 7664.0
+offset_left = 500.0
 offset_top = 328.0
-offset_right = 8123.0
+offset_right = 959.0
 offset_bottom = 436.0
 theme = ExtResource("2_x42e6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)

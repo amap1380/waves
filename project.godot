@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="waves"
-run/main_scene="uid://r1t657hq0hxf"
+run/main_scene="uid://dwoxqk2pyg2sl"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SignalBus="*res://scripts/autoloads/signal_bus.gd"
 LevelManager="*res://scenes/autoloads/level_manager.tscn"
 SceneManager="*res://scenes/autoloads/scene_manager.tscn"
+Constants="*res://scripts/autoloads/constants.gd"
 
 [display]
 
