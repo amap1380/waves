@@ -6,6 +6,7 @@ class_name SineWave
 @onready var bar = $"../HUD/StaminaBar"
 
 var desat_material: ShaderMaterial
+@onready var head: Head = $Head
 
 
 @export var amplitude = 100.0:
@@ -29,9 +30,9 @@ var h = 0.0
 			number_of_points = value
 			queue_redraw()
 
-@export var gradient_1: Gradient
-@export var gradient_2: Gradient
-@export var gradient_3: Gradient
+#@export var gradient_1: Gradient
+#@export var gradient_2: Gradient
+#@export var gradient_3: Gradient
 
 var ratio = 0.1
 @onready var collison_polygone : Array[PackedVector2Array]
@@ -90,6 +91,8 @@ func _physics_process(delta: float) -> void:
 	update_array()
 	body.points = arr
 	spikes.points = arr
+	head.global_position =  arr[-2] + global_position
+	head.look_at(arr[-1] + global_position)
 	queue_redraw()
 
 	_update_color_modulation() # <--- NEW visual call
@@ -122,6 +125,7 @@ func _update_stamina(delta: float) -> void:
 
 func _draw() -> void:
 	pass
+
 
 func update_array():
 	arr = PackedVector2Array()
