@@ -1,0 +1,204 @@
+[gd_scene load_steps=7 format=3 uid="uid://defyhhbx8ywno"]
+
+[ext_resource type="PackedScene" uid="uid://bgvfnquovx67t" path="res://scenes/red_star.tscn" id="1_845dy"]
+[ext_resource type="Script" uid="uid://c23nwx3sr4m8" path="res://scripts/level.gd" id="1_dswqx"]
+[ext_resource type="PackedScene" uid="uid://kg2q7m6ecsjj" path="res://scenes/green_star.tscn" id="2_dswqx"]
+[ext_resource type="Theme" uid="uid://b3akcc4smtgv" path="res://assets/bodyTextTheme.tres" id="4_hldbq"]
+[ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="5_fsnos"]
+[ext_resource type="PackedScene" uid="uid://cy8n4fc7c1qo0" path="res://scenes/finish_line.tscn" id="6_mxx4w"]
+
+[node name="Level5" type="Node2D"]
+script = ExtResource("1_dswqx")
+metadata/_edit_horizontal_guides_ = [126.0, 588.0, 360.0]
+
+[node name="RedStar" parent="." instance=ExtResource("1_845dy")]
+
+[node name="Collectable20" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(1392, 360)
+speed = 250.0
+
+[node name="Collectable21" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(1812, 360)
+speed = 250.0
+
+[node name="Collectable23" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(2220, 360)
+speed = 250.0
+
+[node name="Collectable26" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3084, 360)
+speed = 250.0
+
+[node name="Collectable25" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(2670, 360)
+speed = 250.0
+
+[node name="Collectable" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3216, 584)
+speed = 250.0
+
+[node name="Collectable2" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3216, 136)
+speed = 250.0
+
+[node name="p2" type="Node2D" parent="."]
+position = Vector2(1980, 0)
+
+[node name="Collectable35" parent="p2" instance=ExtResource("1_845dy")]
+position = Vector2(2676, 186)
+speed = 250.0
+
+[node name="Collectable36" parent="p2" instance=ExtResource("1_845dy")]
+position = Vector2(3096, 466)
+speed = 250.0
+
+[node name="Collectable37" parent="p2" instance=ExtResource("1_845dy")]
+position = Vector2(3344, 233)
+speed = 250.0
+
+[node name="Collectable38" parent="p2" instance=ExtResource("1_845dy")]
+position = Vector2(3642, 416)
+speed = 250.0
+
+[node name="Collectable39" parent="p2" instance=ExtResource("1_845dy")]
+position = Vector2(3924, 279)
+speed = 250.0
+
+[node name="Collectable40" parent="p2" instance=ExtResource("1_845dy")]
+position = Vector2(4152, 351)
+speed = 250.0
+
+[node name="Collectable5" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3408, 533)
+speed = 250.0
+
+[node name="Collectable6" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3408, 188)
+speed = 250.0
+
+[node name="Collectable9" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3600, 482)
+speed = 250.0
+
+[node name="Collectable10" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3600, 242)
+speed = 250.0
+
+[node name="Collectable11" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3792, 462)
+speed = 250.0
+
+[node name="Collectable12" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3792, 268)
+speed = 250.0
+
+[node name="Collectable13" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3990, 462)
+speed = 250.0
+
+[node name="Collectable14" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(3984, 268)
+speed = 250.0
+
+[node name="Collectable15" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(4176, 462)
+speed = 250.0
+
+[node name="Collectable16" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(4176, 267)
+speed = 250.0
+
+[node name="Collectable17" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(4343, 487)
+speed = 250.0
+
+[node name="Collectable19" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(6882, 528)
+speed = 200.0
+
+[node name="Collectable22" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(7488, 528)
+speed = 200.0
+
+[node name="Collectable24" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(8094, 528)
+speed = 200.0
+
+[node name="Collectable27" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(8730, 528)
+speed = 200.0
+
+[node name="Collectable28" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(9336, 528)
+speed = 200.0
+
+[node name="Collectable18" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(4356, 243)
+speed = 250.0
+
+[node name="RedStar40" parent="." instance=ExtResource("1_845dy")]
+position = Vector2(9762, 448)
+speed = 200.0
+
+[node name="Collectable209" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(9762, 268)
+speed = 200.0
+
+[node name="RedStar43" parent="." instance=ExtResource("1_845dy")]
+position = Vector2(10352, 448)
+speed = 200.0
+
+[node name="Collectable210" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(10352, 268)
+speed = 200.0
+
+[node name="RedStar46" parent="." instance=ExtResource("1_845dy")]
+position = Vector2(10940, 448)
+speed = 200.0
+
+[node name="Collectable213" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(10940, 268)
+speed = 200.0
+
+[node name="RedStar51" parent="." instance=ExtResource("1_845dy")]
+position = Vector2(11526, 448)
+speed = 200.0
+
+[node name="Collectable215" parent="." instance=ExtResource("2_dswqx")]
+position = Vector2(11526, 268)
+speed = 200.0
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 12210.0
+offset_top = 306.0
+offset_right = 12967.0
+offset_bottom = 414.0
+theme = ExtResource("4_hldbq")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_font_sizes/font_size = 30
+text = "Finished!"
+script = ExtResource("5_fsnos")
+
+[node name="FinishLine" parent="Label8" instance=ExtResource("6_mxx4w")]
+position = Vector2(768.22656, -36.898727)
+
+[node name="RedStar47" parent="." instance=ExtResource("1_845dy")]
+position = Vector2(6882, 181)
+speed = 200.0
+
+[node name="RedStar49" parent="." instance=ExtResource("1_845dy")]
+position = Vector2(7488, 181)
+speed = 200.0
+
+[node name="RedStar50" parent="." instance=ExtResource("1_845dy")]
+position = Vector2(8094, 181)
+speed = 200.0
+
+[node name="RedStar59" parent="." instance=ExtResource("1_845dy")]
+position = Vector2(8730, 181)
+speed = 200.0
+
+[node name="RedStar53" parent="." instance=ExtResource("1_845dy")]
+position = Vector2(9336, 181)
+speed = 200.0

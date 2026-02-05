@@ -1,29 +1,29 @@
 [gd_scene load_steps=6 format=3 uid="uid://1huttcjrnc0v"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_6761a"]
+[ext_resource type="Script" uid="uid://c23nwx3sr4m8" path="res://scripts/level.gd" id="1_6761a"]
 [ext_resource type="PackedScene" uid="uid://bgvfnquovx67t" path="res://scenes/red_star.tscn" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="2_6iamk"]
 [ext_resource type="Theme" uid="uid://b3akcc4smtgv" path="res://assets/bodyTextTheme.tres" id="2_x42e6"]
 [ext_resource type="PackedScene" uid="uid://cy8n4fc7c1qo0" path="res://scenes/finish_line.tscn" id="3_nsrm0"]
 
 [node name="level 1" type="Node2D"]
-editor_description = "=9"
+editor_description = "=10"
 script = ExtResource("1_6761a")
-number_of_orbs = 3
-max_positive = 2
-max_negetive = 2
+number_of_orbs = 1
+max_positive = 6
 metadata/_edit_vertical_guides_ = [712.0]
+metadata/_edit_horizontal_guides_ = [126.0, 588.0, 360.0]
 
 [node name="Collectable" parent="." instance=ExtResource("1_ksju7")]
 position = Vector2(2160, 192)
 speed = 110.0
 
 [node name="Collectable2" parent="." instance=ExtResource("1_ksju7")]
-position = Vector2(2888, 480)
+position = Vector2(2694, 522)
 speed = 110.0
 
 [node name="Collectable3" parent="." instance=ExtResource("1_ksju7")]
-position = Vector2(3456, 192)
+position = Vector2(3360, 234)
 speed = 110.0
 
 [node name="Collectable4" parent="." instance=ExtResource("1_ksju7")]
@@ -35,26 +35,30 @@ position = Vector2(4864, 192)
 speed = 110.0
 
 [node name="Collectable6" parent="." instance=ExtResource("1_ksju7")]
-position = Vector2(5056, 384)
+position = Vector2(5058, 362)
 speed = 110.0
 
 [node name="Collectable7" parent="." instance=ExtResource("1_ksju7")]
-position = Vector2(5248, 576)
+position = Vector2(5256, 522)
 speed = 110.0
 
 [node name="Collectable8" parent="." instance=ExtResource("1_ksju7")]
-position = Vector2(6144, 576)
+position = Vector2(6152, 522)
+speed = 110.0
+
+[node name="Collectable11" parent="." instance=ExtResource("1_ksju7")]
+position = Vector2(7044, 359)
 speed = 110.0
 
 [node name="Collectable10" parent="." instance=ExtResource("1_ksju7")]
-position = Vector2(6336, 376)
+position = Vector2(6338, 359)
 speed = 110.0
 
 [node name="Label" type="Label" parent="."]
-offset_left = 696.0
-offset_top = 104.0
-offset_right = 1155.0
-offset_bottom = 212.0
+offset_left = 654.0
+offset_top = 66.0
+offset_right = 1176.0
+offset_bottom = 227.0
 theme = ExtResource("2_x42e6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
@@ -64,10 +68,10 @@ script = ExtResource("2_6iamk")
 speed = 110.0
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 1800.0
-offset_top = 512.0
-offset_right = 2345.0
-offset_bottom = 620.0
+offset_left = 1818.0
+offset_top = 564.0
+offset_right = 2395.0
+offset_bottom = 672.0
 theme = ExtResource("2_x42e6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
@@ -76,10 +80,10 @@ script = ExtResource("2_6iamk")
 speed = 110.0
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 7664.0
-offset_top = 328.0
-offset_right = 8123.0
-offset_bottom = 436.0
+offset_left = 7680.0
+offset_top = 306.0
+offset_right = 8139.0
+offset_bottom = 414.0
 theme = ExtResource("2_x42e6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
@@ -88,4 +92,4 @@ script = ExtResource("2_6iamk")
 speed = 110.0
 
 [node name="FinishLine" parent="Label3" instance=ExtResource("3_nsrm0")]
-position = Vector2(911.7549, 80.986084)
+position = Vector2(474, 56)

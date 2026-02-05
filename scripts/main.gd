@@ -32,8 +32,6 @@ var negetive_score: int = 0
 var x_pos = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	
 	randomize()
 	if random:
 		match gamemode:
@@ -80,6 +78,10 @@ func _physics_process(delta: float) -> void:
 					#camera_2d.add_trauma(0.3)
 				#collectable.queue_free()
 				pass
+	#if camera_2d.zoom > Vector2(1,1):
+		#camera_2d.zoom -= Vector2(0.0005,0.0005)
+	#elif camera_2d.zoom > Vector2(0.7,0.7):
+		#camera_2d.zoom -= Vector2(0.0001,0.0001)
 
 
 

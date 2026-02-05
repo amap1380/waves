@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bytsjkgf1g428"]
+[gd_scene load_steps=4 format=3 uid="uid://bytsjkgf1g428"]
 
-[ext_resource type="Texture2D" uid="uid://mm822xr5occd" path="res://assets/fill_circle.png" id="1_qipec"]
-[ext_resource type="Texture2D" uid="uid://dfybn0q0102e3" path="res://assets/black_circle.png" id="2_xxjge"]
+[ext_resource type="Texture2D" uid="uid://c2he28o7yayjg" path="res://assets/ui/HUD/Globe Erade.png" id="2_r8qrb"]
 [ext_resource type="Texture2D" uid="uid://d3krrqx08e6ff" path="res://assets/white_circle.png" id="3_r8qrb"]
 [ext_resource type="Script" path="res://scripts/orbs_ui.gd" id="4_xxjge"]
 
@@ -10,10 +9,10 @@ texture_filter = 1
 offset_top = 23.0
 offset_right = 64.0
 offset_bottom = 87.0
-texture_under = ExtResource("1_qipec")
-texture_over = ExtResource("2_xxjge")
+scale = Vector2(0.6, 0.6)
+texture_over = ExtResource("2_r8qrb")
 texture_progress = ExtResource("3_r8qrb")
-tint_progress = Color(0, 1, 0, 1)
+tint_progress = Color(0.28235295, 0.43529412, 0.36078432, 1)
 script = ExtResource("4_xxjge")
 
 [node name="NegetiveBar" type="TextureProgressBar" parent="."]
@@ -21,6 +20,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 fill_mode = 1
-texture_over = ExtResource("2_xxjge")
+texture_over = ExtResource("2_r8qrb")
 texture_progress = ExtResource("3_r8qrb")
-tint_progress = Color(1, 0, 0, 1)
+tint_progress = Color(0.8117647, 0.44705883, 0.3137255, 1)

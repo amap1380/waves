@@ -4,14 +4,16 @@
 [ext_resource type="Script" uid="uid://cotyam0qdodi" path="res://scripts/level_button.gd" id="2_o8246"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8246"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.44705883, 0.3882353, 0.3137255, 0.4)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_bottom_right = 16
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrusj"]
 bg_color = Color(0.28707156, 0.2400937, 0.1931151, 0.8)
@@ -25,23 +27,25 @@ corner_radius_bottom_right = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6g3el"]
 bg_color = Color(0.44672376, 0.38857287, 0.3133042, 0.8)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.73333335, 0.8862745, 0.8156863, 1)
 corner_radius_top_left = 16
-corner_radius_bottom_right = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o8246"]
 
 [node name="LevelButton" type="Button"]
-custom_minimum_size = Vector2(128, 128)
-offset_right = 107.0
-offset_bottom = 102.0
+custom_minimum_size = Vector2(700, 48)
+offset_right = 700.0
+offset_bottom = 51.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_i0sit")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_o8246")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hrusj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6g3el")

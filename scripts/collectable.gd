@@ -26,7 +26,6 @@ func _physics_process(delta: float) -> void:
 	self.global_position.x -= speed * delta
 
 
-	
 func check_collision_with_wave(arr: PackedVector2Array, offset: Vector2):
 	for i in arr.size() - 1:
 		if Geometry2D.segment_intersects_circle(arr[i], arr[i+1], 
@@ -44,19 +43,19 @@ func _despawn():
 	self.collision_shape_2d.set_deferred("disabled", true)
 	if tween:
 		tween.kill()
+	$AnimationPlayer.play("fade out")
 	tween = get_tree().create_tween()
-	tween.tween_property(self.sprite_2d,"scale", Vector2.ZERO, 0.4)
-	tween.tween_property(self.eye,"scale", Vector2.ZERO, 0.4)
-	tween.parallel().tween_property(self,"modulate", Color(0.0, 0.0, 0.0, 0.0), 0.4)
+	#tween.tween_property(self.sprite_2d,"scale", Vector2.ZERO, 0.4)
+	#tween.tween_property(self.eye,"scale", Vector2.ZERO, 0.4)
+	#tween.parallel().tween_property(self,"modulate", Color(0.0, 0.0, 0.0, 0.0), 0.4)
 	tween.parallel().tween_property(self.collision_shape_2d.shape,"radius", 0, 0.4)
 	tween.parallel().tween_property(self.point_light_2d,"texture_scale", 0, 0.4)
 	tween.tween_callback(self.queue_free)
-	$AnimationPlayer.play("Collection")
+	
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	point_light_2d.editor_only = false
-
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	SignalBus.collectable_crossed.emit(self)

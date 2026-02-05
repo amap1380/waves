@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ds4uqhd57sy3l" path="res://scenes/collectable.tscn" id="1_dxred"]
 [ext_resource type="Script" uid="uid://dy21us18jfg2i" path="res://scripts/red_star.gd" id="2_330hb"]
-[ext_resource type="Texture2D" uid="uid://8ln2ol7ul6gs" path="res://assets/StarRed.png" id="2_u80y4"]
+[ext_resource type="Texture2D" uid="uid://bbn1o0xc4vit3" path="res://assets/StarGreen.png" id="3_u80y4"]
 
 [node name="RedStar" instance=ExtResource("1_dxred")]
 script = ExtResource("2_330hb")
@@ -10,7 +10,7 @@ speed = 100.0
 score = 1
 
 [node name="PointLight2D" parent="." index="2"]
-color = Color(1, 0, 0, 1)
+color = Color(0.28235295, 0.43529412, 0.36078432, 1)
 
 [node name="Sprite2D" parent="." index="3"]
-texture = ExtResource("2_u80y4")
+texture = ExtResource("3_u80y4")

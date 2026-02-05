@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bgvfnquovx67t" path="res://scenes/red_star.tscn" id="1_5vn0v"]
 [ext_resource type="PackedScene" uid="uid://kg2q7m6ecsjj" path="res://scenes/green_star.tscn" id="1_06474"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_ts8eg"]
+[ext_resource type="Script" uid="uid://c23nwx3sr4m8" path="res://scripts/level.gd" id="1_ts8eg"]
 [ext_resource type="Theme" uid="uid://b3akcc4smtgv" path="res://assets/bodyTextTheme.tres" id="2_ogj6a"]
 [ext_resource type="Script" uid="uid://lpeicerbwwuf" path="res://scenes/levels/label.gd" id="3_anwe6"]
 [ext_resource type="PackedScene" uid="uid://cy8n4fc7c1qo0" path="res://scenes/finish_line.tscn" id="4_ogj6a"]
@@ -13,8 +13,8 @@ editor_description = "Collectable Distribution:
 13+5+13+3+3+2+(6+6+6+6+6)+10+20(5red)=93"
 position = Vector2(0, -1)
 script = ExtResource("1_ts8eg")
-number_of_orbs = 5
-max_positive = 40
+number_of_orbs = 4
+max_positive = 74
 max_negetive = 40
 metadata/_edit_horizontal_guides_ = [-3122.0, 360.0, 126.0, 588.0]
 
@@ -512,196 +512,223 @@ speed = 165.0
 [node name="FinishLine" parent="Label3" instance=ExtResource("4_ogj6a")]
 position = Vector2(346.64063, -1.8911743)
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="RedStar" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(1512, 168)
-speed = 170.0
-
-[node name="RedStar47" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(24546, 180)
-speed = 200.0
-
-[node name="RedStar48" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(24858, 534)
-speed = 200.0
-
-[node name="RedStar49" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(25152, 180)
-speed = 200.0
-
-[node name="RedStar50" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(25758, 180)
-speed = 200.0
-
-[node name="RedStar51" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(26070, 534)
-speed = 200.0
-
-[node name="RedStar56" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(26394, 180)
-speed = 200.0
-
-[node name="RedStar57" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(26706, 534)
-speed = 200.0
-
-[node name="RedStar58" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(25464, 534)
-speed = 200.0
-
-[node name="RedStar53" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(27000, 180)
-speed = 200.0
-
-[node name="RedStar54" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(27318, 534)
-speed = 200.0
-
-[node name="RedStar55" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(27642, 174)
-speed = 200.0
-
-[node name="RedStar2" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(1638, 270)
-speed = 170.0
-
-[node name="RedStar3" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(1776, 420)
-speed = 170.0
-
-[node name="RedStar4" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(1914, 558)
-speed = 170.0
-
-[node name="RedStar5" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(2004, 582)
-speed = 170.0
-
-[node name="RedStar6" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(2076, 522)
-speed = 170.0
-
-[node name="RedStar7" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(2232, 360)
-speed = 170.0
-
-[node name="RedStar8" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(2388, 204)
-speed = 170.0
-
-[node name="RedStar9" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(2484, 174)
-speed = 170.0
-
-[node name="RedStar10" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(2562, 228)
-speed = 170.0
-
-[node name="RedStar11" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(2634, 366)
-speed = 170.0
-
-[node name="RedStar12" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(2712, 504)
-speed = 170.0
-
-[node name="RedStar13" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(2808, 570)
-speed = 170.0
-
-[node name="RedStar14" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(3540, 168)
-speed = 170.0
-
-[node name="RedStar15" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(3666, 270)
-speed = 170.0
-
-[node name="RedStar16" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(3804, 420)
-speed = 170.0
-
-[node name="RedStar17" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(3942, 558)
-speed = 170.0
-
-[node name="RedStar18" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(4032, 582)
-speed = 170.0
-
-[node name="RedStar19" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(4104, 522)
-speed = 170.0
-
-[node name="RedStar20" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(4260, 360)
-speed = 170.0
-
-[node name="RedStar21" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(4416, 204)
-speed = 170.0
-
-[node name="RedStar22" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(4512, 174)
-speed = 170.0
-
-[node name="RedStar23" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(4590, 228)
-speed = 170.0
-
-[node name="RedStar24" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(4662, 366)
-speed = 170.0
-
-[node name="RedStar25" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(4740, 504)
-speed = 170.0
-
-[node name="RedStar26" parent="Node2D" instance=ExtResource("1_5vn0v")]
-position = Vector2(4836, 570)
-speed = 170.0
-
-[node name="OrangeStar" parent="Node2D" instance=ExtResource("7_um320")]
-position = Vector2(3192, 360)
-speed = 170.0
-
-[node name="OrangeStar2" parent="Node2D" instance=ExtResource("7_um320")]
-position = Vector2(3192, 234)
-speed = 170.0
-
-[node name="OrangeStar3" parent="Node2D" instance=ExtResource("7_um320")]
-position = Vector2(3192, 108)
-speed = 170.0
-
-[node name="OrangeStar4" parent="Node2D" instance=ExtResource("7_um320")]
-position = Vector2(3192, 486)
-speed = 170.0
-
-[node name="OrangeStar6" parent="Node2D" instance=ExtResource("7_um320")]
-position = Vector2(5112, 360)
-speed = 170.0
-
-[node name="OrangeStar7" parent="Node2D" instance=ExtResource("7_um320")]
-position = Vector2(5112, 234)
-speed = 170.0
-
-[node name="OrangeStar8" parent="Node2D" instance=ExtResource("7_um320")]
-position = Vector2(5112, 486)
-speed = 170.0
-
-[node name="OrangeStar9" parent="Node2D" instance=ExtResource("7_um320")]
+[node name="OrangeStar9" parent="." instance=ExtResource("7_um320")]
 position = Vector2(7086, 360)
 speed = 200.0
 
-[node name="OrangeStar10" parent="Node2D" instance=ExtResource("7_um320")]
+[node name="OrangeStar10" parent="." instance=ExtResource("7_um320")]
 position = Vector2(7086, 234)
 speed = 200.0
 
-[node name="OrangeStar11" parent="Node2D" instance=ExtResource("7_um320")]
+[node name="OrangeStar11" parent="." instance=ExtResource("7_um320")]
 position = Vector2(7086, 486)
 speed = 200.0
 
-[node name="OrangeStar5" parent="Node2D" instance=ExtResource("7_um320")]
-position = Vector2(3192, 618)
+[node name="p1" type="Node2D" parent="."]
+position = Vector2(0, -257)
+
+[node name="RedStar" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(1512, 427)
 speed = 170.0
+
+[node name="RedStar2" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(1638, 529)
+speed = 170.0
+
+[node name="RedStar3" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(1776, 679)
+speed = 170.0
+
+[node name="RedStar4" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(1914, 817)
+speed = 170.0
+
+[node name="RedStar5" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(2004, 841)
+speed = 170.0
+
+[node name="RedStar6" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(2076, 781)
+speed = 170.0
+
+[node name="RedStar7" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(2232, 619)
+speed = 170.0
+
+[node name="RedStar8" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(2388, 463)
+speed = 170.0
+
+[node name="RedStar9" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(2484, 433)
+speed = 170.0
+
+[node name="RedStar10" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(2562, 487)
+speed = 170.0
+
+[node name="RedStar11" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(2634, 625)
+speed = 170.0
+
+[node name="RedStar12" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(2712, 763)
+speed = 170.0
+
+[node name="RedStar13" parent="p1" instance=ExtResource("1_5vn0v")]
+position = Vector2(2808, 829)
+speed = 170.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="p1"]
+position = Vector2(0, 355)
+
+[node name="p2" type="Node2D" parent="."]
+position = Vector2(0, -257)
+
+[node name="OrangeStar" parent="p2" instance=ExtResource("7_um320")]
+position = Vector2(3192, 619)
+speed = 170.0
+
+[node name="OrangeStar2" parent="p2" instance=ExtResource("7_um320")]
+position = Vector2(3192, 493)
+speed = 170.0
+
+[node name="OrangeStar3" parent="p2" instance=ExtResource("7_um320")]
+position = Vector2(3192, 367)
+speed = 170.0
+
+[node name="OrangeStar4" parent="p2" instance=ExtResource("7_um320")]
+position = Vector2(3192, 745)
+speed = 170.0
+
+[node name="OrangeStar5" parent="p2" instance=ExtResource("7_um320")]
+position = Vector2(3192, 877)
+speed = 170.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="p2"]
+position = Vector2(0, 710)
+
+[node name="p4" type="Node2D" parent="."]
+position = Vector2(0, -257)
+
+[node name="OrangeStar6" parent="p4" instance=ExtResource("7_um320")]
+position = Vector2(5112, 619)
+speed = 170.0
+
+[node name="OrangeStar7" parent="p4" instance=ExtResource("7_um320")]
+position = Vector2(5112, 493)
+speed = 170.0
+
+[node name="OrangeStar8" parent="p4" instance=ExtResource("7_um320")]
+position = Vector2(5112, 745)
+speed = 170.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="p4"]
+position = Vector2(0, 1420)
+
+[node name="p3" type="Node2D" parent="."]
+position = Vector2(0, -257)
+
+[node name="RedStar14" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(3540, 427)
+speed = 170.0
+
+[node name="RedStar15" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(3666, 529)
+speed = 170.0
+
+[node name="RedStar16" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(3804, 679)
+speed = 170.0
+
+[node name="RedStar17" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(3942, 817)
+speed = 170.0
+
+[node name="RedStar18" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(4032, 841)
+speed = 170.0
+
+[node name="RedStar19" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(4104, 781)
+speed = 170.0
+
+[node name="RedStar20" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(4260, 619)
+speed = 170.0
+
+[node name="RedStar21" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(4416, 463)
+speed = 170.0
+
+[node name="RedStar22" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(4512, 433)
+speed = 170.0
+
+[node name="RedStar23" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(4590, 487)
+speed = 170.0
+
+[node name="RedStar24" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(4662, 625)
+speed = 170.0
+
+[node name="RedStar25" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(4740, 763)
+speed = 170.0
+
+[node name="RedStar26" parent="p3" instance=ExtResource("1_5vn0v")]
+position = Vector2(4836, 829)
+speed = 170.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="p3"]
+position = Vector2(0, 2130)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="RedStar47" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(24546, 181)
+speed = 200.0
+
+[node name="RedStar48" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(24858, 535)
+speed = 200.0
+
+[node name="RedStar49" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(25152, 181)
+speed = 200.0
+
+[node name="RedStar50" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(25758, 181)
+speed = 200.0
+
+[node name="RedStar51" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(26070, 535)
+speed = 200.0
+
+[node name="RedStar59" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(26394, 181)
+speed = 200.0
+
+[node name="RedStar88" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(26706, 535)
+speed = 200.0
+
+[node name="RedStar89" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(25464, 535)
+speed = 200.0
+
+[node name="RedStar53" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(27000, 181)
+speed = 200.0
+
+[node name="RedStar54" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(27318, 535)
+speed = 200.0
+
+[node name="RedStar55" parent="Node2D" instance=ExtResource("1_5vn0v")]
+position = Vector2(27642, 175)
+speed = 200.0
+
+[connection signal="screen_entered" from="p1/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_entered" from="p2/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
