@@ -11,11 +11,11 @@ var current_line: int = 0
 func _ready() -> void:
 	#loads the current level dialogue from dialogues folder
 	if not ResourceLoader.exists("res://resources/dialogues/%d.tres" % LevelManager.current_level):
-		SceneManager.change_scene(self,"res://scenes/main.tscn")
+		SceneManager.change_scene(self,"res://scenes/main.tscn", false)
 		return
 	dialogue = ResourceLoader.load("res://resources/dialogues/%d.tres" % LevelManager.current_level)
 	if dialogue.dialogue_lines.is_empty():
-		SceneManager.change_scene(self, "res://scenes/main.tscn")
+		SceneManager.change_scene(self, "res://scenes/main.tscn", false)
 		return
 	#sets the label text and hides it
 	label.text = dialogue.dialogue_lines[current_line]

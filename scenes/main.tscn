@@ -63,9 +63,9 @@ stamina_drain_rate = 15.0
 stamina_regen_rate = 5.0
 stamina_threshold = 3.0
 
-[node name="Head" parent="." node_paths=PackedStringArray("sine_wave") instance=ExtResource("3_jyhfs")]
-position = Vector2(264, 166)
-sine_wave = NodePath("../SineWave")
+[node name="Head" parent="SineWave" node_paths=PackedStringArray("sine_wave") instance=ExtResource("3_jyhfs")]
+position = Vector2(264, -194)
+sine_wave = NodePath("..")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -212,6 +212,5 @@ grow_vertical = 2
 [node name="DayNightCycleShader" parent="." instance=ExtResource("26_2wyq8")]
 visible = false
 
-[connection signal="devoured" from="SineWave/Head" to="." method="_on_head_devoured"]
 [connection signal="pressed" from="HUD/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

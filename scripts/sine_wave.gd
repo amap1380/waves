@@ -38,18 +38,8 @@ var arr = PackedVector2Array()
 
 var color: Color
 
-func _ready() -> void:
-	update_array()
-	queue_redraw()
-
-
 var transition_flag = true
 
-
-var ratio = 0.1
-var arr = PackedVector2Array()
-var color: Color
-var energy_level := 0
 
 # --- STAMINA SYSTEM ---
 @export_group("Stamina")
