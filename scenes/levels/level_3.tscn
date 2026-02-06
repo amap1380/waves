@@ -7,7 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cy8n4fc7c1qo0" path="res://scenes/finish_line.tscn" id="3_0ljxa"]
 
 [node name="Level3" type="Node2D"]
+editor_description = "orbs: 10+8+4+8+6+12+10+6+12+8+10=94"
 script = ExtResource("1_fmg3e")
+number_of_orbs = 3
+max_negetive = 23
+metadata/_edit_horizontal_guides_ = [126.0, 588.0, 360.0]
 
 [node name="Collectable20" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(4224, 360)
@@ -49,87 +53,11 @@ speed = 250.0
 position = Vector2(25267.887, 456)
 speed = 250.0
 
-[node name="Collectable" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(1344, 584)
-speed = 250.0
-
-[node name="Collectable19" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(1344, 584)
-speed = 250.0
-
-[node name="Collectable2" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(1344, 136)
-speed = 250.0
-
-[node name="Collectable3" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(1536, 584)
-speed = 250.0
-
-[node name="Collectable4" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(1536, 136)
-speed = 250.0
-
-[node name="Collectable5" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(1728, 584)
-speed = 250.0
-
-[node name="Collectable6" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(1728, 136)
-speed = 250.0
-
-[node name="Collectable7" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(1920, 584)
-speed = 250.0
-
-[node name="Collectable8" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(1920, 136)
-speed = 250.0
-
-[node name="Collectable9" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(2112, 584)
-speed = 250.0
-
-[node name="Collectable10" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(2112, 136)
-speed = 250.0
-
-[node name="Collectable11" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(2304, 520)
-speed = 250.0
-
-[node name="Collectable12" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(2304, 200)
-speed = 250.0
-
-[node name="Collectable13" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(2496, 520)
-speed = 250.0
-
-[node name="Collectable14" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(2496, 200)
-speed = 250.0
-
-[node name="Collectable15" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(2688, 520)
-speed = 250.0
-
-[node name="Collectable16" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(2688, 200)
-speed = 250.0
-
-[node name="Collectable17" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(2872, 520)
-speed = 250.0
-
-[node name="Collectable18" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(2872, 200)
-speed = 250.0
-
 [node name="Label2" type="Label" parent="."]
-offset_left = 352.0
-offset_top = 88.0
-offset_right = 897.0
-offset_bottom = 196.0
+offset_left = 456.0
+offset_top = 72.0
+offset_right = 1065.0
+offset_bottom = 180.0
 size_flags_horizontal = 4
 theme = ExtResource("2_0qepi")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -144,7 +72,7 @@ position = Vector2(8935.882, 280)
 speed = 200.0
 
 [node name="Collectable35" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(9535.882, 272)
+position = Vector2(9540, 276)
 speed = 200.0
 
 [node name="Collectable36" parent="." instance=ExtResource("1_o8c3j")]
@@ -161,14 +89,17 @@ speed = 200.0
 
 [node name="Collectable42" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(12192.76, 152)
+rotation = -0.45648843
 speed = 200.0
 
 [node name="Collectable43" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(12792.76, 144)
+rotation = -0.45648843
 speed = 200.0
 
 [node name="Collectable44" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(13432.76, 152)
+rotation = -0.45648843
 speed = 200.0
 
 [node name="Collectable39" parent="." instance=ExtResource("1_o8c3j")]
@@ -177,14 +108,17 @@ speed = 200.0
 
 [node name="Collectable45" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(12480.76, 568)
+rotation = -0.45648843
 speed = 200.0
 
 [node name="Collectable46" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(13112.76, 568)
+rotation = -0.45648843
 speed = 200.0
 
 [node name="Collectable47" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(13720.76, 568)
+rotation = -0.45648843
 speed = 200.0
 
 [node name="Collectable40" parent="." instance=ExtResource("1_o8c3j")]
@@ -212,17 +146,87 @@ position = Vector2(13432.76, 280)
 rotation = -0.38283682
 speed = 200.0
 
+[node name="CanvasGroup" type="Node2D" parent="."]
+
+[node name="Collectable" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(1344, 584)
+speed = 250.0
+
+[node name="Collectable2" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(1344, 136)
+speed = 250.0
+
+[node name="Collectable3" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(1536, 584)
+speed = 250.0
+
+[node name="Collectable4" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(1536, 136)
+speed = 250.0
+
+[node name="Collectable5" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(1728, 584)
+speed = 250.0
+
+[node name="Collectable6" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(1728, 136)
+speed = 250.0
+
+[node name="Collectable7" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(1920, 584)
+speed = 250.0
+
+[node name="Collectable8" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(1920, 136)
+speed = 250.0
+
+[node name="Collectable9" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(2112, 584)
+speed = 250.0
+
+[node name="Collectable10" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(2112, 136)
+speed = 250.0
+
+[node name="Collectable11" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(2304, 522)
+speed = 250.0
+
+[node name="Collectable12" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(2304, 200)
+speed = 250.0
+
+[node name="Collectable13" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(2496, 522)
+speed = 250.0
+
+[node name="Collectable14" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(2496, 200)
+speed = 250.0
+
+[node name="Collectable15" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(2688, 522)
+speed = 250.0
+
+[node name="Collectable16" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(2688, 200)
+speed = 250.0
+
+[node name="Collectable17" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(2872, 516)
+speed = 250.0
+
+[node name="Collectable18" parent="CanvasGroup" instance=ExtResource("1_o8c3j")]
+position = Vector2(2872, 200)
+speed = 250.0
+
 [node name="Collectable51" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(13720.76, 440)
 rotation = -0.38283682
 speed = 200.0
 
 [node name="Collectable24" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(22341.682, 408)
-speed = 275.0
-
-[node name="Collectable26" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(22341.682, 584)
+position = Vector2(22338, 438)
 speed = 275.0
 
 [node name="Collectable33" parent="." instance=ExtResource("1_o8c3j")]
@@ -230,7 +234,7 @@ position = Vector2(22789.682, 280)
 speed = 275.0
 
 [node name="Collectable52" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(23237.682, 424)
+position = Vector2(23234, 438)
 speed = 275.0
 
 [node name="Collectable53" parent="." instance=ExtResource("1_o8c3j")]
@@ -238,7 +242,7 @@ position = Vector2(23685.682, 280)
 speed = 275.0
 
 [node name="Collectable54" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(24133.682, 416)
+position = Vector2(24130, 438)
 speed = 275.0
 
 [node name="Collectable55" parent="." instance=ExtResource("1_o8c3j")]
@@ -246,11 +250,11 @@ position = Vector2(24581.682, 280)
 speed = 275.0
 
 [node name="Collectable56" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(24997.682, 424)
+position = Vector2(24994, 438)
 speed = 275.0
 
 [node name="Collectable22" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(21461.68, 424)
+position = Vector2(21462, 438)
 speed = 275.0
 
 [node name="Collectable57" parent="." instance=ExtResource("1_o8c3j")]
@@ -267,10 +271,6 @@ speed = 300.0
 
 [node name="Collectable60" parent="." instance=ExtResource("1_o8c3j")]
 position = Vector2(34974.93, 288)
-speed = 300.0
-
-[node name="Collectable61" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(34974.93, 112)
 speed = 300.0
 
 [node name="Collectable62" parent="." instance=ExtResource("1_o8c3j")]
@@ -306,7 +306,7 @@ position = Vector2(39550.93, 288)
 speed = 300.0
 
 [node name="Collectable70" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(8364.534, 512)
+position = Vector2(8364, 522)
 speed = 275.0
 
 [node name="Collectable71" parent="." instance=ExtResource("1_o8c3j")]
@@ -314,7 +314,7 @@ position = Vector2(8364.534, 192)
 speed = 275.0
 
 [node name="Collectable72" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(8556.534, 512)
+position = Vector2(8556, 522)
 speed = 275.0
 
 [node name="Collectable73" parent="." instance=ExtResource("1_o8c3j")]
@@ -322,7 +322,7 @@ position = Vector2(8556.534, 192)
 speed = 275.0
 
 [node name="Collectable74" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(8748.534, 512)
+position = Vector2(8748, 522)
 speed = 275.0
 
 [node name="Collectable75" parent="." instance=ExtResource("1_o8c3j")]
@@ -330,7 +330,7 @@ position = Vector2(8748.534, 192)
 speed = 275.0
 
 [node name="Collectable76" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(8932.534, 512)
+position = Vector2(8932, 522)
 speed = 275.0
 
 [node name="Collectable77" parent="." instance=ExtResource("1_o8c3j")]
@@ -338,86 +338,86 @@ position = Vector2(8932.534, 192)
 speed = 275.0
 
 [node name="Collectable78" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40722.695, 592)
+position = Vector2(39375.305, 576)
 speed = 250.0
 
 [node name="Collectable79" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40722.695, 592)
+position = Vector2(39375.305, 576)
 speed = 250.0
 
 [node name="Collectable80" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40722.695, 144)
+position = Vector2(39376, 144)
 speed = 250.0
 
 [node name="Collectable81" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40914.695, 592)
+position = Vector2(39567.305, 576)
 speed = 250.0
 
 [node name="Collectable82" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40914.695, 144)
+position = Vector2(39568, 144)
 speed = 250.0
 
 [node name="Collectable83" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(41106.695, 592)
+position = Vector2(39759.305, 576)
 speed = 250.0
 
 [node name="Collectable84" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(41106.695, 144)
+position = Vector2(39760, 144)
 speed = 250.0
 
 [node name="Collectable85" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(41298.695, 592)
+position = Vector2(39951.305, 576)
 speed = 250.0
 
 [node name="Collectable86" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(41298.695, 144)
+position = Vector2(39952, 144)
 speed = 250.0
 
 [node name="Collectable87" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(41490.695, 592)
+position = Vector2(40143.305, 576)
 speed = 250.0
 
 [node name="Collectable88" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(41490.695, 144)
+position = Vector2(40144, 144)
 speed = 250.0
 
 [node name="Collectable89" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(39962.695, 528)
+position = Vector2(38616, 510)
 speed = 250.0
 
 [node name="Collectable90" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(39962.695, 208)
+position = Vector2(38616, 208)
 speed = 250.0
 
 [node name="Collectable91" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40154.695, 528)
+position = Vector2(38808, 510)
 speed = 250.0
 
 [node name="Collectable92" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40154.695, 208)
+position = Vector2(38808, 208)
 speed = 250.0
 
 [node name="Collectable93" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40346.695, 528)
+position = Vector2(39000, 510)
 speed = 250.0
 
 [node name="Collectable94" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40346.695, 208)
+position = Vector2(39000, 208)
 speed = 250.0
 
 [node name="Collectable95" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40530.695, 528)
+position = Vector2(39184, 510)
 speed = 250.0
 
 [node name="Collectable96" parent="." instance=ExtResource("1_o8c3j")]
-position = Vector2(40530.695, 208)
+position = Vector2(39184, 208)
 speed = 250.0
 
 [node name="Label8" type="Label" parent="."]
-offset_left = 42001.293
-offset_top = 208.0
-offset_right = 42758.293
-offset_bottom = 316.0
+offset_left = 40809.305
+offset_top = 306.0
+offset_right = 41566.305
+offset_bottom = 414.0
 theme = ExtResource("2_0qepi")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -456,10 +456,10 @@ script = ExtResource("2_44gv1")
 speed = 300.0
 
 [node name="Label5" type="Label" parent="."]
-offset_left = 19963.035
-offset_top = 208.0
-offset_right = 20720.035
-offset_bottom = 316.0
+offset_left = 19962.0
+offset_top = 66.0
+offset_right = 20719.0
+offset_bottom = 174.0
 theme = ExtResource("2_0qepi")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -469,10 +469,10 @@ script = ExtResource("2_44gv1")
 speed = 275.0
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 11456.368
-offset_top = 136.0
-offset_right = 12213.368
-offset_bottom = 244.0
+offset_left = 11412.0
+offset_top = 72.0
+offset_right = 12169.0
+offset_bottom = 180.0
 theme = ExtResource("2_0qepi")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 1
@@ -481,10 +481,10 @@ text = "try one more time."
 script = ExtResource("2_44gv1")
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 7928.095
-offset_top = 136.0
-offset_right = 8685.096
-offset_bottom = 244.0
+offset_left = 7926.0
+offset_top = 66.0
+offset_right = 8778.0
+offset_bottom = 174.0
 theme = ExtResource("2_0qepi")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 1

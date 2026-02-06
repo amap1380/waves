@@ -5,16 +5,19 @@
 [ext_resource type="Script" uid="uid://d0efdswdwo7hr" path="res://scripts/orange_star.gd" id="2_dm88n"]
 
 [node name="OrangeStar" instance=ExtResource("1_lbdjt")]
+rotation = 1.5779411
 script = ExtResource("2_dm88n")
 speed = 100.0
 score = -1
 
 [node name="PointLight2D" parent="." index="2"]
+visible = false
 scale = Vector2(2.5, 2.5)
 color = Color(0.67739093, 0.23468158, 2.8878452e-07, 1)
 texture_scale = 1.0
 
 [node name="Sprite2D" parent="." index="3"]
+modulate = Color(1, 1, 1, 0.3137255)
 texture = ExtResource("2_0wj73")
 
 [node name="DespawnTimer" type="Timer" parent="." index="6"]

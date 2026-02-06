@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6l0swft1ol14"
-path="res://.godot/imported/paper texture.png-f16083a7d83ace416a73a13924aebb17.ctex"
+uid="uid://c2he28o7yayjg"
+path="res://.godot/imported/Globe Erade.png-9131b0caca764b211be978baa91a9012.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bg/paper texture.png"
-dest_files=["res://.godot/imported/paper texture.png-f16083a7d83ace416a73a13924aebb17.ctex"]
+source_file="res://assets/ui/HUD/Globe Erade.png"
+dest_files=["res://.godot/imported/Globe Erade.png-9131b0caca764b211be978baa91a9012.ctex"]
 
 [params]
 

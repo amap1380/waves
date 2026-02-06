@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://b87ucga7qn2dq" path="res://assets/Sound/Rec 0006.mp3" id="3_sufax"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kitf"]
-bg_color = Color(0.15170373, 0.15170373, 0.15170373, 1)
+bg_color = Color(0.15625, 0.14801025, 0.13977051, 1)
 
 [node name="DialogueScreen" type="PanelContainer"]
 anchors_preset = 15
