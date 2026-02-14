@@ -17,8 +17,9 @@ func _ready() -> void:
 	head_sprite.material = desat_material
 
 func _process(_delta: float) -> void:
-	_update_color_modulation()
-	print("stamina:", sine_wave.stamina)
+	#_update_color_modulation()
+	#print("stamina:", sine_wave.stamina)
+	pass
 
 
 

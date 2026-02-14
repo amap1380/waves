@@ -11,11 +11,10 @@
 [node name="Level4" type="Node2D"]
 editor_description = "Collectable Distribution:
 13+5+13+3+3+2+(6+6+6+6+6)+10+20(5red)=93"
-position = Vector2(0, -1)
 script = ExtResource("1_ts8eg")
 number_of_orbs = 4
-max_positive = 74
-max_negetive = 40
+max_positive = 14
+max_negetive = 1
 metadata/_edit_horizontal_guides_ = [-3122.0, 360.0, 126.0, 588.0]
 
 [node name="RedStar27" parent="." instance=ExtResource("1_5vn0v")]

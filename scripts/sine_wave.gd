@@ -67,7 +67,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	_update_stamina(delta)
+	#_update_stamina(delta)
 
 	# --- Base wave logic (always runs) ---
 	if transition_flag:
@@ -96,6 +96,8 @@ func _physics_process(delta: float) -> void:
 	head.global_position =  arr[-2] + global_position
 	head.look_at(arr[-1] + global_position)
 	queue_redraw()
+	#_update_color_modulation() # <--- NEW visual call
+
 
 var target: Vector2
 var elapsed_time = 0
@@ -120,20 +122,22 @@ func _draw() -> void:
 
 func ascend():
 	transition_flag = false
-	head.collision_shape_2d.disabled = true
+	can_input = false
+	head.collision_shape_2d.set_deferred("disabled", true)
 	target = Vector2(-1,-1)
 
 func descend():
 	transition_flag = false
-	head.collision_shape_2d.disabled = true
+	can_input = false
+	head.collision_shape_2d.set_deferred("disabled", true)
 	target = Vector2(-1,1)
 
 func stay():
 	transition_flag = false
-	head.collision_shape_2d.disabled = true
+	can_input = false
+	head.collision_shape_2d.set_deferred("disabled", true)
 	target = Vector2.RIGHT
-	_update_color_modulation() # <--- NEW visual call
-	
+
 
 # --- STAMINA LOGIC ---
 func _update_stamina(delta: float) -> void:

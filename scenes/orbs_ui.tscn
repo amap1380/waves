@@ -1,25 +1,78 @@
-[gd_scene load_steps=4 format=3 uid="uid://bytsjkgf1g428"]
+[gd_scene load_steps=9 format=3 uid="uid://bytsjkgf1g428"]
 
-[ext_resource type="Texture2D" uid="uid://c2he28o7yayjg" path="res://assets/ui/HUD/Globe Erade.png" id="2_r8qrb"]
-[ext_resource type="Texture2D" uid="uid://d3krrqx08e6ff" path="res://assets/white_circle.png" id="3_r8qrb"]
-[ext_resource type="Script" path="res://scripts/orbs_ui.gd" id="4_xxjge"]
+[ext_resource type="Texture2D" uid="uid://dt2xdj2ilo2ip" path="res://assets/ui/GlobeEmptyBase.png" id="2_r8qrb"]
+[ext_resource type="Texture2D" uid="uid://boj777eyysev2" path="res://assets/ui/Globe-green-128.png" id="3_nvnqu"]
+[ext_resource type="Texture2D" uid="uid://cqy1o4crcsilj" path="res://assets/ui/Globe-red-128.png" id="4_ete0g"]
+[ext_resource type="Script" uid="uid://dypax10bn68kv" path="res://scripts/orbs_ui.gd" id="4_xxjge"]
+[ext_resource type="Texture2D" uid="uid://b5d580y0516wo" path="res://assets/ui/Globe Erade - 108.png" id="5_10gwr"]
 
-[node name="OrbsUI" type="TextureProgressBar"]
-texture_filter = 1
-offset_top = 23.0
-offset_right = 64.0
-offset_bottom = 87.0
-scale = Vector2(0.6, 0.6)
-texture_over = ExtResource("2_r8qrb")
-texture_progress = ExtResource("3_r8qrb")
-tint_progress = Color(0.28235295, 0.43529412, 0.36078432, 1)
+[sub_resource type="Animation" id="Animation_msdqp"]
+resource_name = "rotate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Behind:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="Animation" id="Animation_vmpx3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Behind:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mthxl"]
+_data = {
+&"RESET": SubResource("Animation_vmpx3"),
+&"rotate": SubResource("Animation_msdqp")
+}
+
+[node name="OrbsUI" type="Control"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 72.0
+offset_bottom = 72.0
 script = ExtResource("4_xxjge")
 
-[node name="NegetiveBar" type="TextureProgressBar" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-fill_mode = 1
-texture_over = ExtResource("2_r8qrb")
-texture_progress = ExtResource("3_r8qrb")
-tint_progress = Color(0.8117647, 0.44705883, 0.3137255, 1)
+[node name="Behind" type="Sprite2D" parent="."]
+position = Vector2(36, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r8qrb")
+
+[node name="Progress" type="Sprite2D" parent="."]
+position = Vector2(36, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_nvnqu")
+
+[node name="NegetiveProgress" type="Sprite2D" parent="."]
+position = Vector2(36, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ete0g")
+
+[node name="Front" type="Sprite2D" parent="."]
+position = Vector2(36, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_10gwr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mthxl")
+}
+autoplay = "rotate"

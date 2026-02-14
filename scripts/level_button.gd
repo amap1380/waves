@@ -15,7 +15,7 @@ const MAIN_SCENE = preload("res://scenes/main.tscn")
 		unlocked = value
 
 func _ready() -> void:
-	level_num = get_index() + 1
+	level_num = LevelManager.max_level - get_index()
 
 
 func _on_pressed() -> void:

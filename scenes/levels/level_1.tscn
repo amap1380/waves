@@ -10,7 +10,8 @@
 editor_description = "=10"
 script = ExtResource("1_6761a")
 number_of_orbs = 1
-max_positive = 6
+max_positive = 2
+max_negetive = 2
 metadata/_edit_vertical_guides_ = [712.0]
 metadata/_edit_horizontal_guides_ = [126.0, 588.0, 360.0]
 

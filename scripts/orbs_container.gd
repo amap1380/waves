@@ -6,7 +6,7 @@ var negetive_index:int = -1
 func reset_orbs() -> void:
 	for orb in get_children():
 		orb.value = 0
-		orb.negetive_bar.value = 0
+		orb.negetive_value = 0
 
 func set_positive(value: int) -> void:
 	#print('postive %d' % value)
@@ -21,7 +21,6 @@ func set_positive(value: int) -> void:
 		orb.value = value
 
 func set_negetive(value: int) -> void:
-	#print('negetive %d' % value)
 	if abs(negetive_index) > get_child_count():
 		return
 	var orb:OrbsUI = get_child(negetive_index)
@@ -30,7 +29,7 @@ func set_negetive(value: int) -> void:
 		set_negetive(value - int(orb.negetive_bar.max_value) * abs(negetive_index + 1))
 	else:
 		#print('negetive final %d' % value)
-		orb.negetive_bar.value = value
+		orb.negetive_value = value
 
 func test_positive(value: int) -> void:
 	var test_index:int = 0
@@ -51,11 +50,11 @@ func test_negetive(value: int) -> void:
 	while abs(test_index) <= get_child_count():
 		#print('negetive %d, index %d' % [value, test_index])
 		var orb: OrbsUI = get_child(test_index)
-		if value > orb.negetive_bar.max_value:
-			orb.negetive_bar.value = orb.negetive_bar.max_value
-			value -= int(orb.negetive_bar.max_value)
+		if value > orb.negetive_max_value:
+			orb.negetive_value = orb.negetive_max_value
+			value -= int(orb.negetive_max_value)
 			test_index -= 1
 			continue
 		else:
-			orb.negetive_bar.value = value
+			orb.negetive_value = value
 			break

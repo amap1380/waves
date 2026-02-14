@@ -42,6 +42,7 @@ func _ready() -> void:
 	SignalBus.collectable_crossed.connect(_on_collectable_crossed)
 	SignalBus.level_finished.connect(_on_level_finished)
 	
+	
 	var level: Level = LevelManager.levels[LevelManager.current_level - 1].instantiate()
 	self.add_child(level)
 	
@@ -51,7 +52,7 @@ func _ready() -> void:
 		var new_orb:OrbsUI = ORBS_UI.instantiate()
 		orbs_container.add_child(new_orb)
 		new_orb.max_value = level.max_positive
-		new_orb.negetive_bar.max_value = level.max_negetive
+		new_orb.negetive_max_value = level.max_negetive
 
 	var finish_line:Node2D =  get_tree().get_first_node_in_group("FinishLine")
 	day_night_cycle.finish_line = finish_line
@@ -83,7 +84,7 @@ func _on_collectable_crossed(_collectable: Collectable):
 
 
 func _on_level_finished():
-	if positive_score == MAX_POSITIVE:
+	if positive_score >= MAX_POSITIVE:
 		sine_wave.ascend()
 		LevelManager.current_level += 1
 	elif positive_score < float(MAX_POSITIVE) / 2 or negetive_score < float(MAX_NEGETIVE) / 2:
