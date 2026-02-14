@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://sk44x2v00sao"]
+[gd_scene load_steps=32 format=3 uid="uid://sk44x2v00sao"]
 
 [ext_resource type="Script" uid="uid://8go1bifdo0o0" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://wyu4i6dnbgfh" path="res://assets/Sound/whispers/sorrywhispered-104387.mp3" id="2_gqmmt"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://qsonnftfq5wd" path="res://assets/Bg/paper texture darker.png" id="16_vxglm"]
 [ext_resource type="Script" uid="uid://dmwkhtbt7uhl2" path="res://scripts/orbs_container.gd" id="25_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://d0uke0bcx6w1n" path="res://scenes/day_night_cycle_shader.tscn" id="26_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://6rgk0472qgcb" path="res://scenes/pause_menu.tscn" id="28_2f3dj"]
 
 [sub_resource type="Environment" id="Environment_sugp2"]
 background_mode = 3
@@ -173,6 +174,7 @@ bus = &"SFX"
 layer = 20
 
 [node name="Button" type="Button" parent="HUD"]
+visible = false
 offset_left = 24.0
 offset_top = 24.0
 offset_right = 92.0
@@ -214,6 +216,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DayNightCycleShader" parent="." instance=ExtResource("26_2wyq8")]
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("28_2f3dj")]
 visible = false
 
 [connection signal="devoured" from="SineWave/Head" to="." method="_on_head_devoured"]

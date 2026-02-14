@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boj777eyysev2"
-path="res://.godot/imported/Globe-green-128.png-f6e48520389880d0ca3ed8aa1961b49e.ctex"
+uid="uid://b5d580y0516wo"
+path="res://.godot/imported/Globe Erade - 108.png-87708cc485e736a2fe2cbecf818c6caf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/Globe-green-128.png"
-dest_files=["res://.godot/imported/Globe-green-128.png-f6e48520389880d0ca3ed8aa1961b49e.ctex"]
+source_file="res://assets/ui/HUD/Globe Erade - 108.png"
+dest_files=["res://.godot/imported/Globe Erade - 108.png-87708cc485e736a2fe2cbecf818c6caf.ctex"]
 
 [params]
 

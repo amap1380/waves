@@ -16,6 +16,6 @@ func change_scene(from, to_scene_name: String, transition: bool = true):
 	if transition:
 		animation_player.play("transition_in")
 		await animation_player.animation_finished
-	
+	#
 	#if get_tree().paused:
 		#get_tree().paused = false

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqy1o4crcsilj"
-path="res://.godot/imported/Globe-red-128.png-e5ad816cdc0ed1001121e61aaa211c45.ctex"
+path="res://.godot/imported/Globe-red-128.png-85d82aa1d44df73d936fe21ba86f62fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/Globe-red-128.png"
-dest_files=["res://.godot/imported/Globe-red-128.png-e5ad816cdc0ed1001121e61aaa211c45.ctex"]
+source_file="res://assets/ui/HUD/Globe-red-128.png"
+dest_files=["res://.godot/imported/Globe-red-128.png-85d82aa1d44df73d936fe21ba86f62fe.ctex"]
 
 [params]
 

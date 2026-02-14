@@ -1,10 +1,25 @@
 [gd_scene load_steps=9 format=3 uid="uid://bytsjkgf1g428"]
 
-[ext_resource type="Texture2D" uid="uid://dt2xdj2ilo2ip" path="res://assets/ui/GlobeEmptyBase.png" id="2_r8qrb"]
-[ext_resource type="Texture2D" uid="uid://boj777eyysev2" path="res://assets/ui/Globe-green-128.png" id="3_nvnqu"]
-[ext_resource type="Texture2D" uid="uid://cqy1o4crcsilj" path="res://assets/ui/Globe-red-128.png" id="4_ete0g"]
+[ext_resource type="Texture2D" uid="uid://dt2xdj2ilo2ip" path="res://assets/ui/HUD/GlobeEmptyBase.png" id="2_r8qrb"]
+[ext_resource type="Texture2D" uid="uid://boj777eyysev2" path="res://assets/ui/HUD/Globe-green-128.png" id="3_nvnqu"]
+[ext_resource type="Texture2D" uid="uid://cqy1o4crcsilj" path="res://assets/ui/HUD/Globe-red-128.png" id="4_ete0g"]
 [ext_resource type="Script" uid="uid://dypax10bn68kv" path="res://scripts/orbs_ui.gd" id="4_xxjge"]
-[ext_resource type="Texture2D" uid="uid://b5d580y0516wo" path="res://assets/ui/Globe Erade - 108.png" id="5_10gwr"]
+[ext_resource type="Texture2D" uid="uid://b5d580y0516wo" path="res://assets/ui/HUD/Globe Erade - 108.png" id="5_10gwr"]
+
+[sub_resource type="Animation" id="Animation_vmpx3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Behind:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_msdqp"]
 resource_name = "rotate"
@@ -20,21 +35,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.2831855]
-}
-
-[sub_resource type="Animation" id="Animation_vmpx3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Behind:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mthxl"]

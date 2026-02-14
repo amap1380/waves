@@ -15,6 +15,7 @@ var negetive_max_value:int = 10
 	set(new_value):
 		value = new_value
 		progress.modulate.a = float(value) / max_value
+		print(progress.modulate.a)
 
 		
 @export var negetive_value:int = 0:

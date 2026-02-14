@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj5ocivxds333"
-path="res://.godot/imported/EradeGlobe-emptyNoGlow-128.png-fe46f9e84b5a4644098de9df0e74517b.ctex"
+uid="uid://boj777eyysev2"
+path="res://.godot/imported/Globe-green-128.png-696f7082e011d5b71d3c40f30250b0ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/EradeGlobe-emptyNoGlow-128.png"
-dest_files=["res://.godot/imported/EradeGlobe-emptyNoGlow-128.png-fe46f9e84b5a4644098de9df0e74517b.ctex"]
+source_file="res://assets/ui/HUD/Globe-green-128.png"
+dest_files=["res://.godot/imported/Globe-green-128.png-696f7082e011d5b71d3c40f30250b0ff.ctex"]
 
 [params]
 

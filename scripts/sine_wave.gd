@@ -24,7 +24,7 @@ var h = 0.0
 @export var speed := 1.0
 @export var sine_speed := 2.0
 
-@export var number_of_points:int = 1000:
+@export var number_of_points:int = 100:
 	set(value):
 		if number_of_points != value:
 			number_of_points = value
@@ -54,6 +54,10 @@ var can_input := true
 func _ready() -> void:
 	stamina = max_stamina
 	update_array()
+	body.points = arr
+	spikes.points = arr
+	head.global_position =  arr[-2] + global_position
+	head.look_at(arr[-1] + global_position)
 	queue_redraw()
 	
 	#for desaturation look
