@@ -115,7 +115,7 @@ ignore_camera_scroll = true
 
 [node name="Mountains" type="Parallax2D" parent="."]
 z_index = -10
-scroll_offset = Vector2(-22.5, -17.5)
+scroll_offset = Vector2(-1169, 41)
 repeat_size = Vector2(1280, 0)
 autoscroll = Vector2(-30, 0)
 ignore_camera_scroll = true
@@ -176,23 +176,20 @@ layer = 20
 [node name="Button" type="Button" parent="HUD"]
 visible = false
 offset_left = 24.0
-offset_top = 24.0
+offset_top = 135.0
 offset_right = 92.0
-offset_bottom = 75.0
+offset_bottom = 186.0
 theme_override_fonts/font = ExtResource("5_o6xl0")
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
 [node name="OrbsContainer" type="HBoxContainer" parent="HUD"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -112.0
-offset_top = 18.0
-offset_right = 112.0
-offset_bottom = 90.0
-grow_horizontal = 2
-alignment = 1
+layout_direction = 2
+offset_left = 36.0
+offset_top = 16.0
+offset_right = 260.0
+offset_bottom = 88.0
+size_flags_vertical = 4
 script = ExtResource("25_2wyq8")
 
 [node name="StaminaBar" type="ProgressBar" parent="HUD"]

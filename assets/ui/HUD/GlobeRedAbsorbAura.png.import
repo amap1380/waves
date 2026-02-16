@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7pyfb8r0fx3r"
-path="res://.godot/imported/Globe-red-128.png-85d82aa1d44df73d936fe21ba86f62fe.ctex"
+uid="uid://d1nm8lpmyd7mo"
+path="res://.godot/imported/GlobeRedAbsorbAura.png-47d5a7db2821156082305e29e044d904.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/HUD/Globe-red-128.png"
-dest_files=["res://.godot/imported/Globe-red-128.png-85d82aa1d44df73d936fe21ba86f62fe.ctex"]
+source_file="res://assets/ui/HUD/GlobeRedAbsorbAura.png"
+dest_files=["res://.godot/imported/GlobeRedAbsorbAura.png-47d5a7db2821156082305e29e044d904.ctex"]
 
 [params]
 

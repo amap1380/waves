@@ -11,7 +11,6 @@ editor_description = "=31"
 script = ExtResource("1_l37oo")
 number_of_orbs = 2
 max_positive = 13
-max_negetive = 13
 metadata/_edit_horizontal_guides_ = [126.0, 588.0, 360.0]
 
 [node name="Collectable9" parent="." instance=ExtResource("1_j2425")]

@@ -367,6 +367,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_tctuf")
 }
 autoplay = "idle"
+speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 visible = false
