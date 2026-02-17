@@ -92,7 +92,7 @@ func _on_level_finished():
 		LevelManager.current_level -= 1
 	else:
 		sine_wave.stay()
-	await get_tree().create_timer(Constants.SINE_WAVE_TRANSITION_TIME).timeout
+	await get_tree().create_timer(Constants.SINE_WAVE_TRANSITION_TIME/4).timeout
 	SceneManager.change_scene(self,"res://scenes/dialogue_screen.tscn")
 
 
@@ -140,6 +140,12 @@ func play_collected_sound():
 func _on_head_devoured(area: Collectable) -> void:
 	if area.score < 0:
 		camera_2d.add_screen_shake(4, 0.2)
+		var current_orb:OrbsUI = orbs_container.get_child(orbs_container.negetive_index)
+		current_orb.play_negetive_absorb_anim()
+	elif area.score > 0 :
+		var current_orb:OrbsUI = orbs_container.get_child(orbs_container.positive_index)
+		current_orb.play_positive_absorb_anim()
+		
 	self.positive_score += area.score
 	self.positive_score = clampi(self.positive_score, 0, MAX_POSITIVE)
 	self.negetive_score += area.score

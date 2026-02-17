@@ -4,6 +4,7 @@ class_name OrbsUI
 var max_value:int = 10
 var negetive_max_value:int = 10
 
+const ORB_ABSORB_ANIMATION = preload("uid://duykepqbpk51")
 
 
 @onready var negetive_progress: Sprite2D = $NegetiveProgress
@@ -14,15 +15,27 @@ var negetive_max_value:int = 10
 @export var value:int = 0:
 	set(new_value):
 		value = new_value
-		progress.modulate.a = float(value) / max_value
-		print(progress.modulate.a)
+		if value >= max_value:
+			animation_player.stop()
+		progress.self_modulate.a = float(value) / max_value
 
 		
 @export var negetive_value:int = 0:
 	set(value):
 		negetive_value = value
-		negetive_progress.modulate.a = float(negetive_value) / negetive_max_value
+		if negetive_value >= negetive_max_value:
+			animation_player.stop()
+		negetive_progress.self_modulate.a = float(negetive_value) / negetive_max_value
 
+func play_negetive_absorb_anim():
+	var anim :AnimatedSprite2D= ORB_ABSORB_ANIMATION.instantiate()
+	anim.modulate = Color("#bb3c35")
+	negetive_progress.add_child(anim)
+
+func play_positive_absorb_anim():
+	var anim :AnimatedSprite2D= ORB_ABSORB_ANIMATION.instantiate()
+	anim.modulate = Color("#54ffa7")
+	negetive_progress.add_child(anim)
 
 func _ready() -> void:
 	value = 0

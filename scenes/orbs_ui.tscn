@@ -1,51 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://bytsjkgf1g428"]
+[gd_scene load_steps=9 format=3 uid="uid://bytsjkgf1g428"]
 
 [ext_resource type="Texture2D" uid="uid://dt2xdj2ilo2ip" path="res://assets/ui/HUD/GlobeEmptyBase.png" id="2_r8qrb"]
-<<<<<<< Updated upstream
-[ext_resource type="Texture2D" uid="uid://boj777eyysev2" path="res://assets/ui/HUD/Globe-green-128.png" id="3_nvnqu"]
-[ext_resource type="Texture2D" uid="uid://cqy1o4crcsilj" path="res://assets/ui/HUD/Globe-red-128.png" id="4_ete0g"]
-[ext_resource type="Script" uid="uid://dypax10bn68kv" path="res://scripts/orbs_ui.gd" id="4_xxjge"]
-[ext_resource type="Texture2D" uid="uid://b5d580y0516wo" path="res://assets/ui/HUD/Globe Erade - 108.png" id="5_10gwr"]
-
-[sub_resource type="Animation" id="Animation_vmpx3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Behind:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-=======
-[ext_resource type="Texture2D" uid="uid://cv1gef4vuiuj7" path="res://assets/ui/HUD/Globe-green-128.png" id="3_r8qrb"]
-[ext_resource type="Texture2D" uid="uid://dampext7f3j8p" path="res://assets/ui/HUD/Globe-red-128.png" id="4_nvnqu"]
+[ext_resource type="Texture2D" uid="uid://dlqq5ibc6x0bm" path="res://assets/ui/HUD/Globe-green-128.png" id="3_r8qrb"]
+[ext_resource type="Texture2D" uid="uid://b7pyfb8r0fx3r" path="res://assets/ui/HUD/Globe-red-128.png" id="4_nvnqu"]
 [ext_resource type="Script" uid="uid://dypax10bn68kv" path="res://scripts/orbs_ui.gd" id="4_xxjge"]
 [ext_resource type="Texture2D" uid="uid://b5d580y0516wo" path="res://assets/ui/HUD/Globe Erade - 108.png" id="5_nvnqu"]
-[ext_resource type="Texture2D" uid="uid://bnedfv24svk15" path="res://assets/ui/HUD/GlobeRedAbsorbAura.png" id="6_nvnqu"]
->>>>>>> Stashed changes
 
-[sub_resource type="Animation" id="Animation_ete0g"]
-resource_name = "Absorb"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
-<<<<<<< Updated upstream
-=======
 [sub_resource type="Animation" id="Animation_vmpx3"]
 length = 0.001
 tracks/0/type = "value"
@@ -64,6 +24,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_msdqp"]
 resource_name = "rotate"
 loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -77,168 +38,11 @@ tracks/0/keys = {
 "values": [0.0, 6.2831855]
 }
 
->>>>>>> Stashed changes
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mthxl"]
 _data = {
-&"Absorb": SubResource("Animation_ete0g"),
 &"RESET": SubResource("Animation_vmpx3"),
 &"rotate": SubResource("Animation_msdqp")
 }
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ete0g"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(0, 0, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_10gwr"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(0, 360, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_msdqp"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(0, 720, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vmpx3"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(0, 1080, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mthxl"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(0, 1440, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qyn33"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(0, 1800, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xmcdh"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(0, 2160, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gkm3t"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(0, 2520, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tw5sy"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(360, 0, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_er81b"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(360, 360, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_moanc"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(360, 720, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2nlcl"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(360, 1080, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ggl0"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(360, 1440, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0yy5c"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(360, 1800, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rnlmw"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(360, 2160, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xo2kc"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(360, 2520, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fed3c"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(720, 0, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j8uv0"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(720, 360, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qxjyw"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(720, 720, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sxmvb"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(720, 1080, 360, 360)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dxipq"]
-atlas = ExtResource("6_nvnqu")
-region = Rect2(720, 1440, 360, 360)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_j8uv0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ete0g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_10gwr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_msdqp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vmpx3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mthxl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qyn33")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xmcdh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gkm3t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tw5sy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_er81b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_moanc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2nlcl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ggl0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0yy5c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rnlmw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xo2kc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fed3c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j8uv0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qxjyw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sxmvb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dxipq")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 20.0
-}]
 
 [node name="OrbsUI" type="Control"]
 custom_minimum_size = Vector2(72, 72)
@@ -275,13 +79,3 @@ libraries = {
 }
 autoplay = "rotate"
 speed_scale = 0.3
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.32941175, 1, 0.654228, 0.78431374)
-show_behind_parent = true
-position = Vector2(34.819, 35.349)
-scale = Vector2(0.325573, 0.325573)
-sprite_frames = SubResource("SpriteFrames_j8uv0")
-animation = &"new_animation"
-autoplay = "new_animation"
-frame_progress = 0.9546927
