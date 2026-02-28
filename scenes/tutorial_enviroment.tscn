@@ -1,0 +1,272 @@
+[gd_scene load_steps=24 format=3 uid="uid://btjhgvpl4q4bm"]
+
+[ext_resource type="PackedScene" uid="uid://cepq1jsbyexcn" path="res://scenes/sine_wave.tscn" id="1_oky2v"]
+[ext_resource type="PackedScene" uid="uid://cd433od0xoqoc" path="res://scenes/head.tscn" id="2_apbdd"]
+[ext_resource type="Script" uid="uid://c51orpd3k7so2" path="res://scripts/camera_2d.gd" id="3_e36bq"]
+[ext_resource type="Texture2D" uid="uid://jxvlanv6wx4u" path="res://assets/Bg/bg alone_no texture.png" id="4_apbdd"]
+[ext_resource type="Texture2D" uid="uid://dt6pwb5fmkw0" path="res://assets/Bg/cave back ver.2.png" id="4_weg37"]
+[ext_resource type="Texture2D" uid="uid://btbb2dkgpxhxd" path="res://assets/Bg/ForeGroundRocks/foreCaveRockBlur1.png" id="6_fsvb8"]
+[ext_resource type="Texture2D" uid="uid://cj2pa42ioisuf" path="res://assets/Bg/ForeGroundRocks/foreCaveRockBlur2.png" id="7_1h26n"]
+[ext_resource type="Texture2D" uid="uid://cwthv8ps8ot8d" path="res://assets/Bg/ForeGroundRocks/foreCaveRockBlur3.png" id="8_ctex2"]
+[ext_resource type="Texture2D" uid="uid://begao1b5yysjf" path="res://assets/Bg/ForeGroundRocks/foreCaveRockBlur4.png" id="9_bbpbc"]
+[ext_resource type="Texture2D" uid="uid://ch4n6ucf0ew6" path="res://assets/Bg/ForeGroundRocks/foreCaveRockBlur5.png" id="10_588ob"]
+[ext_resource type="Texture2D" uid="uid://3ibmd1mpasj" path="res://assets/Bg/ForeGroundRocks/foreCaveRockBlur6.png" id="11_hf21v"]
+[ext_resource type="Texture2D" uid="uid://c4kuely0xk2cg" path="res://assets/Bg/ForeGroundRocks/foreCaveRockBlur7.png" id="12_dorta"]
+[ext_resource type="AudioStream" uid="uid://da425b32vv3jb" path="res://assets/Sound/Cave/177958__sclolex__water-dripping-in-cave.wav" id="13_bbpbc"]
+[ext_resource type="AudioStream" uid="uid://cs3h77s7xjc0" path="res://assets/Sound/Cave/825858__vrymaa__monastery-atmosphere-monk-chant-chimes.wav" id="15_588ob"]
+[ext_resource type="AudioStream" uid="uid://b6eug7ggpu6ip" path="res://assets/Sound/Cave/792664__vrymaa__instrument-sho-japanese.mp3" id="15_hf21v"]
+[ext_resource type="AudioStream" uid="uid://bbh1nqkfwhk5u" path="res://assets/Sound/Cave/722406__vrymaa__quaero.wav" id="16_hf21v"]
+
+[sub_resource type="Gradient" id="Gradient_ctex2"]
+offsets = PackedFloat32Array(0, 0.1411043, 0.25153375, 0.38650307, 0.607362, 0.74846625, 0.82822084, 0.9263804, 1)
+colors = PackedColorArray(0.52734375, 0.17921448, 0.35871863, 1, 0.61328125, 0.48957247, 0.25393677, 1, 0.52734375, 0.17921448, 0.35871863, 1, 0.17254902, 0.22352941, 0.69411767, 1, 0.5525571, 0.22229525, 0.39293063, 1, 0.61328125, 0.48957247, 0.25393677, 1, 0.17254902, 0.22352941, 0.69411767, 1, 0.52734375, 0.17921448, 0.35871863, 1, 0.17254902, 0.22352941, 0.69411767, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bbpbc"]
+gradient = SubResource("Gradient_ctex2")
+width = 107
+height = 60
+
+[sub_resource type="Gradient" id="Gradient_fsvb8"]
+offsets = PackedFloat32Array(0, 0.1411043, 0.8588957, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fsvb8"]
+gradient = SubResource("Gradient_fsvb8")
+width = 119
+fill_to = Vector2(0, 1)
+metadata/_snap_count = 2
+
+[sub_resource type="Gradient" id="Gradient_1h26n"]
+offsets = PackedFloat32Array(0.5521472, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ctex2"]
+gradient = SubResource("Gradient_1h26n")
+width = 119
+fill = 1
+fill_from = Vector2(0, 0.5198238)
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_dorta"]
+stream_count = 4
+stream_0/stream = ExtResource("13_bbpbc")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("15_hf21v")
+stream_1/volume = -60.0
+stream_2/stream = ExtResource("15_588ob")
+stream_2/volume = -12.69
+stream_3/stream = ExtResource("16_hf21v")
+stream_3/volume = -11.71
+
+[node name="TutorialEnviroment" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [720.0]
+
+[node name="SineWave" parent="." instance=ExtResource("1_oky2v")]
+position = Vector2(0, 360)
+stamina_drain_rate = 15.0
+stamina_regen_rate = 5.0
+stamina_threshold = 3.0
+
+[node name="Head" parent="SineWave" node_paths=PackedStringArray("sine_wave") instance=ExtResource("2_apbdd")]
+position = Vector2(264, -194)
+sine_wave = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+limit_left = 0
+script = ExtResource("3_e36bq")
+
+[node name="PlainBlack" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -11
+z_as_relative = false
+position = Vector2(-0.5, 0.5)
+scale = Vector2(0.64722216, 0.6662037)
+texture = ExtResource("4_apbdd")
+centered = false
+
+[node name="Caveback1" type="Parallax2D" parent="."]
+z_index = -11
+scroll_offset = Vector2(-0.5, 0.5)
+repeat_size = Vector2(2770, 0)
+autoscroll = Vector2(-250, 0)
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Caveback1"]
+modulate = Color(0.45748308, 0.45748308, 0.45748308, 1)
+scale = Vector2(0.64646465, 0.6666666)
+texture = ExtResource("4_weg37")
+centered = false
+flip_h = true
+flip_v = true
+
+[node name="Caveback2" type="Parallax2D" parent="."]
+z_index = -10
+scroll_offset = Vector2(-0.5, 0.5)
+repeat_size = Vector2(2770, 0)
+autoscroll = Vector2(-300, 0)
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Caveback2"]
+scale = Vector2(0.64646465, 0.6666666)
+texture = ExtResource("4_weg37")
+centered = false
+
+[node name="CaveFore" type="Parallax2D" parent="."]
+z_index = 1
+scroll_offset = Vector2(-0.5, 0.5)
+repeat_size = Vector2(20000, 0)
+autoscroll = Vector2(-600, 0)
+ignore_camera_scroll = true
+
+[node name="ForeRock10" type="Sprite2D" parent="CaveFore"]
+position = Vector2(9665.092, -1.5)
+scale = Vector2(0.74, 0.74)
+texture = ExtResource("6_fsvb8")
+centered = false
+flip_h = true
+flip_v = true
+
+[node name="ForeRock1" type="Sprite2D" parent="CaveFore"]
+position = Vector2(-15722.5, 73.5)
+scale = Vector2(0.6663885, 0.486897)
+texture = ExtResource("6_fsvb8")
+flip_v = true
+
+[node name="ForeRock2" type="Sprite2D" parent="CaveFore"]
+position = Vector2(5547.5, -0.5)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("7_1h26n")
+centered = false
+flip_v = true
+
+[node name="ForeRock3" type="Sprite2D" parent="CaveFore"]
+position = Vector2(4794.5, 459.5)
+scale = Vector2(0.61638397, 0.66985196)
+texture = ExtResource("8_ctex2")
+centered = false
+
+[node name="ForeRock4" type="Sprite2D" parent="CaveFore"]
+position = Vector2(15250.5, -10.5)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("9_bbpbc")
+centered = false
+
+[node name="ForeRock5" type="Sprite2D" parent="CaveFore"]
+position = Vector2(5048.46, 0.5)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("10_588ob")
+centered = false
+
+[node name="ForeRock6" type="Sprite2D" parent="CaveFore"]
+position = Vector2(18743.922, -11.5)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("11_hf21v")
+centered = false
+flip_v = true
+
+[node name="ForeRock7" type="Sprite2D" parent="CaveFore"]
+position = Vector2(18908.922, -10.5)
+scale = Vector2(0.6329693, 0.5731688)
+texture = ExtResource("12_dorta")
+centered = false
+flip_v = true
+
+[node name="ForeRock8" type="Sprite2D" parent="CaveFore"]
+position = Vector2(9892.086, 717.8165)
+rotation = -3.1415927
+scale = Vector2(0.4556827, 0.4556827)
+texture = ExtResource("11_hf21v")
+centered = false
+flip_v = true
+
+[node name="ForeRock9" type="Sprite2D" parent="CaveFore"]
+position = Vector2(10164.078, 730.5)
+rotation = -3.1415927
+scale = Vector2(0.43049726, 0.38982552)
+texture = ExtResource("12_dorta")
+centered = false
+flip_v = true
+
+[node name="ForeRock11" type="Sprite2D" parent="CaveFore"]
+position = Vector2(18265.5, 257.5)
+scale = Vector2(0.4489, 0.4489)
+texture = ExtResource("7_1h26n")
+centered = false
+flip_h = true
+
+[node name="ForeRock12" type="Sprite2D" parent="CaveFore"]
+position = Vector2(18116.5, 0.5)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("9_bbpbc")
+centered = false
+flip_h = true
+flip_v = true
+
+[node name="ForeRock13" type="Sprite2D" parent="CaveFore"]
+position = Vector2(9413.092, -1.4999847)
+texture = ExtResource("8_ctex2")
+centered = false
+flip_h = true
+flip_v = true
+
+[node name="ForeRock14" type="Sprite2D" parent="CaveFore"]
+position = Vector2(9718.517, 719.5)
+rotation = -3.1415927
+scale = Vector2(0.600024, 0.600024)
+texture = ExtResource("11_hf21v")
+centered = false
+flip_v = true
+
+[node name="ForeRock15" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-155.5, 0.5)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("9_bbpbc")
+centered = false
+
+[node name="ForeRock16" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-246.5, -10.5)
+scale = Vector2(0.6329693, 0.5731688)
+texture = ExtResource("12_dorta")
+centered = false
+flip_v = true
+
+[node name="PointVibrant" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+energy = 4.37
+blend_mode = 2
+range_z_min = -10
+range_z_max = -1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_bbpbc")
+texture_scale = 12.04
+
+[node name="PointDark" type="PointLight2D" parent="."]
+position = Vector2(640, 360)
+color = Color(0.9375, 0.99853516, 1, 1)
+energy = 0.56
+blend_mode = 1
+range_z_min = -154
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_fsvb8")
+texture_scale = 11.58
+
+[node name="PointLight" type="PointLight2D" parent="."]
+position = Vector2(690, 360)
+color = Color(0.9375, 0.99853516, 1, 1)
+energy = 1.65
+range_z_min = -10
+range_z_max = 0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ctex2")
+texture_scale = 12.04
+
+[node name="BgMusicVer2" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamSynchronized_dorta")
+autoplay = true
+mix_target = 1
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamSynchronized_dorta")
+mix_target = 1
