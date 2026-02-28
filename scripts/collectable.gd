@@ -20,6 +20,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	self.global_position.x -= speed * delta
+	if self.global_position.x < 0:
+		SignalBus.collectable_crossed.emit()
+		queue_free()
 
 
 	
@@ -51,8 +54,3 @@ func _despawn():
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	point_light_2d.enabled = true
-
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	SignalBus.collectable_crossed.emit(self)
-	queue_free()
