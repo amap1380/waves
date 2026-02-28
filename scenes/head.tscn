@@ -1,4 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=35 format=3 uid="uid://cd433od0xoqoc"]
+=======
+<<<<<<< Updated upstream
+[gd_scene load_steps=11 format=3 uid="uid://cd433od0xoqoc"]
+=======
+[gd_scene load_steps=41 format=3 uid="uid://cd433od0xoqoc"]
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://ol26keh5ewgg" path="res://scripts/head.gd" id="1_d75dd"]
 [ext_resource type="Texture2D" uid="uid://lscn3a24kf1k" path="res://assets/Serpent/EyeMovement.png" id="2_480qb"]
@@ -17,6 +25,54 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8, 0.2)
 metadata/_snap_enabled = true
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym82m"]
+atlas = ExtResource("2_480qb")
+region = Rect2(0, 0, 368, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbtww"]
+atlas = ExtResource("2_480qb")
+region = Rect2(368, 0, 368, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnnvi"]
+atlas = ExtResource("2_480qb")
+region = Rect2(736, 0, 368, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77p83"]
+atlas = ExtResource("2_480qb")
+region = Rect2(1104, 0, 368, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik5q6"]
+atlas = ExtResource("2_480qb")
+region = Rect2(1472, 0, 368, 216)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vpj3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym82m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbtww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnnvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77p83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik5q6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+>>>>>>> Stashed changes
 [sub_resource type="AtlasTexture" id="AtlasTexture_480qb"]
 atlas = ExtResource("6_tctuf")
 region = Rect2(0, 0, 515, 349)
@@ -172,6 +228,10 @@ animations = [{
 "speed": 21.0
 }]
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 [sub_resource type="Animation" id="Animation_480qb"]
 length = 0.001
 tracks/0/type = "value"
@@ -325,6 +385,15 @@ texture = SubResource("GradientTexture2D_6rdic")
 texture_scale = 4.0
 
 [node name="WholeHeadSprite" type="Node2D" parent="."]
+
+[node name="EyePupilSprite" type="AnimatedSprite2D" parent="WholeHeadSprite"]
+position = Vector2(20, 14.999999)
+rotation = 0.5235988
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_vpj3h")
+autoplay = "default"
+frame_progress = 0.52214676
+speed_scale = 0.6
 
 [node name="HeadSprite" type="Sprite2D" parent="WholeHeadSprite"]
 position = Vector2(20, 14.999998)

@@ -138,10 +138,24 @@ position = Vector2(6762, 378)
 speed = 110.0
 
 [node name="Label2" type="Label" parent="."]
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+offset_left = 664.0
+offset_top = 112.0
+offset_right = 1209.0
+offset_bottom = 220.0
+=======
+visible = false
+>>>>>>> Stashed changes
 offset_left = 643.0
 offset_top = 75.0
 offset_right = 1220.0
 offset_bottom = 183.0
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 theme = ExtResource("2_fiq81")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30

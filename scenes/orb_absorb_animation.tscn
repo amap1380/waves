@@ -164,8 +164,12 @@ show_behind_parent = true
 sprite_frames = SubResource("SpriteFrames_j8uv0")
 animation = &"new_animation"
 autoplay = "new_animation"
+<<<<<<< Updated upstream
 frame = 20
 frame_progress = 1.0
+=======
+speed_scale = 1.4
+>>>>>>> Stashed changes
 script = ExtResource("2_yum6h")
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

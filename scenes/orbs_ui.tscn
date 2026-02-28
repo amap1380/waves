@@ -53,6 +53,19 @@ offset_bottom = 72.0
 scale = Vector2(0.67435837, 0.67435837)
 script = ExtResource("4_xxjge")
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+[node name="NegetiveBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 1
+texture_over = ExtResource("2_xxjge")
+texture_progress = ExtResource("3_r8qrb")
+tint_progress = Color(1, 0, 0, 1)
+=======
+>>>>>>> Stashed changes
 [node name="Behind" type="Sprite2D" parent="."]
 position = Vector2(36, 36)
 scale = Vector2(0.5, 0.5)
@@ -60,12 +73,20 @@ texture = ExtResource("2_r8qrb")
 
 [node name="Progress" type="Sprite2D" parent="."]
 position = Vector2(36, 36)
+<<<<<<< Updated upstream
 scale = Vector2(0.5, 0.5)
+=======
+scale = Vector2(0.39715716, 0.39715716)
+>>>>>>> Stashed changes
 texture = ExtResource("3_r8qrb")
 
 [node name="NegetiveProgress" type="Sprite2D" parent="."]
 position = Vector2(36, 36)
+<<<<<<< Updated upstream
 scale = Vector2(0.5, 0.5)
+=======
+scale = Vector2(0.39715716, 0.39715716)
+>>>>>>> Stashed changes
 texture = ExtResource("4_nvnqu")
 
 [node name="Front" type="Sprite2D" parent="."]
@@ -79,3 +100,7 @@ libraries = {
 }
 autoplay = "rotate"
 speed_scale = 0.3
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
